@@ -1,0 +1,43 @@
+{
+  "id": "fracture-good",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "buprenorphine",
+        "doseMg": 0.36
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "xp": [
+      70,
+      70
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-DOSE-IN-RANGE",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  }
+}

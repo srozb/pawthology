@@ -1,0 +1,39 @@
+{
+  "id": "fracture-missing-dose-invalid",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "buprenorphine"
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-DOSE-INVALID",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-IN-RANGE",
+      "recovered"
+    ],
+    "xp": [
+      50,
+      50
+    ]
+  }
+}

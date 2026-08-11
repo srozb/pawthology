@@ -1,0 +1,24 @@
+{
+  "id": "fracture-no-treatment",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [],
+    "procedures": [],
+    "recommendations": []
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-NO-TREATMENT"
+    ],
+    "xp": [
+      0,
+      0
+    ],
+    "patientOutcome": "not-responding"
+  }
+}

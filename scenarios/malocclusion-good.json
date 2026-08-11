@@ -1,0 +1,44 @@
+{
+  "id": "malocclusion-good",
+  "caseId": "case-malocclusion-rabbit",
+  "decisions": {
+    "weightKg": 2.2,
+    "exams": [
+      "physical-exam"
+    ],
+    "diagnosis": "malocclusion",
+    "treatments": [
+      {
+        "drug": "meloxicam",
+        "doseMg": 1.1
+      }
+    ],
+    "procedures": [
+      "incisor-trim-bur"
+    ],
+    "recommendations": [
+      "hay-diet",
+      "recheck-teeth-3m"
+    ]
+  },
+  "expected": {
+    "xp": [
+      65,
+      65
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-ABX-IRRATIONAL",
+      "R-DOSE-OVER",
+      "R-EXAM-REDUNDANT"
+    ]
+  }
+}

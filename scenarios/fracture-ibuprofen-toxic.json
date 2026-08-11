@@ -1,0 +1,36 @@
+{
+  "id": "fracture-ibuprofen-toxic",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "ibuprofen",
+        "doseMg": 400
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "critical",
+    "mustContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "xp": [
+      15,
+      15
+    ]
+  }
+}

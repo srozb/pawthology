@@ -1,0 +1,37 @@
+{
+  "id": "egg-binding-no-calcium",
+  "caseId": "case-egg-binding",
+  "decisions": {
+    "weightKg": 0.09,
+    "exams": [
+      "physical-exam",
+      "radiograph"
+    ],
+    "diagnosis": "egg-binding",
+    "treatments": [],
+    "procedures": [
+      "egg-assistance"
+    ],
+    "recommendations": [
+      "isolation-humidification",
+      "calcium-supplementation"
+    ]
+  },
+  "expected": {
+    "xp": [
+      45,
+      45
+    ],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-DX-CORRECT",
+      "R-NO-TREATMENT",
+      "R-PROC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-CONTRA",
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  }
+}

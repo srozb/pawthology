@@ -1,0 +1,39 @@
+{
+  "id": "fleas-cat-povidone-mismatch",
+  "caseId": "case-fleas-cat",
+  "decisions": {
+    "weightKg": 5,
+    "exams": [
+      "flea-comb"
+    ],
+    "diagnosis": "flea-infestation",
+    "treatments": [
+      {
+        "drug": "povidone-iodine",
+        "doseMg": 0
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "treat-environment",
+      "treat-all-pets"
+    ]
+  },
+  "expected": {
+    "xp": [
+      30,
+      30
+    ],
+    "patientOutcome": "improving",
+    "mustContainVerdicts": [
+      "R-DRUG-GROUP-MISMATCH",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-DOSE-OVER",
+      "R-ABX-IRRATIONAL"
+    ]
+  },
+  "note": "Antiseptic on flea infestation = wrong group (mismatch) but not toxic. Topical so no dose evaluation."
+}

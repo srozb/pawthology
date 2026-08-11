@@ -1,0 +1,39 @@
+{
+  "id": "abrasion-antibiotic-mistake",
+  "caseId": "case-abrasion-paw",
+  "decisions": {
+    "weightKg": 12,
+    "exams": [
+      "wound-inspection"
+    ],
+    "diagnosis": "uncomplicated-abrasion",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 300
+      }
+    ],
+    "procedures": [
+      "wound-clean-debride"
+    ],
+    "recommendations": [
+      "wound-observation"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-GROUP-MISMATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DX-WRONG"
+    ],
+    "xp": [
+      20,
+      20
+    ],
+    "patientOutcome": "not-responding"
+  }
+}

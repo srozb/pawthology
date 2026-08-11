@@ -1,0 +1,41 @@
+{
+  "id": "malocclusion-redundant-bloodpanel",
+  "caseId": "case-malocclusion-rabbit",
+  "decisions": {
+    "weightKg": 2.2,
+    "exams": [
+      "physical-exam",
+      "blood-panel"
+    ],
+    "diagnosis": "malocclusion",
+    "treatments": [
+      {
+        "drug": "meloxicam",
+        "doseMg": 1.1
+      }
+    ],
+    "procedures": [
+      "incisor-trim-bur"
+    ],
+    "recommendations": [
+      "hay-diet",
+      "recheck-teeth-3m"
+    ]
+  },
+  "expected": {
+    "xp": [
+      60,
+      60
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-REDUNDANT",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  }
+}

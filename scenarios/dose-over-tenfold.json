@@ -1,0 +1,36 @@
+{
+  "id": "dose-over-tenfold",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "buprenorphine",
+        "doseMg": 3.6
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-DOSE-OVER",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "xp": [
+      45,
+      45
+    ],
+    "patientOutcome": "deteriorating"
+  }
+}

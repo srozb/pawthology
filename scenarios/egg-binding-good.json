@@ -1,0 +1,45 @@
+{
+  "id": "egg-binding-good",
+  "caseId": "case-egg-binding",
+  "decisions": {
+    "weightKg": 0.09,
+    "exams": [
+      "physical-exam",
+      "radiograph"
+    ],
+    "diagnosis": "egg-binding",
+    "treatments": [
+      {
+        "drug": "calcium-gluconate",
+        "doseMg": 9
+      }
+    ],
+    "procedures": [
+      "egg-assistance"
+    ],
+    "recommendations": [
+      "isolation-humidification",
+      "calcium-supplementation"
+    ]
+  },
+  "expected": {
+    "xp": [
+      75,
+      75
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-PROC-CONTRA",
+      "R-DRUG-SPECIES-TOXIC",
+      "R-DOSE-INVALID",
+      "R-ABX-IRRATIONAL"
+    ]
+  }
+}

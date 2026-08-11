@@ -1,0 +1,13 @@
+{
+  "name": "pawthology",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pawthology - small animal veterinary clinical simulator (educational game)",
+  "scripts": {
+    "test": "node --test",
+    "replay": "node tools/replay.js",
+    "validate": "node tools/validate_game.js .",
+    "serve": "python3 -m http.server 8000"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "gi-foreign-body-nsaid-toxic",
+  "caseId": "case-gi-foreign-body",
+  "decisions": {
+    "weightKg": 11,
+    "exams": [
+      "physical-exam",
+      "radiograph"
+    ],
+    "diagnosis": "gi-foreign-body",
+    "treatments": [
+      {
+        "drug": "meloxicam",
+        "doseMg": 1.1
+      }
+    ],
+    "procedures": [
+      "enterotomy"
+    ],
+    "recommendations": [
+      "prevent-pica",
+      "strict-rest"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-SURG-REQUIRED",
+      "R-DRUG-CONTRAINDICATED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-ABX-IRRATIONAL"
+    ],
+    "xp": [
+      45,
+      45
+    ]
+  }
+}

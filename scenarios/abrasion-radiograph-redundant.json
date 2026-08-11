@@ -1,0 +1,39 @@
+{
+  "id": "abrasion-radiograph-redundant",
+  "caseId": "case-abrasion-paw",
+  "decisions": {
+    "weightKg": 12,
+    "exams": [
+      "wound-inspection",
+      "radiograph"
+    ],
+    "diagnosis": "uncomplicated-abrasion",
+    "treatments": [
+      {
+        "drug": "chlorhexidine",
+        "doseMg": 24
+      }
+    ],
+    "procedures": [
+      "wound-clean-debride"
+    ],
+    "recommendations": [
+      "wound-observation"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-EXAM-REDUNDANT",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC"
+    ],
+    "xp": [
+      55,
+      55
+    ],
+    "patientOutcome": "recovered"
+  }
+}

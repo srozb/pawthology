@@ -1,0 +1,44 @@
+{
+  "id": "scaly-face-good",
+  "caseId": "case-scaly-face-mites",
+  "decisions": {
+    "weightKg": 0.035,
+    "exams": [
+      "physical-exam",
+      "skin-scrape"
+    ],
+    "diagnosis": "scaly-face-mites",
+    "treatments": [
+      {
+        "drug": "ivermectin",
+        "doseMg": 0
+      }
+    ],
+    "procedures": [
+      "beak-trim"
+    ],
+    "recommendations": [
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": [
+      70,
+      70
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC",
+      "R-DOSE-OVER",
+      "R-DOSE-INVALID"
+    ]
+  }
+}

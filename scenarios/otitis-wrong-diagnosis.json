@@ -1,0 +1,40 @@
+{
+  "id": "otitis-wrong-diagnosis",
+  "caseId": "case-otitis-dog",
+  "decisions": {
+    "weightKg": 22,
+    "exams": [
+      "otoscopy",
+      "ear-cytology"
+    ],
+    "diagnosis": "uncomplicated-abrasion",
+    "treatments": [
+      {
+        "drug": "ear-drops-complex",
+        "doseMg": 0
+      }
+    ],
+    "procedures": [
+      "ear-flush"
+    ],
+    "recommendations": [
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": [
+      25,
+      25
+    ],
+    "patientOutcome": "deteriorating",
+    "mustContainVerdicts": [
+      "R-DX-WRONG",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DX-CORRECT"
+    ]
+  }
+}

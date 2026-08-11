@@ -1,0 +1,37 @@
+{
+  "id": "fleas-cat-ibuprofen-toxic",
+  "caseId": "case-fleas-cat",
+  "decisions": {
+    "weightKg": 5,
+    "exams": [
+      "flea-comb"
+    ],
+    "diagnosis": "flea-infestation",
+    "treatments": [
+      {
+        "drug": "ibuprofen",
+        "doseMg": 100
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "treat-environment",
+      "treat-all-pets"
+    ]
+  },
+  "expected": {
+    "xp": [
+      0,
+      0
+    ],
+    "patientOutcome": "critical",
+    "mustContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-GROUP-MATCH",
+      "R-DOSE-OVER"
+    ]
+  }
+}

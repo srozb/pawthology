@@ -1,0 +1,40 @@
+{
+  "id": "fracture-antibiotic-irrational",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 360
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-GROUP-MISMATCH",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC"
+    ],
+    "xp": [
+      30,
+      30
+    ],
+    "patientOutcome": "not-responding"
+  }
+}

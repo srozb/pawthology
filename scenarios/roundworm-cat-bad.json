@@ -1,0 +1,13 @@
+{
+  "id": "roundworm-cat-bad",
+  "caseId": "case-roundworm-cat",
+  "decisions": {
+    "weightKg": 2.0,
+    "exams": [],
+    "diagnosis": "TODO-wrongdx",
+    "treatments": []
+  },
+  "expected": {
+    "_TODO": "uruchom: node tools/replay.js roundworm-cat-bad.json --trace i uzupełnij expected"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "fracture-no-weight-invalid-dose",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 0,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "buprenorphine",
+        "doseMg": 0.36
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-DOSE-INVALID",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-IN-RANGE"
+    ],
+    "xp": [
+      50,
+      50
+    ]
+  }
+}

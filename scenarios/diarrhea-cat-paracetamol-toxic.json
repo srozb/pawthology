@@ -1,0 +1,36 @@
+{
+  "id": "diarrhea-cat-paracetamol-toxic",
+  "caseId": "case-diarrhea-cat",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "fecal-exam"
+    ],
+    "diagnosis": "diarrhea-parasitic",
+    "treatments": [
+      {
+        "drug": "acetaminophen",
+        "doseMg": 100
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "rehydration-if-needed",
+      "recheck-fecal-2w"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "critical",
+    "mustContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-IN-RANGE"
+    ],
+    "xp": [
+      0,
+      0
+    ]
+  }
+}

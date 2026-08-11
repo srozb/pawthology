@@ -1,0 +1,39 @@
+{
+  "id": "malocclusion-antibiotic-toxic",
+  "caseId": "case-malocclusion-rabbit",
+  "decisions": {
+    "weightKg": 2.2,
+    "exams": [
+      "physical-exam"
+    ],
+    "diagnosis": "malocclusion",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 27.5
+      }
+    ],
+    "procedures": [
+      "incisor-trim-bur"
+    ],
+    "recommendations": [
+      "hay-diet",
+      "recheck-teeth-3m"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "critical",
+    "mustContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-IN-RANGE"
+    ],
+    "xp": [
+      0,
+      0
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "id": "abrasion-good",
+  "caseId": "case-abrasion-paw",
+  "decisions": {
+    "weightKg": 12,
+    "exams": [
+      "wound-inspection",
+      "wound-swab-cytology"
+    ],
+    "diagnosis": "uncomplicated-abrasion",
+    "treatments": [
+      {
+        "drug": "chlorhexidine",
+        "doseMg": 24
+      }
+    ],
+    "procedures": [
+      "wound-clean-debride"
+    ],
+    "recommendations": [
+      "wound-observation"
+    ]
+  },
+  "expected": {
+    "xp": [
+      70,
+      70
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC",
+      "R-DOSE-OVER"
+    ]
+  }
+}

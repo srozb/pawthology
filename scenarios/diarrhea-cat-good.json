@@ -1,0 +1,40 @@
+{
+  "id": "diarrhea-cat-good",
+  "caseId": "case-diarrhea-cat",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "fecal-exam"
+    ],
+    "diagnosis": "diarrhea-parasitic",
+    "treatments": [
+      {
+        "drug": "fenbendazole",
+        "doseMg": 200
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "rehydration-if-needed",
+      "recheck-fecal-2w"
+    ]
+  },
+  "expected": {
+    "xp": [
+      55,
+      55
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-DOSE-IN-RANGE",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  }
+}

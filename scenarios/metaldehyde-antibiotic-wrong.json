@@ -1,0 +1,41 @@
+{
+  "id": "metaldehyde-antibiotic-wrong",
+  "caseId": "case-metaldehyde-toxicity",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "physical-exam"
+    ],
+    "diagnosis": "metaldehyde-toxicity",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 100
+      }
+    ],
+    "procedures": [
+      "induce-emesis"
+    ],
+    "recommendations": [
+      "observe-toxicity"
+    ]
+  },
+  "expected": {
+    "xp": [
+      10,
+      10
+    ],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED",
+      "R-DRUG-CONTRAINDICATED",
+      "R-ABX-IRRATIONAL"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  }
+}

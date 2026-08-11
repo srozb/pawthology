@@ -1,0 +1,18 @@
+{
+  "id": "fracture-splint-alternative",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": ["radiograph"],
+    "diagnosis": "fracture",
+    "treatments": [{ "drug": "buprenorphine", "doseMg": 0.36 }],
+    "procedures": ["fracture-stabilize-splint"],
+    "recommendations": ["strict-rest", "recheck-radiograph"]
+  },
+  "expected": {
+    "xp": [65, 65],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-DOSE-IN-RANGE", "R-PROC-REQUIRED", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-SURG-MISSING", "R-SURG-EXTRA", "R-PROC-EXTRA", "R-DRUG-SPECIES-TOXIC"]
+  }
+}

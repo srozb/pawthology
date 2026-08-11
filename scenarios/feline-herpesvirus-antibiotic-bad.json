@@ -1,0 +1,29 @@
+{
+  "id": "feline-herpesvirus-antibiotic-bad",
+  "caseId": "case-feline-herpesvirus",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "physical-exam",
+      "eye-exam"
+    ],
+    "diagnosis": "feline-herpesvirus",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 50
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "isolation-humidification",
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-CONTRAINDICATED"
+    ]
+  }
+}

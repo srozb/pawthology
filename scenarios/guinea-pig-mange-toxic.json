@@ -1,0 +1,20 @@
+{
+  "id": "guinea-pig-mange-toxic",
+  "caseId": "case-guinea-pig-mange",
+  "decisions": {
+    "weightKg": 0.8,
+    "exams": ["skin-scrape"],
+    "diagnosis": "guinea-pig-mange",
+    "treatments": [
+      { "drug": "amoxicillin-clavulanate", "doseMg": 6.4 }
+    ],
+    "procedures": [],
+    "recommendations": []
+  },
+  "expected": {
+    "xp": [0, 0],
+    "patientOutcome": "critical",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-SPECIES-TOXIC", "R-ABX-IRRATIONAL"],
+    "mustNotContainVerdicts": ["R-DRUG-GROUP-MATCH"]
+  }
+}

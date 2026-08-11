@@ -1,0 +1,42 @@
+{
+  "id": "otitis-good",
+  "caseId": "case-otitis-dog",
+  "decisions": {
+    "weightKg": 22,
+    "exams": [
+      "otoscopy",
+      "ear-cytology"
+    ],
+    "diagnosis": "otitis-externa",
+    "treatments": [
+      {
+        "drug": "ear-drops-complex",
+        "doseMg": 0
+      }
+    ],
+    "procedures": [
+      "ear-flush"
+    ],
+    "recommendations": [
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": [
+      70,
+      70
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-DOSE-OVER"
+    ]
+  }
+}

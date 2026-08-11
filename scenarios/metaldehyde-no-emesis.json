@@ -1,0 +1,34 @@
+{
+  "id": "metaldehyde-no-emesis",
+  "caseId": "case-metaldehyde-toxicity",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "physical-exam"
+    ],
+    "diagnosis": "metaldehyde-toxicity",
+    "treatments": [],
+    "procedures": [],
+    "recommendations": [
+      "observe-toxicity"
+    ]
+  },
+  "expected": {
+    "xp": [
+      25,
+      25
+    ],
+    "patientOutcome": "improving",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-PROC-MISSING",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-CONTRAINDICATED",
+      "R-NO-TREATMENT"
+    ]
+  }
+}

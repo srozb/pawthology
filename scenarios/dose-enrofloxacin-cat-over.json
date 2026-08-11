@@ -1,0 +1,39 @@
+{
+  "id": "dose-enrofloxacin-cat-over",
+  "caseId": "case-diarrhea-cat",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "fecal-exam"
+    ],
+    "diagnosis": "diarrhea-parasitic",
+    "treatments": [
+      {
+        "drug": "enrofloxacin",
+        "doseMg": 24
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "rehydration-if-needed",
+      "recheck-fecal-2w"
+    ]
+  },
+  "expected": {
+    "xp": [
+      0,
+      0
+    ],
+    "patientOutcome": "deteriorating",
+    "mustContainVerdicts": [
+      "R-DOSE-OVER",
+      "R-DRUG-GROUP-MISMATCH",
+      "R-ABX-IRRATIONAL",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-IN-RANGE"
+    ]
+  },
+  "note": "24mg/4kg = 6 mg/kg exceeds cat max 5 mg/kg (retinotoxic) = overdose. R-DOSE-OVER dominates outcome (deteriorating) over R-ABX-IRRATIONAL."
+}

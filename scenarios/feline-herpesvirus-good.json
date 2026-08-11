@@ -1,0 +1,31 @@
+{
+  "id": "feline-herpesvirus-good",
+  "caseId": "case-feline-herpesvirus",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "physical-exam",
+      "eye-exam"
+    ],
+    "diagnosis": "feline-herpesvirus",
+    "treatments": [],
+    "procedures": [],
+    "recommendations": [
+      "isolation-humidification",
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": 50,
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-EXAM-REDUNDANT"
+    ]
+  }
+}

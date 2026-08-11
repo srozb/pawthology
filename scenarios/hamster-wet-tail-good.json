@@ -1,0 +1,20 @@
+{
+  "id": "hamster-wet-tail-good",
+  "caseId": "case-hamster-wet-tail",
+  "decisions": {
+    "weightKg": 0.1,
+    "exams": ["physical-exam", "fecal-exam"],
+    "diagnosis": "hamster-wet-tail",
+    "treatments": [
+      { "drug": "enrofloxacin", "doseMg": 0.75 }
+    ],
+    "procedures": [],
+    "recommendations": ["rehydration-if-needed", "recheck-if-recurrent"]
+  },
+  "expected": {
+    "xp": [70, 70],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-DOSE-IN-RANGE", "R-ABX-INDICATED", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-DRUG-SPECIES-TOXIC", "R-ABX-IRRATIONAL", "R-NO-TREATMENT"]
+  }
+}

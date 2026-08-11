@@ -1,0 +1,39 @@
+{
+  "id": "dose-enrofloxacin-cat-at-max",
+  "caseId": "case-diarrhea-cat",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "fecal-exam"
+    ],
+    "diagnosis": "diarrhea-parasitic",
+    "treatments": [
+      {
+        "drug": "enrofloxacin",
+        "doseMg": 20
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "rehydration-if-needed",
+      "recheck-fecal-2w"
+    ]
+  },
+  "expected": {
+    "xp": [
+      15,
+      15
+    ],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-DOSE-IN-RANGE",
+      "R-DRUG-GROUP-MISMATCH",
+      "R-ABX-IRRATIONAL",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-OVER"
+    ]
+  },
+  "note": "Enrofloxacin cat range is 5-5 mg/kg (retinotoxic). 20mg/4kg = 5 mg/kg = exactly at max = in-range. Antibiotic is irrational (parasitic diarrhea, not bacterial)."
+}

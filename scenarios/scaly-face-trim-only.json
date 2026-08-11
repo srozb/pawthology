@@ -1,0 +1,37 @@
+{
+  "id": "scaly-face-trim-only",
+  "caseId": "case-scaly-face-mites",
+  "decisions": {
+    "weightKg": 0.035,
+    "exams": [
+      "physical-exam",
+      "skin-scrape"
+    ],
+    "diagnosis": "scaly-face-mites",
+    "treatments": [],
+    "procedures": [
+      "beak-trim"
+    ],
+    "recommendations": [
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": [
+      40,
+      40
+    ],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-NO-TREATMENT",
+      "R-PROC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-GROUP-MATCH",
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  }
+}

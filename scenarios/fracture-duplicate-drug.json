@@ -1,0 +1,43 @@
+{
+  "id": "fracture-duplicate-drug",
+  "caseId": "case-fracture-dog",
+  "decisions": {
+    "weightKg": 18,
+    "exams": [
+      "radiograph"
+    ],
+    "diagnosis": "fracture",
+    "treatments": [
+      {
+        "drug": "buprenorphine",
+        "doseMg": 0.36
+      },
+      {
+        "drug": "buprenorphine",
+        "doseMg": 0.36
+      }
+    ],
+    "procedures": [
+      "fracture-osteosynthesis"
+    ],
+    "recommendations": [
+      "strict-rest",
+      "recheck-radiograph"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-DRUG-DUPLICATE",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC"
+    ],
+    "xp": [
+      65,
+      65
+    ]
+  }
+}

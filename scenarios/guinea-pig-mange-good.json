@@ -1,0 +1,20 @@
+{
+  "id": "guinea-pig-mange-good",
+  "caseId": "case-guinea-pig-mange",
+  "decisions": {
+    "weightKg": 0.8,
+    "exams": ["skin-scrape"],
+    "diagnosis": "guinea-pig-mange",
+    "treatments": [
+      { "drug": "selamectin", "doseMg": 0 }
+    ],
+    "procedures": [],
+    "recommendations": ["treat-environment", "treat-all-pets"]
+  },
+  "expected": {
+    "xp": [55, 55],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-DOSE-OVER", "R-DOSE-UNDER", "R-ABX-IRRATIONAL", "R-DRUG-SPECIES-TOXIC"]
+  }
+}

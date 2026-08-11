@@ -1,0 +1,29 @@
+{
+  "id": "babesiosis-dog-antibiotic-bad",
+  "caseId": "case-babesiosis-dog",
+  "decisions": {
+    "weightKg": 20,
+    "exams": [
+      "physical-exam",
+      "blood-smear"
+    ],
+    "diagnosis": "babesiosis",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 250
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "tick-prevention",
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-GROUP-MISMATCH"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "babesiosis-dog-good",
+  "caseId": "case-babesiosis-dog",
+  "decisions": {
+    "weightKg": 20,
+    "exams": [
+      "physical-exam",
+      "blood-smear",
+      "blood-panel"
+    ],
+    "diagnosis": "babesiosis",
+    "treatments": [
+      {
+        "drug": "imidocarb",
+        "doseMg": 110
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "tick-prevention",
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": 75,
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-DOSE-IN-RANGE",
+      "R-REC-REQUIRED"
+    ]
+  }
+}

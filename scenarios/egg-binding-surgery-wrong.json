@@ -1,0 +1,42 @@
+{
+  "id": "egg-binding-surgery-wrong",
+  "caseId": "case-egg-binding",
+  "decisions": {
+    "weightKg": 0.09,
+    "exams": [
+      "physical-exam",
+      "radiograph"
+    ],
+    "diagnosis": "egg-binding",
+    "treatments": [
+      {
+        "drug": "calcium-gluconate",
+        "doseMg": 9
+      }
+    ],
+    "procedures": [
+      "salpingotomy"
+    ],
+    "recommendations": [
+      "isolation-humidification",
+      "calcium-supplementation"
+    ]
+  },
+  "expected": {
+    "xp": [
+      45,
+      45
+    ],
+    "patientOutcome": "improving",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-SURG-EXTRA"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-SPECIES-TOXIC",
+      "R-PROC-CONTRA"
+    ]
+  }
+}

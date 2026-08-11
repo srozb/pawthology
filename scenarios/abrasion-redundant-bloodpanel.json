@@ -1,0 +1,39 @@
+{
+  "id": "abrasion-redundant-bloodpanel",
+  "caseId": "case-abrasion-paw",
+  "decisions": {
+    "weightKg": 12,
+    "exams": [
+      "wound-inspection",
+      "blood-panel"
+    ],
+    "diagnosis": "uncomplicated-abrasion",
+    "treatments": [
+      {
+        "drug": "chlorhexidine",
+        "doseMg": 24
+      }
+    ],
+    "procedures": [
+      "wound-clean-debride"
+    ],
+    "recommendations": [
+      "wound-observation"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-EXAM-REDUNDANT",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL"
+    ],
+    "xp": [
+      55,
+      55
+    ],
+    "patientOutcome": "recovered"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "id": "fleas-cat-good",
+  "caseId": "case-fleas-cat",
+  "decisions": {
+    "weightKg": 5,
+    "exams": [
+      "flea-comb"
+    ],
+    "diagnosis": "flea-infestation",
+    "treatments": [
+      {
+        "drug": "fluralaner",
+        "doseMg": 250
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "treat-environment",
+      "treat-all-pets"
+    ]
+  },
+  "expected": {
+    "xp": [
+      55,
+      55
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-DOSE-IN-RANGE",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL"
+    ]
+  }
+}

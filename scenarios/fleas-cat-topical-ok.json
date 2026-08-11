@@ -1,0 +1,40 @@
+{
+  "id": "fleas-cat-topical-ok",
+  "caseId": "case-fleas-cat",
+  "decisions": {
+    "weightKg": 5,
+    "exams": [
+      "flea-comb"
+    ],
+    "diagnosis": "flea-infestation",
+    "treatments": [
+      {
+        "drug": "selamectin",
+        "doseMg": 0
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "treat-environment",
+      "treat-all-pets"
+    ]
+  },
+  "expected": {
+    "xp": [
+      55,
+      55
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DOSE-OVER",
+      "R-DOSE-UNDER",
+      "R-ABX-IRRATIONAL"
+    ]
+  }
+}

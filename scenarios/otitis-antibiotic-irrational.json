@@ -1,0 +1,44 @@
+{
+  "id": "otitis-antibiotic-irrational",
+  "caseId": "case-otitis-dog",
+  "decisions": {
+    "weightKg": 22,
+    "exams": [
+      "otoscopy",
+      "ear-cytology"
+    ],
+    "diagnosis": "otitis-externa",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 330
+      }
+    ],
+    "procedures": [
+      "ear-flush"
+    ],
+    "recommendations": [
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "xp": [
+      50,
+      50
+    ],
+    "patientOutcome": "improving",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MISMATCH",
+      "R-ABX-INDICATED",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC"
+    ]
+  },
+  "note": "Otitis is bacterial (bacterialInfection=true), so systemic antibiotic fires R-ABX-INDICATED even though ear-drops group is first-line (R-DRUG-GROUP-MISMATCH). Name 'irrational' = clinically wrong route, not AMR rule."
+}

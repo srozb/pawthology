@@ -1,0 +1,51 @@
+{
+  "id": "gi-foreign-body-good",
+  "caseId": "case-gi-foreign-body",
+  "decisions": {
+    "weightKg": 11,
+    "exams": [
+      "physical-exam",
+      "radiograph",
+      "blood-panel"
+    ],
+    "diagnosis": "gi-foreign-body",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 206
+      },
+      {
+        "drug": "buprenorphine",
+        "doseMg": 0.22
+      }
+    ],
+    "procedures": [
+      "enterotomy"
+    ],
+    "recommendations": [
+      "prevent-pica",
+      "strict-rest"
+    ]
+  },
+  "expected": {
+    "xp": [
+      110,
+      110
+    ],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-DRUG-GROUP-MATCH",
+      "R-DOSE-IN-RANGE",
+      "R-SURG-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-IRRATIONAL",
+      "R-DRUG-SPECIES-TOXIC",
+      "R-DOSE-OVER",
+      "R-SURG-MISSING"
+    ]
+  }
+}

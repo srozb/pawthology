@@ -1,0 +1,20 @@
+{
+  "id": "roundworm-cat-good",
+  "caseId": "case-roundworm-cat",
+  "decisions": {
+    "weightKg": 2,
+    "exams": ["fecal-exam"],
+    "diagnosis": "roundworm-infestation",
+    "treatments": [
+      { "drug": "fenbendazole", "doseMg": 100 }
+    ],
+    "procedures": [],
+    "recommendations": ["treat-all-pets", "recheck-fecal-2w"]
+  },
+  "expected": {
+    "xp": [55, 55],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-DOSE-IN-RANGE", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-ABX-IRRATIONAL", "R-DRUG-SPECIES-TOXIC"]
+  }
+}

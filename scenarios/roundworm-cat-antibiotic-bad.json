@@ -1,0 +1,20 @@
+{
+  "id": "roundworm-cat-antibiotic-bad",
+  "caseId": "case-roundworm-cat",
+  "decisions": {
+    "weightKg": 2,
+    "exams": ["fecal-exam"],
+    "diagnosis": "roundworm-infestation",
+    "treatments": [
+      { "drug": "amoxicillin-clavulanate", "doseMg": 25 }
+    ],
+    "procedures": [],
+    "recommendations": []
+  },
+  "expected": {
+    "xp": [0, 0],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": ["R-ABX-IRRATIONAL", "R-DRUG-GROUP-MISMATCH"],
+    "mustNotContainVerdicts": ["R-DRUG-SPECIES-TOXIC", "R-DOSE-OVER"]
+  }
+}

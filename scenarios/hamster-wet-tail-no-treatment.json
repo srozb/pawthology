@@ -1,0 +1,18 @@
+{
+  "id": "hamster-wet-tail-no-treatment",
+  "caseId": "case-hamster-wet-tail",
+  "decisions": {
+    "weightKg": 0.1,
+    "exams": ["physical-exam", "fecal-exam"],
+    "diagnosis": "hamster-wet-tail",
+    "treatments": [],
+    "procedures": [],
+    "recommendations": ["rehydration-if-needed", "recheck-if-recurrent"]
+  },
+  "expected": {
+    "xp": [35, 35],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-NO-TREATMENT", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-DRUG-GROUP-MATCH", "R-ABX-INDICATED", "R-DRUG-SPECIES-TOXIC", "R-REC-MISSING"]
+  }
+}

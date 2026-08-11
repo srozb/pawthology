@@ -1,0 +1,39 @@
+{
+  "id": "diarrhea-bacterial-antibiotic-ok",
+  "caseId": "case-diarrhea-cat",
+  "decisions": {
+    "weightKg": 4,
+    "exams": [
+      "fecal-exam"
+    ],
+    "diagnosis": "diarrhea-bacterial",
+    "treatments": [
+      {
+        "drug": "metronidazole",
+        "doseMg": 48
+      }
+    ],
+    "procedures": [],
+    "recommendations": [
+      "rehydration-if-needed",
+      "recheck-fecal-2w"
+    ]
+  },
+  "expected": {
+    "xp": [
+      0,
+      0
+    ],
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": [
+      "R-DX-WRONG",
+      "R-DRUG-GROUP-MISMATCH",
+      "R-ABX-IRRATIONAL",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-ABX-INDICATED"
+    ]
+  },
+  "note": "Player diagnoses diarrhea-bacterial (wrong: trueDx=parasitic). Engine evaluates against true disease (parasitic, bacterialInfection=false), so antibiotic is irrational despite player thinking it's bacterial."
+}

@@ -1,0 +1,35 @@
+{
+  "id": "dose-under-forgot-multiply-weight",
+  "caseId": "case-abrasion-paw",
+  "decisions": {
+    "weightKg": 12,
+    "exams": [
+      "wound-inspection"
+    ],
+    "diagnosis": "uncomplicated-abrasion",
+    "treatments": [
+      {
+        "drug": "amoxicillin-clavulanate",
+        "doseMg": 1
+      }
+    ],
+    "procedures": [
+      "wound-clean-debride"
+    ],
+    "recommendations": [
+      "wound-observation"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-DOSE-UNDER",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "xp": [
+      10,
+      10
+    ],
+    "patientOutcome": "not-responding"
+  }
+}

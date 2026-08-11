@@ -1,0 +1,31 @@
+{
+  "id": "feline-cystitis-no-drug-improving",
+  "caseId": "case-feline-cystitis",
+  "decisions": {
+    "weightKg": 5,
+    "exams": [
+      "physical-exam",
+      "urinalysis"
+    ],
+    "diagnosis": "feline-cystitis",
+    "treatments": [],
+    "procedures": [],
+    "recommendations": [
+      "increase-water-intake",
+      "stress-reduction"
+    ]
+  },
+  "expected": {
+    "patientOutcome": "improving",
+    "mustContainVerdicts": [
+      "R-EXAM-NEEDED",
+      "R-DX-CORRECT",
+      "R-NO-TREATMENT",
+      "R-REC-REQUIRED"
+    ],
+    "mustNotContainVerdicts": [
+      "R-DRUG-CONTRAINDICATED",
+      "R-ABX-IRRATIONAL"
+    ]
+  }
+}

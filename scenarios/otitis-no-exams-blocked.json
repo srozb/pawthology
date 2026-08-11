@@ -1,0 +1,36 @@
+{
+  "id": "otitis-no-exams-blocked",
+  "caseId": "case-otitis-dog",
+  "decisions": {
+    "weightKg": 22,
+    "exams": [
+      "physical-exam"
+    ],
+    "diagnosis": "otitis-externa",
+    "treatments": [
+      {
+        "drug": "ear-drops-complex",
+        "doseMg": 0
+      }
+    ],
+    "procedures": [
+      "ear-flush"
+    ],
+    "recommendations": [
+      "recheck-if-recurrent"
+    ]
+  },
+  "expected": {
+    "mustContainVerdicts": [
+      "R-EXAM-MISSED",
+      "R-DX-LUCKY",
+      "R-PROC-REQUIRED",
+      "R-REC-REQUIRED"
+    ],
+    "xp": [
+      5,
+      5
+    ],
+    "patientOutcome": "recovered"
+  }
+}
