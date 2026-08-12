@@ -701,6 +701,7 @@ export const drugGroups = [
     id: "endocrine",
     labelPl: "Leki endokrynne", labelEn: "Endocrine drugs",
     descPl: "Leki regulujące hormony i poziom glukozy — np. w insulinomie (hipoglikemia) u fretek: prednizolon podnosi glukozę, diazoksyd hamuje uwalnianie insuliny.",
-    descEn: "Drugs that regulate hormones and glucose — e.g. for insulinoma (hypoglycemia) in ferrets: prednisolone raises glucose, diazoxide inhibits insulin release."
+    descEn: "Drugs that regulate hormones and glucose — e.g. for insulinoma (hypoglycemia) in ferrets: prednisolone raises glucose, diazoxide inhibits insulin release.",
+    image: "drug-groups/endocrine.webp"
   }
 ];
