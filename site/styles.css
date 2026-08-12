@@ -98,6 +98,19 @@ h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.5rem; }
   white-space: nowrap;
 }
 
+.debug-pill {
+  background: var(--warn-bg);
+  color: var(--warn);
+  border: 1px solid var(--warn-border);
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  cursor: help;
+}
+
 /* === Buttons === */
 button, .btn {
   font-family: inherit;

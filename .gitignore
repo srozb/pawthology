@@ -15,3 +15,6 @@ __pycache__/
 # Local dev artifacts (don't ship test harnesses)
 _*.html
 *.tmp
+
+# Pi coding agent local state
+.pi/

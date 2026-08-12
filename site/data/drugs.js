@@ -17,7 +17,8 @@ export const drugs = [
     dosingType: "topical",
     dosing: {
       dog: { unitNotePl: "roztwór 0.05–2%", frequencyPl: "1–2× dziennie" },
-      cat: { unitNotePl: "roztwór 0.05–2% (nie do oczu)", frequencyPl: "1–2× dziennie" }
+      cat: { unitNotePl: "roztwór 0.05–2% (nie do oczu)", frequencyPl: "1–2× dziennie" },
+      snake: { unitNotePl: "płukanie jamy ustnej 0,05% roztworem", frequencyPl: "1–2× dziennie, 5–7 dni" }
     },
     speciesToxic: [],
     antibiotic: false,
@@ -150,7 +151,8 @@ export const drugs = [
     dosing: {
       dog: { mgPerKg: { min: 5, max: 10 }, frequencyPl: "1× dziennie" },
       cat: { mgPerKg: { min: 5, max: 5 }, frequencyPl: "1× dziennie (rygorystycznie, retinotoksyczny)" },
-      hamster: { mgPerKg: { min: 5, max: 10 }, frequencyPl: "2× dziennie 5–7 dni" }
+      hamster: { mgPerKg: { min: 5, max: 10 }, frequencyPl: "2× dziennie 5–7 dni" },
+      snake: { mgPerKg: { min: 5, max: 10 }, frequencyPl: "co 24–48 godz. (powolny metabolizm gadów)" }
     },
     speciesToxic: [],
     antibiotic: true,
@@ -450,7 +452,7 @@ export const drugs = [
           "frequencyPl": "jednorazowo, powtórzyć za 2 tyg."
         }
       },
-      "speciesToxic": [],
+      "speciesToxic": ["tortoise"],
       "antibiotic": false,
       "infoPl": "Iwermektyna to przeciwpasożytniczy lek z grupy makrocyklicznych laktonów — działa na roztocza (Knemidokoptes, Sarcoptes) i nicienie. U ptaków podaje się ją jako spot-on (jedna kropla na skórę karku), powtarzając po 2 tygodniach na roztocza, które wylęgły się z jaj. Ma szeroki margines bezpieczeństwa w zalecanej dawce.\n\nPodręcznikowo (Merck Veterinary Manual) dawkowanie to 0,2 mg/kg p.o. lub i.m. W praktyce awiaryjnej u małych ptaków (papużki, nimfy) często stosuje się rozwodniony roztwór spot-on na skórę karku — dawka p.o./i.m. u ptaka 30–90 g jest trudna do precyzyjnego odmierzenia bez rozcieńczenia, a spot-on omija ten problem.\n\nTo lek z wyboru na świerzb twarzowy papużek — przywraca dziób do normy, gdy połączy się go ze spiłowaniem. Nie jest antybiotykiem — nie wybiera oporności bakteryjnej (AMR), bo jej cel to pasożyty, nie bakterie. Podaje się ją na skórę, nie doustnie, więc u małego ptaka nie wymaga obliczania mg/kg — jedna kropla wystarcza.",
       "infoEn": "Ivermectin is an antiparasitic from the macrocyclic lactone class — it acts on mites (Knemidokoptes, Sarcoptes) and nematodes. In birds it is given as a spot-on (one drop on nape skin), repeated after 2 weeks to catch mites that hatched from eggs. It has a wide safety margin at the recommended dose.\n\nPer the Merck Veterinary Manual the dose is 0.2 mg/kg PO or IM. In avian practice with small birds (budgerigars, cockatiels) a diluted spot-on on nape skin is often used instead — the PO/IM dose for a 30–90 g bird is hard to measure precisely without dilution, and the spot-on bypasses that problem.\n\nIt is the drug of choice for scaly face mites in budgerigars — it restores the beak to normal when combined with a trim. It is not an antibiotic — it does not drive bacterial resistance (AMR), because its target is parasites, not bacteria. It is applied to the skin, not orally, so for a small bird it needs no mg/kg calculation — one drop suffices.",
@@ -500,7 +502,123 @@ export const drugs = [
       "claimIds": [
         "C-DRG-23"
       ]
-    }
+    },
+  {
+    "id": "calcium-carbonate",
+    "minLevel": 2,
+    "inn": "Węglan wapnia",
+    "groupId": "vitamin-mineral",
+    "groupPl": "Suplement wapnia",
+    "groupEn": "Calcium supplement",
+    "tooltipPl": "Doustny preparat wapnia na MBD u gadów — uzupełnia niedobór i mineralizuje kości i pancerz.",
+    "tooltipEn": "Oral calcium preparation for MBD in reptiles — replenishes deficiency and mineralizes bones and shell.",
+    "routePl": "p.o.",
+    "routeEn": "oral",
+    "dosingType": "systemic",
+    "dosing": {
+      "tortoise": {
+        "mgPerKg": { "min": 100, "max": 300 },
+        "frequencyPl": "1× dziennie, 2–4 tygodnie"
+      }
+    },
+    "speciesToxic": [],
+    "antibiotic": false,
+    "infoPl": "Węglan wapnia to doustny preparat uzupełniający niedobór wapnia — pierwiastka niezbędnego do mineralizacji kości i pancerza u gadów. W chorobie metabolicznej kości (MBD) wapń jest niedoborowy, bo bez witaminy D3 (i UVB) organizm nie wchłania go z pokarmu. Suplementacja doustna omija ten problem, dostarczając wapnia bezpośrednio.\n\nWąskie terapeutycznie wapń nie jest — ma szerokie okno bezpieczeństwa, bo nadmiar wydalany jest przez nerki i jelita. Dlatego pasmo dawki jest szerokie (100–300 mg/kg), a dokładne trafienie w suwaku mniej krytyczne niż przy lekach o wąskim marginesie (NSAID, opioidy). Terapia trwa tygodniami — kość się przebudowuje powoli.\n\nWęglan wapnia to nie antybiotyk i nie działa na patogeny — leczy niedobór, nie infekcję. Podanie antybiotyku na MBD to błąd: choroba jest metaboliczna, nie bakteryjna, a antybiotyk napędza oporność (AMR) bez korzyści.",
+    "infoEn": "Calcium carbonate is an oral preparation that replenishes calcium deficiency — the element essential for bone and shell mineralization in reptiles. In metabolic bone disease (MBD) calcium is deficient, because without vitamin D3 (and UVB) the body cannot absorb it from food. Oral supplementation bypasses this problem by delivering calcium directly.\n\nCalcium is not therapeutically narrow — it has a wide safety window, because the excess is excreted by the kidneys and gut. That is why the dose band is wide (100–300 mg/kg) and hitting the exact value on the slider is less critical than with narrow-margin drugs (NSAIDs, opioids). Therapy lasts weeks — bone rebuilds slowly.\n\nCalcium carbonate is not an antibiotic and does not act on pathogens — it treats a deficiency, not an infection. Giving an antibiotic for MBD is a mistake: the disease is metabolic, not bacterial, and an antibiotic drives resistance (AMR) with no benefit.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/W%C4%99glan_wapnia",
+    "wikiEn": "https://en.wikipedia.org/wiki/Calcium_carbonate",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-DRG-24"]
+  },
+  {
+    "id": "vitamin-d3",
+    "minLevel": 2,
+    "inn": "Cholekalcyferol (witamina D3)",
+    "groupId": "vitamin-mineral",
+    "groupPl": "Witamina D3",
+    "groupEn": "Vitamin D3",
+    "tooltipPl": "Witamina D3 — umożliwia wchłanianie wapnia z jelita; bez niej kości i pancerz się nie mineralizują.",
+    "tooltipEn": "Vitamin D3 — enables intestinal calcium absorption; without it bones and shell cannot mineralize.",
+    "routePl": "p.o.",
+    "routeEn": "oral",
+    "dosingType": "topical",
+    "dosing": {
+      "tortoise": {
+        "unitNotePl": "100–400 IU doustnie, co 7 dni",
+        "frequencyPl": "co 7 dni, 3–4 dawki"
+      }
+    },
+    "speciesToxic": [],
+    "antibiotic": false,
+    "infoPl": "Witamina D3 (cholekalcyferol) to klucz do wchłaniania wapnia — bez niej jelito nie przyswaja wapnia z pokarmu, a kości i pancerz się nie mineralizują. W naturze żółw syntetyzuje witaminę D3 w skórze pod promieniowaniem UVB (280–315 nm). W niewoli, bez lampy UVB, synteza ustaje i prowadzi do choroby metabolicznej kości (MBD).\n\nDawkowanie witaminy D3 podaje się w jednostkach międzynarodowych (IU), nie w mg — dlatego w grze dawkowanie jest opisowe (topical), bez suwaka mg/kg. W skórze żółwia z lampą UVB witamina D3 powstaje endogennie, więc u zdrowego, dobrze oświetlonego żółwia suplement nie jest potrzebny.\n\nWitamina D3 to nie antybiotyk — nie działa na bakterie. Podanie antybiotyku na MBD to błąd: choroba metaboliczna nie jest infekcją. Leczenie MBD to troje: wapń + witamina D3 + korekcja oświetlenia UVB i diety. Bez UVB suplementacja wapnia i D3 musi trwać dłużej.",
+    "infoEn": "Vitamin D3 (cholecalciferol) is the key to calcium absorption — without it the gut cannot absorb calcium from food, and bones and shell fail to mineralize. In nature a tortoise synthesizes vitamin D3 in its skin under UVB radiation (280–315 nm). In captivity, without a UVB lamp, synthesis stops and metabolic bone disease (MBD) follows.\n\nVitamin D3 is dosed in international units (IU), not in mg — that is why in the game the dosing is descriptive (topical), without an mg/kg slider. In the skin of a tortoise with a UVB lamp vitamin D3 is made endogenously, so a healthy, well-lit tortoise does not need supplementation.\n\nVitamin D3 is not an antibiotic — it does not act on bacteria. Giving an antibiotic for MBD is a mistake: a metabolic disease is not an infection. Treatment of MBD is a trio: calcium + vitamin D3 + correction of UVB lighting and diet. Without UVB the calcium and D3 supplementation must last longer.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Witamina_D",
+    "wikiEn": "https://en.wikipedia.org/wiki/Vitamin_D",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-DRG-25"]
+  },
+  {
+    "id": "prednisolone",
+    "minLevel": 3,
+    "inn": "Prednizolon",
+    "groupId": "endocrine",
+    "groupPl": "Glikokortykosteroid (endokrynny)",
+    "groupEn": "Glucocorticoid (endocrine)",
+    "tooltipPl": "Podnosi glukozę we krwi przez stymulację glukoneogenezy — lek pierwszego rzutu w insulinomie (hipoglikemia) u fretek.",
+    "tooltipEn": "Raises blood glucose by stimulating gluconeogenesis — first-line drug for insulinoma (hypoglycemia) in ferrets.",
+    "routePl": "p.o.",
+    "routeEn": "oral",
+    "dosingType": "systemic",
+    "dosing": {
+      "ferret": {
+        "mgPerKg": { "min": 0.5, "max": 2 },
+        "frequencyPl": "2× dziennie"
+      }
+    },
+    "speciesToxic": [],
+    "antibiotic": false,
+    "infoPl": "Prednizolon to glikokortykosteroid — lek, który stymuluje glukoneogenezę (produkcję glukozy z białek i tłuszczów w wątrobie), podnosząc poziom cukru we krwi. W insulinomie u fretek to lek pierwszego rzutu: guz wysepek trzustki nadmiernie wydziela insulinę, glukoza spada, a prednizolon ją podnosi, kontrolując objawy hipoglikemii.\n\nLeczenie prednizolonem jest paliatywne — kontroluje objawy, ale nie leczy guza. Dawkę zwiększa się, gdy objawy wracają. Długotrwałe stosowanie niesie skutki uboczne sterydów: immunosupresja (osłabiona odporność), zwiększone pragnienie i oddawanie moczu, zmiany skórne.\n\nTo nie antybiotyk — nie działa na bakterie. Podanie antybiotyku na insulinom to błąd: choroba nie jest infekcją. Insulinoma to nowotwór metaboliczny, a prednizolon to lek endokrynny, który reguluje glukozę, a nie zabija patogen.",
+    "infoEn": "Prednisolone is a glucocorticoid — a drug that stimulates gluconeogenesis (production of glucose from proteins and fats in the liver), raising blood sugar. In insulinoma in ferrets it is the first-line drug: the pancreatic beta-cell tumor over-secretes insulin, glucose drops, and prednisolone raises it back, controlling the signs of hypoglycemia.\n\nTreatment with prednisolone is palliative — it controls signs but does not cure the tumor. The dose is increased when signs recur. Long-term use carries steroid side effects: immunosuppression (weakened immunity), increased thirst and urination, skin changes.\n\nIt is not an antibiotic — it does not act on bacteria. Giving an antibiotic for insulinoma is a mistake: the disease is not an infection. Insulinoma is a metabolic tumor, and prednisolone is an endocrine drug that regulates glucose, not a drug that kills pathogens.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Prednizolon",
+    "wikiEn": "https://en.wikipedia.org/wiki/Prednisolone",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-DRG-26"]
+  },
+  {
+    "id": "diazoxide",
+    "minLevel": 3,
+    "inn": "Diazoksyd",
+    "groupId": "endocrine",
+    "groupPl": "Inhibitor uwalniania insuliny",
+    "groupEn": "Insulin-release inhibitor",
+    "tooltipPl": "Hamuje uwalnianie insuliny z komórek beta trzustki — lek drugiego rzutu w insulinomie, gdy prednizolon nie wystarcza; droższy.",
+    "tooltipEn": "Inhibits insulin release from pancreatic beta cells — second-line for insulinoma when prednisolone is inadequate; more expensive.",
+    "routePl": "p.o.",
+    "routeEn": "oral",
+    "dosingType": "systemic",
+    "dosing": {
+      "ferret": {
+        "mgPerKg": { "min": 5, "max": 30 },
+        "frequencyPl": "2× dziennie (tytułować do efektu)"
+      }
+    },
+    "speciesToxic": [],
+    "antibiotic": false,
+    "infoPl": "Diazoksyd to lek hamujący uwalnianie insuliny — otwiera kanały potasowe zależne od ATP (K-ATP) w komórkach beta trzustki, co zamyka kanały wapniowe i blokuje wydzielanie insuliny. Mniej insuliny = wyższa glukoza. W insulinomie u fretek to lek drugiego rzutu: stosuje się go, gdy prednizolon już nie wystarcza, a objawy hipoglikemii wracają.\n\nDawkę tytułuje się do efektu — zaczyna od najniższej (5 mg/kg) i zwiększa, aż glukoza się ustabilizuje. Diazoksyd jest droższy od prednizolonu i często łączy się go z prednizolonem, gdy żaden z leków sam nie działa.\n\nTo nie antybiotyk — nie działa na bakterie. Insulinoma to nowotwór endokrynny, a diazoksyd to lek regulujący wydzielanie insuliny, a nie lek przeciwdrobnoustrojowy. Podanie antybiotyku na insulinom to błąd: choroba nie jest infekcją.",
+    "infoEn": "Diazoxide is a drug that inhibits insulin release — it opens ATP-sensitive potassium channels (K-ATP) in the pancreatic beta cells, which closes calcium channels and blocks insulin secretion. Less insulin = higher glucose. In insulinoma in ferrets it is the second-line drug: it is used when prednisolone is no longer enough and the signs of hypoglycemia recur.\n\nThe dose is titrated to effect — starting at the lowest (5 mg/kg) and increasing until glucose stabilizes. Diazoxide is more expensive than prednisolone and is often combined with it when neither drug alone works.\n\nIt is not an antibiotic — it does not act on bacteria. Insulinoma is an endocrine tumor, and diazoxide is a drug that regulates insulin secretion, not an antimicrobial. Giving an antibiotic for insulinoma is a mistake: the disease is not an infection.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Diazoksyd",
+    "wikiEn": "https://en.wikipedia.org/wiki/Diazoxide",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-DRG-27"]
+  }
 ];
 
 // Metadane grup leków — opis sekcji (co to za grupa, kiedy się stosuje w weterynarii).
@@ -570,5 +688,19 @@ export const drugGroups = [
       "descPl": "Preparaty wapnia — kluczowe w hipokalcemii i zatrzymaniu jaja u ptaków.",
       "descEn": "Calcium preparations — key in hypocalcemia and egg binding in birds.",
       "image": "drug-groups/calcium.webp"
-    }
+    },
+  {
+      "id": "vitamin-mineral",
+      "labelPl": "Suplementy mineralno-witaminowe",
+      "labelEn": "Mineral-vitamin supplements",
+      "descPl": "Suplementy wapnia i witaminy D3 — kluczowe w chorobie metabolicznej kości (MBD) u gadów: uzupełniają niedobór i umożliwiają mineralizację kości i pancerza.",
+      "descEn": "Calcium and vitamin D3 supplements — key in metabolic bone disease (MBD) in reptiles: they replenish the deficiency and enable bone and shell mineralization.",
+      "image": "drug-groups/vitamin-mineral.webp"
+    },
+  {
+    id: "endocrine",
+    labelPl: "Leki endokrynne", labelEn: "Endocrine drugs",
+    descPl: "Leki regulujące hormony i poziom glukozy — np. w insulinomie (hipoglikemia) u fretek: prednizolon podnosi glukozę, diazoksyd hamuje uwalnianie insuliny.",
+    descEn: "Drugs that regulate hormones and glucose — e.g. for insulinoma (hypoglycemia) in ferrets: prednisolone raises glucose, diazoxide inhibits insulin release."
+  }
 ];

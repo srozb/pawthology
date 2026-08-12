@@ -70,8 +70,51 @@ const state = {
 };
 state.totalXp = sumXp(state.bestXp);  // total XP = suma najlepszych wyników per przypadek
 
+/* ---- DEBUG (z URL) ----
+   Tryb debugu do testowania progresu bez „przerabiania” całej gry:
+     #unlocked | #debug | ?debug=true | ?debug=1   → wszyscy pacjenci + pełny katalog (poziom 3),
+                                                    XP zablokowane (nie liczą się, nie psują zapisu)
+     ?xp=N                                          → total XP ustawione na N (stałe dla sesji),
+                                                    odblokowania wynikają z progów; XP nie liczą się
+   W trybie debug NIE zapisujemy bestXp/bestOutcome/history — realny zapis w localStorage
+   pozostaje nietknięty. Wynik przypadku (XP) nadal jest pokazywany na ekranie konsekwencji.
+   Hash (#unlocked) działa „na żywo” (hashchange); parametry ? wymagają przeładowania. */
+function parseDebugFromUrl() {
+  const params = new URLSearchParams(window.location.search || "");
+  const hash = (window.location.hash || "").toLowerCase();
+  let unlockAll = false;
+  let xpOverride = null;
+  if (hash.includes("unlocked") || hash.includes("debug")) unlockAll = true;
+  const d = params.get("debug");
+  if (d === "" || d === "1" || d === "true") unlockAll = true;
+  if (params.get("unlock") === "1" || params.get("unlock") === "true") unlockAll = true;
+  const xp = params.get("xp");
+  if (xp !== null) {
+    const n = Number(xp);
+    if (Number.isFinite(n) && n >= 0) xpOverride = n;
+  }
+  return { active: unlockAll || xpOverride !== null, unlockAll, xpOverride };
+}
+state.debug = parseDebugFromUrl();
+
+/** XP używane do decyzji o odblokowaniu (przypadki / poziom gracza / katalog leków).
+ *  W trybie unlockAll → Infinity (wszystko otwarte); przy ?xp=N → N; inaczej realny total. */
+function effectiveXp() {
+  if (state.debug.unlockAll) return Infinity;
+  if (state.debug.xpOverride !== null) return state.debug.xpOverride;
+  return state.totalXp;
+}
+
+/** XP pokazywane w badge'ach — tekst (dla unlockAll → „∞”). */
+function displayXpStr() {
+  if (state.debug.unlockAll) return "∞";
+  if (state.debug.xpOverride !== null) return String(state.debug.xpOverride);
+  return String(state.totalXp);
+}
+
 function persist() {
   localStorage.setItem("pawthology.lang", state.lang);
+  if (state.debug.active) return;  // tryb debug: nie psujemy realnego zapisu w localStorage
   localStorage.setItem("pawthology.bestXp", JSON.stringify(state.bestXp));
   localStorage.setItem("pawthology.bestOutcome", JSON.stringify(state.bestOutcome));
   localStorage.setItem("pawthology.history", JSON.stringify(state.history));
@@ -508,8 +551,16 @@ function renderHeader() {
 
   const actions = h("div", { class: "header-actions" });
   actions.append(
-    h("span", { class: "xp-badge" }, `${tt("label.xpTotal")}: ${state.totalXp}`)
+    h("span", { class: "xp-badge" }, `${tt("label.xpTotal")}: ${displayXpStr()}`)
   );
+  if (state.debug.active) {
+    actions.append(h("span", {
+      class: "debug-pill",
+      title: state.debug.unlockAll
+        ? tt("debug.unlockedAll")
+        : ttf("debug.xpSet", { xp: String(state.debug.xpOverride) })
+    }, tt("debug.badge")));
+  }
 
   // History button
   const histBtn = h("button", {
@@ -568,7 +619,7 @@ function renderHeader() {
 
 function renderCaseSelection() {
   const container = h("div");
-  const unlocked = new Set(availableCases(CONTENT, state.totalXp));
+  const unlocked = new Set(availableCases(CONTENT, effectiveXp()));
 
   // Group by difficulty (asc); within group sort by unlock threshold (asc).
   const groups = {};
@@ -685,7 +736,7 @@ function buildCaseCard(c, unlocked) {
   );
 
   if (!isUnlocked) {
-    const missing = Math.max(0, requiredXp - state.totalXp);
+    const missing = Math.max(0, requiredXp - effectiveXp());
     const lockInfo = h("div", { class: "lock-info" });
     lockInfo.innerHTML = iconSvg("lock");
     lockInfo.append(document.createTextNode(" " + ttf("case.lockMissingXp", { xp: missing })));
@@ -1112,7 +1163,7 @@ function renderTreatment(c) {
   // dla początkującego). validate_game.py wymusza, że wszystko WYMAGANE na trudności D
   // ma minLevel<=D — przypadek zawsze wygralny. Trapy (antybiotyk/otc) są dostępne
   // już na L1, bo są kluczową lekcją (AMR, toksyczność).
-  const playerLevel = levelFromXp(CONTENT, state.totalXp);
+  const playerLevel = levelFromXp(CONTENT, effectiveXp());
   const availDrugs = availableDrugs(CONTENT, playerLevel);
   const availProcedures = availableProcedures(CONTENT, playerLevel, "procedure");
   const availSurgeries = availableProcedures(CONTENT, playerLevel, "surgery");
@@ -1736,14 +1787,16 @@ function renderOutcome(c) {
     h("div", { class: "xp-breakdown-detail" },
       h("span", { class: "xp-pos" }, `${tt("outcome.xpPositive")}: +${xpPos}`),
       h("span", { class: "xp-neg" }, `${tt("outcome.xpNegative")}: ${xpNeg}`),
-      h("span", { class: "xp-total-badge" }, `${tt("label.xpTotal")}: ${state.totalXp}`)
+      h("span", { class: "xp-total-badge" }, `${tt("label.xpTotal")}: ${displayXpStr()}`)
     ),
     h("div", { class: "xp-record-note" },
-      r.wasPlayedBefore && r.xpDelta === 0
-        ? tt("outcome.recordNotBeaten")
-        : (r.xpDelta > 0
-            ? ttf("outcome.recordNew", { delta: r.xpDelta })
-            : tt("outcome.recordFirst"))
+      r.debugFrozen
+        ? tt("debug.outcomeNote")
+        : (r.wasPlayedBefore && r.xpDelta === 0
+            ? tt("outcome.recordNotBeaten")
+            : (r.xpDelta > 0
+                ? ttf("outcome.recordNew", { delta: r.xpDelta })
+                : tt("outcome.recordFirst")))
     )
   ));
 
@@ -1908,7 +1961,7 @@ function renderHistory() {
   }
 
   // Summary stats
-  const totalXp = state.totalXp;  // spójne z badge'em w nagłówku (najlepszy wynik per przypadek)
+  const totalXp = displayXpStr();  // spójne z badge'em w nagłówku (debug: uwzględnia override/∞)
   const outcomes = {};
   state.history.forEach((e) => { outcomes[e.patientOutcome] = (outcomes[e.patientOutcome] || 0) + 1; });
 
@@ -2453,42 +2506,49 @@ function finishCase() {
 
     // Best-per-case XP: liczy się tylko najlepszy wynik danego przypadku.
     // Poprawa przy powtórce podnosi total; gorsza powtórka nic nie zmienia.
+    // Tryb debug (z URL) → XP zablokowane: nie modyfikujemy bestXp/total/history,
+    // by realny zapis w localStorage pozostał nietknięty. Wynik przypadku nadal pokazujemy.
     const beforeTotal = state.totalXp;
     const prev = state.bestXp[c.id] ?? null;
-    if (prev === null || result.xp > prev) {
-      state.bestXp[c.id] = result.xp;
-      state.totalXp = sumXp(state.bestXp);
+    if (!state.debug.active) {
+      if (prev === null || result.xp > prev) {
+        state.bestXp[c.id] = result.xp;
+        state.totalXp = sumXp(state.bestXp);
+      }
+      if (!(c.id in state.bestOutcome) || outcomeRank(result.patientOutcome) > outcomeRank(state.bestOutcome[c.id])) {
+        state.bestOutcome[c.id] = result.patientOutcome;
+      }
     }
-    if (!(c.id in state.bestOutcome) || outcomeRank(result.patientOutcome) > outcomeRank(state.bestOutcome[c.id])) {
-      state.bestOutcome[c.id] = result.patientOutcome;
-    }
-    result.xpDelta = state.totalXp - beforeTotal;   // faktyczna zmiana total (0, gdy gorsza powtórka)
+    result.xpDelta = state.totalXp - beforeTotal;   // faktyczna zmiana total (0, gdy gorsza powtórka / debug)
     result.wasPlayedBefore = prev !== null;
+    result.debugFrozen = state.debug.active;
 
-    // Save to history (always, even on replay)
-    const dxCorrect = state.diagnosis === c.trueDiagnosis;
-    const entry = {
-      caseId: c.id,
-      patientName: c.patientName || loc(c, "signal"),
-      species: c.species,
-      diagnosis: state.diagnosis,
-      exams: [...state.selectedExams],
-      treatments: state.treatments.map((t) => ({ drug: t.drug, doseMg: Number(t.doseMg) || 0 })),
-      procedures: [...state.procedures],
-      recommendations: [...state.recommendations],
-      diagnosisCorrect: dxCorrect,
-      patientOutcome: result.patientOutcome,
-      xpEarned: result.xp,
-      date: new Date().toISOString()
-    };
-    const existingIdx = state.history.findIndex((h) => h.caseId === c.id);
-    if (existingIdx === -1) {
-      state.history.push(entry);
-    } else if (result.xp >= state.history[existingIdx].xpEarned) {
-      state.history.splice(existingIdx, 1);   // better or tie -> newest wins
-      state.history.push(entry);
+    // Save to history (always, even on replay) — pominięte w trybie debug (nie psujemy zapisu)
+    if (!state.debug.active) {
+      const dxCorrect = state.diagnosis === c.trueDiagnosis;
+      const entry = {
+        caseId: c.id,
+        patientName: c.patientName || loc(c, "signal"),
+        species: c.species,
+        diagnosis: state.diagnosis,
+        exams: [...state.selectedExams],
+        treatments: state.treatments.map((t) => ({ drug: t.drug, doseMg: Number(t.doseMg) || 0 })),
+        procedures: [...state.procedures],
+        recommendations: [...state.recommendations],
+        diagnosisCorrect: dxCorrect,
+        patientOutcome: result.patientOutcome,
+        xpEarned: result.xp,
+        date: new Date().toISOString()
+      };
+      const existingIdx = state.history.findIndex((h) => h.caseId === c.id);
+      if (existingIdx === -1) {
+        state.history.push(entry);
+      } else if (result.xp >= state.history[existingIdx].xpEarned) {
+        state.history.splice(existingIdx, 1);   // better or tie -> newest wins
+        state.history.push(entry);
+      }
+      // worse than stored best -> keep the stored best, do not add
     }
-    // worse than stored best -> keep the stored best, do not add
 
     persist();
     state.phase = "outcome";
@@ -2580,3 +2640,10 @@ function fmt(n) {
 /* ============================== INIT ============================== */
 
 render();
+
+// Tryb debug z hashem (#unlocked / #debug) działa „na żywo” — zmiana hasha bez przeładowania
+// przełącza tryb i odświeża widok. Parametry ? (np. ?xp=N) wymagają przeładowania strony.
+window.addEventListener("hashchange", () => {
+  state.debug = parseDebugFromUrl();
+  render();
+});

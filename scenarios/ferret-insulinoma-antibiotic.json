@@ -1,0 +1,16 @@
+{
+  "id": "ferret-insulinoma-antibiotic",
+  "caseId": "case-ferret-insulinoma",
+  "decisions": {
+    "weightKg": 1.0,
+    "exams": ["blood-panel", "physical-exam"],
+    "diagnosis": "insulinoma",
+    "treatments": [{ "drug": "enrofloxacin", "doseMg": 5 }],
+    "procedures": [],
+    "recommendations": ["frequent-small-meals", "monitor-glucose"]
+  },
+  "expected": {
+    "mustContainVerdicts": ["R-DRUG-CONTRAINDICATED"],
+    "mustNotContainVerdicts": ["R-DRUG-SPECIES-TOXIC"]
+  }
+}

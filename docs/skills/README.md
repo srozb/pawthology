@@ -23,7 +23,12 @@ Skills live **exclusively in this repo** (`docs/skills/`). There is no copy in `
 
 ## Project status
 
-- 10 cases, 3 species, 19 drugs (8 groups), 15 diseases, 12 exams, 5 procedures/surgeries, 14 recommendations, 52 glossary terms (219 inflected forms), 36 Lucide icons, 28 rubric rules.
-- 42 golden scenarios, 69 claims in `claims.md`.
-- `art/prompts/` has 30 patient prompt files (10 × 3 states) + 25 exam/procedure/drug-group files — ready for image generation.
-- Verification loop: `node tools/validate_game.js .` → `node tools/derive_levels.js --check` → `node --test` (no path!) → `node tools/replay.js --check` → `node tools/explore.js --all` → `node tools/replay.js --lang en`.
+The catalog grows over time, so these docs avoid hard-coded counts. For the current state, run:
+
+- `node tools/explore.js` — list of cases (id, difficulty, diagnosis)
+- `node tools/derive_levels.js` — per-level drug/procedure/surgery catalog + `minLevel` consistency
+- `node tools/replay.js --check` — golden scenario suite (pass count in the summary)
+- `node tools/validate_game.js .` — data consistency; `research/claims.md` is the claim ledger
+- `node --test` — engine, scenario, and asset tests
+
+Verification loop: `node tools/validate_game.js .` → `node tools/derive_levels.js --check` → `node --test` (no path!) → `node tools/replay.js --check` → `node tools/explore.js --all` → `node tools/replay.js --lang en`.

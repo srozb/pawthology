@@ -197,6 +197,22 @@ export const procedures = [
       "claimIds": [
         "C-RUB-PROC"
       ]
+    },
+    {
+      "id": "mouth-cleaning",
+      "minLevel": 1,
+      "kind": "procedure",
+      "image": "procedures/mouth-cleaning.webp",
+      "labelPl": "Oczyszczenie jamy ustnej i martwiktomia",
+      "labelEn": "Oral cavity cleaning and debridement",
+      "infoPl": "Oczyszczenie jamy ustnej to zabieg miejscowy przy zapaleniu jamy ustnej (stomatitis) u węży. Polega na usunięciu masy serowatej (caseous) i martwej tkanki, które zalegają w pysku i są pożywką dla bakterii. Martwiktomia odsłania zdrową, ukrwioną błonę śluzową, do której dotrze antyseptyk i antybiotyk.\n\nBez oczyszczenia sama chemia (antyseptyk, antybiotyk) nie zadziała — masa serowata izoluje bakterie od leku, jak tarcza. Zabieg wykonuje się delikatnie, bo jama ustna węża jest wrażliwa i bolesna przy stomatitis. Po oczyszczeniu płucie się antyseptykiem (chlorheksydyna).\n\nTo odpowiednik oczyszczenia rany (wound-clean-debride) dla jamy ustnej: najpierw usuwa się to, co chore, potem dopiero leczy. Bez tego zabiegu wąż nie wyzdrowieje — antybiotyk sam nie wystarczy.",
+      "infoEn": "Oral cavity cleaning is a local procedure for infectious stomatitis (mouth rot) in snakes. It removes the caseous (cheese-like) material and necrotic tissue that pool in the mouth and feed bacteria. Debridement exposes healthy, vascularized mucosa that the antiseptic and antibiotic can reach.\n\nWithout cleaning, chemistry alone (antiseptic, antibiotic) will not work — the caseous mass shields bacteria from the drug, like a shield. The procedure is done gently, because the snake's mouth is sensitive and painful in stomatitis. After cleaning, the mouth is rinsed with an antiseptic (chlorhexidine).\n\nIt is the oral equivalent of wound cleaning (wound-clean-debride): first remove what is diseased, then treat. Without this procedure the snake will not recover — the antibiotic alone is not enough.",
+      "wikiPl": "https://en.wikipedia.org/wiki/Stomatitis",
+      "wikiEn": "https://en.wikipedia.org/wiki/Stomatitis",
+      "reviewStatus": "draft",
+      "reviewDate": null,
+      "sources": ["S-MVM"],
+      "claimIds": ["C-RUB-PROC"]
     }
 ];
 
@@ -418,5 +434,83 @@ export const recommendations = [
       "claimIds": [
         "C-RUB-REC"
       ]
-    }
+    },
+  {
+    "id": "uvb-lighting",
+    "labelPl": "Instalacja lampy UVB i miejsca do wygrzewania",
+    "labelEn": "Install a UVB lamp and a basking spot",
+    "infoPl": "Zalecenie instalacji lampy UVB to fundament leczenia i profilaktyki choroby metabolicznej kości (MBD) u gadów. Bez promieniowania UVB (280–315 nm) żółw nie syntetyzuje witaminy D3 w skórze, a bez D3 nie wchłania wapnia z pokarmu — kości i pancerz miękną. Lampa UVB + miejsce do wygrzewania (basking spot) odtwarza warunki, w których organizm sam produkuje D3.\n\nW grze to kluczowe zalecenie po rozpoznaniu MBD — bez korekcji oświetlenia suplementacja wapnia i D3 leczy objaw, nie przyczynę. Żółw, który wraca do terrarium bez UVB, zachoruje ponownie. Lampę wymienia się co 6–12 miesięcy, bo jej emisja UVB spada z czasem.\n\nZalecenie uczy, że w gadzie warunki to lekarstwo: odpowiednie oświetlenie i temperatura to nie luksus, lecz terapia i profilaktyka.",
+    "infoEn": "Installing a UVB lamp is the foundation of treating and preventing metabolic bone disease (MBD) in reptiles. Without UVB radiation (280–315 nm) a tortoise cannot synthesize vitamin D3 in its skin, and without D3 it cannot absorb calcium from food — bones and shell soften. A UVB lamp plus a basking spot recreates the conditions in which the body produces D3 on its own.\n\nIn the game it is a key recommendation after diagnosing MBD — without correcting the lighting, calcium and D3 supplementation treats the symptom, not the cause. A tortoise that returns to a terrarium without UVB will get sick again. The lamp is replaced every 6–12 months, because its UVB output declines over time.\n\nThe recommendation teaches that in a reptile the environment is the medicine: proper lighting and temperature are not a luxury but therapy and prevention.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Ultrafiolet",
+    "wikiEn": "https://en.wikipedia.org/wiki/Ultraviolet",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-RUB-REC"]
+  },
+  {
+    "id": "calcium-diet",
+    "labelPl": "Dieta bogata w wapń (mniszek, chwasty, sepia)",
+    "labelEn": "Calcium-rich diet (dandelion, weeds, cuttlebone)",
+    "infoPl": "Zalecenie diety bogatej w wapń to drugi filar leczenia MBD u gadów. Żółw śródziemnomorski jest roślinożerny — jego dieta powinna obfitować w błonnik i wapń (mniszek lekarski, babka, chwasty, liście), a być uboga w białko. Podawanie samej sałaty to częsty błąd: mało wapnia i zły stosunek wapnia do fosforu. Dodatek sepiej (kości morskiej) dostarcza wapnia w naturalnej formie.\n\nW grze to właściwe zalecenie po rozpoznaniu MBD — sama suplementacja doustna to leczenie ostre, a dieta to profilaktyka długoterminowa. Żółw na diecie sałatowej wróci do MBD; żółw na diecie chwastowej z sepią wyzdrowieje i nie zachoruje ponownie.\n\nZalecenie uczy, że w gadzie dieta to nie tylko pokarm — to źródło budulca kości i pancerza. Wapń w diecie to podstawa, a suplementacja to dodatek, nie odwrotnie.",
+    "infoEn": "A calcium-rich diet is the second pillar of treating MBD in reptiles. The Mediterranean tortoise is herbivorous — its diet should be rich in fiber and calcium (dandelion, plantain, weeds, leaves) and low in protein. Feeding only lettuce is a common mistake: little calcium and a poor calcium-to-phosphorus ratio. Adding cuttlebone (sepia) provides calcium in a natural form.\n\nIn the game it is the right recommendation after diagnosing MBD — oral supplementation alone is acute treatment, while diet is long-term prevention. A tortoise on a lettuce diet will return to MBD; a tortoise on a weed diet with cuttlebone will recover and not relapse.\n\nThe recommendation teaches that in a reptile diet is not just food — it is the source of the building material for bones and shell. Calcium in the diet is the foundation, and supplementation is an adjunct, not the other way around.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Wap%C5%84",
+    "wikiEn": "https://en.wikipedia.org/wiki/Calcium",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-RUB-REC"]
+  },
+  {
+    "id": "correct-temperature-gradient",
+    "labelPl": "Prawidłowy gradient temperatur i oświetlenia w terrarium",
+    "labelEn": "Correct temperature and lighting gradient in the terrarium",
+    "infoPl": "Zalecenie prawidłowego gradientu temperatur to trzeci filar zdrowia gadu w niewoli. Żółwie są zmiennocieplne — ich temperatura ciała zależy od otoczenia. Terrarium musi mieć ciepłą stronę (basking spot, ~32–35°C) i chłodną (~24–26°C), by gad mógł sam regulować temperaturę ciała przemieszczając się. Bez gradientu gad nie trawi, nie trawi = nie wchłania, a wchłanianie to klucz do MBD.\n\nW grze to właściwe zalecenie po MBD — nawet z wapniem, D3 i lampą UVB, gdy terrarium jest zimne lub bez gradientu, organizm gadu nie funkcjonuje prawidłowo. Gradient temperatur i oświetlenia to razem system: żółw wygrzewa się pod lampą (metabolizm rośnie) i chłodzi się w cieniu (trawienie).\n\nZalecenie uczy, że gady nie są psami czy kotami — ich zdrowie zależy od środowiska. Terrarium to nie dekoracja, lecz urządzenie podtrzymujące życie.",
+    "infoEn": "A correct temperature gradient is the third pillar of captive reptile health. Tortoises are ectothermic — their body temperature depends on the environment. A terrarium must have a warm side (basking spot, ~32–35°C) and a cool side (~24–26°C) so the reptile can regulate its body temperature by moving. Without a gradient the reptile cannot digest, no digestion means no absorption, and absorption is the key to MBD.\n\nIn the game it is the right recommendation after MBD — even with calcium, D3, and a UVB lamp, if the terrarium is cold or has no gradient, the reptile's body does not function properly. The temperature and lighting gradient is a system together: the tortoise basks under the lamp (metabolism rises) and cools in the shade (digestion).\n\nThe recommendation teaches that reptiles are not dogs or cats — their health depends on the environment. A terrarium is not decoration but life-support equipment.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Terrarium",
+    "wikiEn": "https://en.wikipedia.org/wiki/Terrarium",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-RUB-REC"]
+  },
+  {
+    "id": "frequent-small-meals",
+    "labelPl": "Częste, małe posiłki wysokobiałkowe",
+    "labelEn": "Frequent, small high-protein meals",
+    "infoPl": "Zalecenie częstych, małych posiłków to fundament leczenia insulinomu u fretek. Fretka to bezwzględny mięsożerca o szybkim metabolizmie — musi jeść często, by utrzymać poziom glukozy. W insulinomie guz pompuje insulinę nawet na czczo, więc pominięcie posiłku oznacza spadek glukozy i napad hipoglikemii. Posiłki wysokobiałkowe i niskowęglowodanowe podnoszą glukozę wolniej i stabilniej niż węglowodany.\n\nW grze to właściwe zalecenie po rozpoznaniu insulinomu — leki (prednizolon, diazoksyd) kontrolują objawy, ale dieta to codzienna profilaktyka napadów. Fretka na jednym dużym posiłku dziennie ma gorszą kontrolę glukozy niż na czterech małych.\n\nZalecenie uczy, że w insulinomie leczenie to nie tylko pigułka — to rytm dnia. Bez częstych posiłków leki same nie wystarczą, a każdy pominięty posiłek to ryzyko kolapsu.",
+    "infoEn": "A recommendation for frequent, small meals is the foundation of managing insulinoma in ferrets. A ferret is an obligate carnivore with a fast metabolism — it must eat often to maintain glucose. In insulinoma the tumor pumps insulin even while fasting, so a missed meal means a glucose drop and a hypoglycemic episode. High-protein, low-carbohydrate meals raise glucose more slowly and steadily than carbohydrates.\n\nIn the game it is the right recommendation after diagnosing insulinoma — the drugs (prednisolone, diazoxide) control the signs, but diet is the daily prevention of episodes. A ferret on one large meal a day has worse glucose control than on four small ones.\n\nThe recommendation teaches that in insulinoma treatment is not just a pill — it is a daily rhythm. Without frequent meals the drugs alone are not enough, and every missed meal risks a collapse.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Insulinoma",
+    "wikiEn": "https://en.wikipedia.org/wiki/Insulinoma",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-RUB-REC"]
+  },
+  {
+    "id": "monitor-glucose",
+    "labelPl": "Monitorowanie glukozy i objawów hipoglikemii w domu",
+    "labelEn": "Monitor glucose and hypoglycemia signs at home",
+    "infoPl": "Zalecenie monitorowania glukozy i objawów to drugi filar leczenia insulinomu u fretek. Opiekun ma znać objawy hipoglikemii — osłabienie tylnych łap, ślinotok, drżenia, nietypowa senność — i reagować, podając szybko przyswajalne źródło glukozy (np. miód na dziąsła w nagłym napadzie). Glukozę we krwi można monitorować glukometrem w domu.\n\nW grze to właściwe zalecenie po rozpoznaniu insulinomu — leki kontrolują glukozę w miarę, ale guz rośnie i dawka z czasem staje się niewystarczająca. Opiekun, który zauważa nawracające objawy, zgłasza się wcześniej — a wcześniejsza korekta dawki przedłuża dobre miesiące.\n\nZalecenie uczy, że insulinoma to choroba dynamiczna: guz nie stoi w miejscu. Bez monitorowania opiekun dowie się o nawrocie dopiero, gdy fretka straci przytomność.",
+    "infoEn": "A recommendation to monitor glucose and signs is the second pillar of managing insulinoma in ferrets. The carer must know the signs of hypoglycemia — hind-leg weakness, drooling, tremors, unusual sleepiness — and react by giving a fast-acting glucose source (e.g. honey on the gums in an acute episode). Blood glucose can be monitored with a home glucometer.\n\nIn the game it is the right recommendation after diagnosing insulinoma — the drugs control glucose as long as they can, but the tumor grows and the dose becomes insufficient over time. A carer who notices recurring signs reports earlier — and earlier dose adjustment extends the good months.\n\nThe recommendation teaches that insulinoma is a dynamic disease: the tumor does not stand still. Without monitoring the carer learns of a relapse only when the ferret loses consciousness.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Insulinoma",
+    "wikiEn": "https://en.wikipedia.org/wiki/Insulinoma",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-RUB-REC"]
+  },
+  {
+    "id": "enclosure-hygiene",
+    "labelPl": "Higiena terrarium: czyszczenie i dezynfekcja",
+    "labelEn": "Enclosure hygiene: cleaning and disinfection",
+    "infoPl": "Zalecenie higieny terrarium to usunięcie czynnika, który wywołał infekcję jamy ustnej. Brudne terrarium to rezerwuar bakterii (Pseudomonas rośnie w wilgotnym substracie i odchodach), które kolonizują jamę ustną osłabionego węża. Czyszczenie i dezynfekcja (z wymianą substratu) to leczenie przyczynowe, a nie tylko objawowe.\n\nBez higieny infekcja wraca: antybiotyk zlikwiduje bakterie w pysku, ale węże znów się zarazi z brudnego środowiska. To odpowiednik leczenia środowiska przy pasożytach — lek działa na pacjenta, a higiana na źródło.\n\nTo zalecenie uczy, że u gadów choroba to najczęściej wynik środowiska, a leczenie bez poprawy warunków to błędne koło.",
+    "infoEn": "An enclosure hygiene recommendation removes the factor that caused the mouth infection. A dirty enclosure is a reservoir of bacteria (Pseudomonas grows in damp substrate and feces) that colonize the mouth of a weakened snake. Cleaning and disinfection (with substrate replacement) is causal treatment, not just symptomatic.\n\nWithout hygiene the infection returns: the antibiotic clears bacteria in the mouth, but the snake gets re-infected from the dirty environment. It is the reptile equivalent of environmental parasite control — the drug treats the patient, hygiene treats the source.\n\nThis recommendation teaches that in reptiles disease is most often a result of the environment, and treatment without improving conditions is a vicious circle.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Wąż",
+    "wikiEn": "https://en.wikipedia.org/wiki/Snake",
+    "reviewStatus": "draft",
+    "reviewDate": null,
+    "sources": ["S-MVM"],
+    "claimIds": ["C-RUB-REC"]
+  }
 ];

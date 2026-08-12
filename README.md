@@ -29,11 +29,24 @@ Open `http://localhost:8000/site/` in your browser.
 
 > The game is a static site (vanilla HTML/CSS/JS, ES modules, no build process, no runtime network, no analytics). Serve it via any HTTP server — ES modules require a server, not `file://`.
 
+## Debug mode (URL)
+
+For testing progression without grinding through every case, append a flag to the site URL:
+
+- `…/site/#unlocked` (also `#debug`, or `?debug=true` / `?debug=1`) — **all patients unlocked**, full drug/procedure/surgery catalog (level 3), **XP frozen** (it stops counting and never touches your real save in `localStorage`).
+- `…/site/?xp=2000` — **set total XP to 2000** (frozen for the session). Unlocks follow the normal thresholds, so e.g. `?xp=150` opens level 2, `?xp=400` opens everything.
+- Both can be combined: `…/site/?xp=150#unlocked`.
+
+Notes:
+- The amber **DEBUG** pill in the header shows the active mode (hover for details).
+- In debug mode your real `localStorage` save (best XP, outcomes, history) is **never modified** — per-case XP is still computed and shown on the outcome screen, but it isn't recorded.
+- The hash form (`#unlocked`) toggles **live** (no reload); query params (`?xp=N`) need a page reload.
+
 ## Testing and validation
 
 ```bash
 node --test                          # engine logic tests (clean, no DOM) — no path in ESM!
-node tools/replay.js --check         # golden suite: 42 scenarios, exit≠0 on fail
+node tools/replay.js --check         # golden suite, exit≠0 on fail
 node tools/replay.js --lang en        # check translation completeness (i18n)
 node tools/explore.js --all          # answer key + Invariant scoring for each case
 node tools/validate_game.js .      # data consistency + validity of progressive unlock

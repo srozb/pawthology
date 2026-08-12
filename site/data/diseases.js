@@ -588,6 +588,55 @@ export const diseases = [
   "claimIds": [
     "C-DIS-22"
   ]
-}
+},
+  {
+  "id": "metabolic-bone-disease",
+  "labelPl": "Choroba metaboliczna kości (MBD)",
+  "labelEn": "Metabolic bone disease",
+  "requiredExams": ["physical-exam", "radiograph"],
+  "supportiveExams": [],
+  "recommendedGroups": ["vitamin-mineral"],
+  "contraindicatedGroups": ["antibiotic"],
+  "bacterialInfection": false,
+  "drugIsSupportive": false,
+  "optionalExams": ["blood-panel"],
+  "infoPl": "Choroba metaboliczna kości (MBD) to grupa zaburzeń kości wywołanych niedoborem wapnia i witaminy D3 — najczęściej z braku promieniowania UVB w niewoli. Bez UVB gad nie syntetyzuje witaminy D3 w skórze, a bez D3 jelito nie wchłania wapnia z pokarmu. Kości i pancerz stają się miękkie, kończyny wyginają się, a płytki pancerza piramidują. To najczęstsza choroba gadów w niewoli.\n\nMBD nie jest infekcją — to choroba metaboliczna, „niedoborowa”. Antybiotyk na MBD to błąd: nie działa na przyczynę (niedobór), a napędza oporność (AMR). Leczenie to troje: doustny wapń, witamina D3 i korekcja warunków — lampa UVB, dieta bogata w wapń, gradient temperatur. Wikipedia potwierdza: MBD jest „commonly reversible once the underlying defect has been treated” — odwracalna po usunięciu przyczyny.\n\nDiagnoza to badanie kliniczne (miękki pancerz, osłabione kończyny) i RTG (zubożona struktura kości). Bez RTG nie widać, jak daleko poszła demineralizacja. MBD uczy, że w gadzie fundament zdrowia to warunki, nie leki — i że antybiotyk nie leczy wszystkiego.",
+  "infoEn": "Metabolic bone disease (MBD) is a group of bone disorders caused by calcium and vitamin D3 deficiency — most often from lack of UVB radiation in captivity. Without UVB a reptile cannot synthesize vitamin D3 in its skin, and without D3 the gut cannot absorb calcium from food. Bones and shell become soft, limbs bow, and shell plates pyramid. It is the most common disease of captive reptiles.\n\nMBD is not an infection — it is a metabolic, „deficiency” disease. An antibiotic for MBD is a mistake: it does not address the cause (deficiency) and drives resistance (AMR). Treatment is a trio: oral calcium, vitamin D3, and correction of conditions — a UVB lamp, a calcium-rich diet, a temperature gradient. Wikipedia confirms MBD is „commonly reversible once the underlying defect has been treated” — reversible after the cause is removed.\n\nDiagnosis is clinical exam (soft shell, weak limbs) and a radiograph (depleted bone structure). Without an X-ray one cannot see how far demineralization has gone. MBD teaches that in a reptile the foundation of health is the environment, not drugs — and that an antibiotic does not treat everything.",
+  "wikiPl": "https://pl.wikipedia.org/wiki/Choroba_metaboliczna_ko%C5%9Bci",
+  "wikiEn": "https://en.wikipedia.org/wiki/Metabolic_bone_disease",
+  "claimIds": ["C-DIS-23"]
+},
+  {
+    "id": "insulinoma",
+    "labelPl": "Insulinoma (guz wysepek trzustki)",
+    "labelEn": "Insulinoma",
+    "requiredExams": ["blood-panel"],
+    "supportiveExams": [],
+    "optionalExams": ["physical-exam"],
+    "recommendedGroups": ["endocrine"],
+    "contraindicatedGroups": ["antibiotic"],
+    "bacterialInfection": false,
+    "infoPl": "Insulinoma to guz neuroendokrynny trzustki wywodzący się z komórek beta wysepek trzustkowych, które produkują insulinę. Guz wydziela insulinę niezależnie od poziomu glukozy — pompuje insulinę nawet gdy cukier we krwi jest już niski, co prowadzi do hipoglikemii. To najczęstszy nowotwór u fretek (typowo wiek 4-5 lat). Wikipedia potwierdza: \"Insulinoma...is the most common form of cancer in ferrets.\"\n\nObjawy hipoglikemii to osłabienie tylnych łap, ślinotok, drżenia, a w skrajnych przypadkach drgawki i kolaps — nasilają się na czczo i przy wysiłku. Rozpoznanie to niski poziom glukozy na czczo (poniżej 60 mg/dL) w panelu biochemicznym — nie wymaga osobnego badania, glukoza jest w standardowym panelu.\n\nLeczenie jest paliatywne: prednizolon podnosi glukozę (glukoneogeneza), diazoksyd hamuje wydzielanie insuliny (K-ATP). To NIE infekcja bakteryjna — antybiotyk jest przeciwwskazany. Insulinoma to choroba metaboliczna/endokrynna, a nie zakaźna. Jedynym potencjalnym lekarstwem jest chirurgia (usunięcie guzu), ale to procedura specjalistyczna (referral).",
+    "infoEn": "Insulinoma is a neuroendocrine tumor of the pancreas arising from the beta cells of the islets of Langerhans, which produce insulin. The tumor secretes insulin regardless of glucose level — it pumps insulin even when blood sugar is already low, causing hypoglycemia. It is the most common cancer in ferrets (typically ages 4-5). Wikipedia confirms: \"Insulinoma...is the most common form of cancer in ferrets.\"\n\nSigns of hypoglycemia are hind-leg weakness, drooling, tremors, and in severe cases seizures and collapse — they worsen with fasting and exercise. Diagnosis is a low fasting blood glucose (below 60 mg/dL) on a biochemistry panel — no separate exam is needed, glucose is in the standard panel.\n\nTreatment is palliative: prednisolone raises glucose (gluconeogenesis), diazoxide inhibits insulin release (K-ATP). This is NOT a bacterial infection — antibiotics are contraindicated. Insulinoma is a metabolic/endocrine disease, not an infectious one. The only potential cure is surgery (tumor removal), but that is a specialist (referral) procedure.",
+    "wikiPl": "https://pl.wikipedia.org/wiki/Insulinoma",
+    "wikiEn": "https://en.wikipedia.org/wiki/Insulinoma",
+    "claimIds": ["C-DIS-24"]
+  },
+  {
+    "id": "infectious-stomatitis",
+    "labelPl": "Zapalenie jamy ustnej (stomatitis)",
+    "labelEn": "Infectious stomatitis (mouth rot)",
+    "requiredExams": ["physical-exam"],
+    "supportiveExams": [],
+    "optionalExams": [],
+    "recommendedGroups": ["antibiotic", "antiseptic-topical"],
+    "contraindicatedGroups": [],
+    "bacterialInfection": true,
+    "infoPl": "Zapalenie jamy ustnej (stomatitis, potocznie „mouth rot”) to bakteryjna infekcja błony śluzowej jamy ustnej u węży. Bakterie (często Gram-ujemne, np. Pseudomonas) namnażaają się w jamie ustnej, gdy odporność spada — zwykle z powodu błędów w hodowli: zbyt niska temperatura (zwalnia metabolizm i odporność), zła higiena terrarium lub uraz jamy ustnej. Nieleczona infekcja szerzy się, niszczy tkanki i może przejść w zakażenie ogólnoustrojowe — bywa śmiertelna.\n\nObjawy to ślinotok, obrzęk i przekrwienie błony śluzowej, oraz masa serowata (caseous) zalegająca w jamie ustnej — to martwa tkanka i ropa. Wąż odmawia jedzenia, bo boli go otwarcie pyska. Rozpoznanie to badanie kliniczne (oględziny jamy ustnej), a leczenie łączy trzy elementy: oczyszczenie jamy ustnej i martwiktomię (usunięcie masy serowatej), miejscowy antyseptyk (chlorheksydyna) oraz systemiczny antybiotyk (enrofloksacyna, skuteczna na Gram-ujemne).\n\nTo infekcja bakteryjna — antybiotyk jest tu wskazany, w przeciwieństwie do chorób metabolicznych (MBD) czy endokrynnych (insulinoma), gdzie antybiotyk szkodzi. Stomatitis uczy, że wąż nierządzący jedzenia w chłodnym terrarium to pacjent, a higiena i temperatura to lek zapobiegawczy.",
+    "infoEn": "Infectious stomatitis (commonly „mouth rot”) is a bacterial infection of the oral mucosa in snakes. Bacteria (often Gram-negative, e.g. Pseudomonas) proliferate in the mouth when immunity drops — usually from poor husbandry: too-low temperature (slows metabolism and immunity), poor enclosure hygiene, or mouth injury. Untreated, the infection spreads, destroys tissue, and can become systemic — it can be fatal.\n\nSigns are drooling, swelling and redness of the mucosa, and caseous (cheese-like) material pooling in the mouth — dead tissue and pus. The snake refuses to eat because opening the mouth hurts. Diagnosis is clinical (oral examination), and treatment combines three elements: oral cavity cleaning and debridement (removing the caseous debris), topical antiseptic (chlorhexidine), and a systemic antibiotic (enrofloxacin, effective against Gram-negatives).\n\nThis is a bacterial infection — antibiotics ARE indicated here, unlike metabolic (MBD) or endocrine (insulinoma) diseases where antibiotics harm. Stomatitis teaches that a snake refusing food in a cool enclosure is a patient, and that hygiene and temperature are preventive medicine.",
+    "wikiPl": "https://en.wikipedia.org/wiki/Stomatitis",
+    "wikiEn": "https://en.wikipedia.org/wiki/Stomatitis",
+    "claimIds": ["C-DIS-25"]
+  }
 
 ];

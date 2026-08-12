@@ -54,7 +54,7 @@ Each image = one `.md` file with YAML frontmatter (24 keys, same order everywher
 - **Each file is self-contained** — style, palette, lighting, environment are inlined in the frontmatter and prompt (the model sees one file = gets all anchors).
 - **EN prompt** under `# Prompt (EN)` — ready to paste into a generative model.
 
-The existing 15 files (5 patients × 3 states) are already complete in `art/prompts/patients/`. Use them as templates.
+The existing patient prompt files in `art/prompts/patients/` (one directory per patient, 3 states each) are already complete — use them as templates.
 
 ## Generating images (handoff to user)
 

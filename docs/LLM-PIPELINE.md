@@ -7,11 +7,11 @@
 
 ```
 LLM adds content  →  data/*.js (entry with claimIds, sources, reviewStatus="draft")
-                  →  tools/validate_game.py   (self-verification of structure + units + references + kinds)
-                  →  node tools/explore.mjs <caseId>   (ANSWER KEY + auto good/bad playthrough — BEFORE scenarios)
+                  →  node tools/validate_game.js .   (self-verification of structure + units + references + kinds)
+                  →  node tools/explore.js <caseId>   (ANSWER KEY + auto good/bad playthrough — BEFORE scenarios)
                   →  scenarios/*.json          (golden: test expected behavior)
                   →  node tools/replay.js --trace  (diagnose grading errors)
-                  →  node tools/explore.mjs --all     (grading invariants for all cases)
+                  →  node tools/explore.js --all     (grading invariants for all cases)
                   →  source audit via internet   (factual sign-off → "llm-audited")
                   →  merge
 ```
@@ -72,7 +72,7 @@ trueDiagnosis, diagnosisOptions, examResults keys) exist in the data.
 The LLM runs the validator on its candidates **before** merge:
 
 ```bash
-python3 tools/validate_game.py .
+node tools/validate_game.js .
 ```
 
 The validator rejects:
@@ -87,7 +87,7 @@ The validator rejects:
 Additionally, run the threshold consistency guard:
 
 ```bash
-node tools/derive_levels.mjs --check   # stored minLevel ≤ derived from case dependencies
+node tools/derive_levels.js --check   # stored minLevel ≤ derived from case dependencies
 ```
 If the validator fails — the LLM fixes and retries.
 
@@ -96,8 +96,8 @@ If the validator fails — the LLM fixes and retries.
 First **the emulator** (does not require writing JSON):
 
 ```bash
-node tools/explore.mjs <caseId>          # ANSWER KEY + 5 auto-paths — check invariants
-node tools/explore.mjs <caseId> --trace  # + full trace
+node tools/explore.js <caseId>          # ANSWER KEY + 5 auto-paths — check invariants
+node tools/explore.js <caseId> --trace  # + full trace
 ```
 
 `explore` will synthesize from the case data: required exams, true diagnosis, a drug from recommendedGroups at mid-band dose, required procedures/surgeries, recommendations — and compare with 4 bad variants. If invariants are violated (good<bad, toxic≠critical, good=critical) — fix the data BEFORE scenarios.
@@ -106,7 +106,7 @@ Then the LLM writes golden scenarios (format below) and runs:
 
 ```bash
 node tools/replay.js --check       # whole suite, exit≠0 on fail
-node tools/explore.mjs --all       # grading invariants for all cases
+node tools/explore.js --all       # grading invariants for all cases
 ```
 
 If a new drug/case breaks existing scenarios — regression. The LLM reads `--trace` and diagnoses.
@@ -222,7 +222,7 @@ Each `expected` field is optional — only those present are checked.
 ## Full example: LLM adds a new drug
 
 1. **Generates** the `doxycycline` entry in `drugs.js` + the `C-DRG-NEW-01` claim in `claims.md` (`reviewStatus: "draft"`).
-2. **Validates**: `python3 tools/validate_game.py .` → must pass.
+2. **Validates**: `node tools/validate_game.js .` → must pass.
 3. **Tests**: writes `scenarios/doxycycline-good.json` + `doxycycline-irrational.json`; `node tools/replay.js --check` → must PASS.
 4. **Diagnoses** (if fail): `node tools/replay.js scenarios/doxycycline-good.json --trace` → reads the trace, fixes.
 5. **Audits source**: opens Merck Vet Manual, confirms 5–10 mg/kg dose, returns JSON.

@@ -1,0 +1,21 @@
+{
+  "id": "snake-mouth-rot-good",
+  "caseId": "case-snake-mouth-rot",
+  "decisions": {
+    "weightKg": 0.4,
+    "exams": ["physical-exam"],
+    "diagnosis": "infectious-stomatitis",
+    "treatments": [
+      { "drug": "enrofloxacin", "doseMg": 3 },
+      { "drug": "chlorhexidine", "doseMg": 0 }
+    ],
+    "procedures": ["mouth-cleaning"],
+    "recommendations": ["enclosure-hygiene", "correct-temperature-gradient"]
+  },
+  "expected": {
+    "xp": [85, 85],
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-DOSE-IN-RANGE", "R-PROC-REQUIRED", "R-REC-REQUIRED", "R-ABX-INDICATED"],
+    "mustNotContainVerdicts": ["R-ABX-IRRATIONAL", "R-DRUG-SPECIES-TOXIC", "R-DOSE-OVER", "R-PROC-MISSING"]
+  }
+}

@@ -146,7 +146,7 @@ Details and trace anatomy: `references/verify-and-diagnose.md`.
 
 | File | Read when… |
 |---|---|
-| `../../ARCHITECTURE.md` | New to the project — layout, separation, principles, 28 rules |
+| `../../ARCHITECTURE.md` | New to the project — layout, separation, principles, evaluation rules |
 | `../../EXTENDING.md` | Adding a specific entity — **canonical living schema** + full schemas and steps |
 | `../../LLM-PIPELINE.md` | Full LLM-driven expansion loop (generation → verification → source audit) |
 | `../../../research/data-model.md` | F1 project context (historical; current schema → EXTENDING.md) |

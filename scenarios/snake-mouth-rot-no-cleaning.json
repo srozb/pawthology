@@ -1,0 +1,20 @@
+{
+  "id": "snake-mouth-rot-no-cleaning",
+  "caseId": "case-snake-mouth-rot",
+  "decisions": {
+    "weightKg": 0.4,
+    "exams": ["physical-exam"],
+    "diagnosis": "infectious-stomatitis",
+    "treatments": [
+      { "drug": "enrofloxacin", "doseMg": 3 },
+      { "drug": "chlorhexidine", "doseMg": 0 }
+    ],
+    "procedures": [],
+    "recommendations": ["enclosure-hygiene", "correct-temperature-gradient"]
+  },
+  "expected": {
+    "patientOutcome": "improving",
+    "mustContainVerdicts": ["R-PROC-MISSING"],
+    "mustNotContainVerdicts": ["R-DRUG-SPECIES-TOXIC"]
+  }
+}

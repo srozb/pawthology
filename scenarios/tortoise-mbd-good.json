@@ -1,0 +1,20 @@
+{
+  "id": "tortoise-mbd-good",
+  "caseId": "case-tortoise-mbd",
+  "decisions": {
+    "weightKg": 0.8,
+    "exams": ["physical-exam", "radiograph"],
+    "diagnosis": "metabolic-bone-disease",
+    "treatments": [
+      { "drug": "calcium-carbonate", "doseMg": 160 },
+      { "drug": "vitamin-d3", "doseMg": 0 }
+    ],
+    "procedures": [],
+    "recommendations": ["uvb-lighting", "calcium-diet", "correct-temperature-gradient"]
+  },
+  "expected": {
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-DOSE-IN-RANGE", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-ABX-IRRATIONAL", "R-DRUG-SPECIES-TOXIC", "R-DRUG-CONTRAINDICATED"]
+  }
+}

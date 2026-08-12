@@ -1,0 +1,19 @@
+{
+  "id": "tortoise-mbd-antibiotic",
+  "caseId": "case-tortoise-mbd",
+  "decisions": {
+    "weightKg": 0.8,
+    "exams": ["physical-exam", "radiograph"],
+    "diagnosis": "metabolic-bone-disease",
+    "treatments": [
+      { "drug": "enrofloxacin", "doseMg": 5 }
+    ],
+    "procedures": [],
+    "recommendations": ["uvb-lighting"]
+  },
+  "expected": {
+    "patientOutcome": "not-responding",
+    "mustContainVerdicts": ["R-DRUG-CONTRAINDICATED"],
+    "mustNotContainVerdicts": ["R-DRUG-SPECIES-TOXIC"]
+  }
+}

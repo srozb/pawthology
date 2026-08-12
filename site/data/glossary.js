@@ -819,6 +819,160 @@ export const GLOSSARY = [
       "fullEn": "Dystocia is difficult egg-laying in birds or difficult birth in mammals. In birds it most often means egg binding — the egg is stuck in the oviduct due to hypokalcemia or an anatomical defect. Treatment is stepwise: calcium and support first, manual assistance, surgery last.",
       "source": null,
       "verified": false
+    },
+  {
+    "id": "g-insulinoma",
+    "term": "insulinoma", termEn: "insulinoma",
+    forms: ["insulinomu", "insulinomie", "insulinom"],
+    simplePl: "Guz trzustki, który wydziela za dużo insuliny — cukier we krwi spada, zwierzę słabnie.",
+    fullPl: "Insulinoma to guz komórek beta trzustki, które nieprzerwanie wydzielają insulinę niezależnie od poziomu glukozy. Efekt to hipoglikemia (niski cukier) — mózg głoduje, pojawia się osowiałość, drżenia, a wreszcie drgawki i utrata przytomności. Najczęstszy nowotwór fretki. Leczy się paliatywnie lekami podnoszącymi glukozę (prednizolon, diazoksyd); operacja to jedyna szansa na wyleczenie, ale bywa niemożliwa.",
+    simpleEn: "A pancreatic tumor that secretes too much insulin — blood sugar drops, the animal weakens.",
+    fullEn: "Insulinoma is a tumor of the beta cells of the pancreas that continuously secretes insulin regardless of glucose level. The result is hypoglycemia (low sugar) — the brain starves, with lethargy, tremors and finally seizures and collapse. The most common tumor in ferrets. It is managed palliatively with drugs that raise glucose (prednisolone, diazoxide); surgery is the only potential cure but is often not feasible.",
+    "source": "https://en.wikipedia.org/wiki/Insulinoma",
+    "verified": false
+    },
+  {
+    "id": "g-hipoglikemia",
+    "term": "hipoglikemia", termEn: "hypoglycemia",
+    forms: ["hipoglikemię", "hipoglikemii"],
+    simplePl: "Za niski poziom cukru we krwi — zwierzę słabnie, drży, może stracić przytomność.",
+    fullPl: "Hipoglikemia to spadek glukozy we krwi poniżej normy. Mózg zależy od glukozy, więc jej brak daje objawy neurologiczne: osowiałość, ataksję, drżenia, ślinotok, a w skrajnych przypadkach drgawki i śpiączkę. U fretki najczęstszą przyczyną jest insulinoma; u innych zwierząt np. przedawkowanie insuliny lub głodówka. Pierwsza pomoc to podanie glukozy.",
+    simpleEn: "Blood sugar too low — the animal weakens, trembles, may lose consciousness.",
+    fullEn: "Hypoglycemia is a fall of blood glucose below normal. The brain depends on glucose, so its lack gives neurological signs: lethargy, ataxia, tremors, drooling, and in severe cases seizures and coma. In ferrets the most common cause is insulinoma; in other animals e.g. insulin overdose or fasting. First aid is giving glucose.",
+    "source": "https://pl.wikipedia.org/wiki/Hipoglikemia",
+    "verified": false
+    },
+  {
+    "id": "g-prednisolone",
+    "term": "prednizolon", termEn: "prednisolone",
+    forms: ["prednizolonem", "prednizolonie", "prednizolonu"],
+    simplePl: "Lek sterydowy, który m.in. podnosi cukier we krwi — dlatego pomaga przy insulinomie.",
+    fullPl: "Prednizolon to glikokortykosteroid — steryd, który m.in. stymuluje glukoneogenezę (produkcję glukozy w wątrobie), podnosząc cukier we krwi. W insulinomie to lek pierwszego wyboru: zapobiega hipoglikemii, choć nie leczy guza. Długotrwale osłabia odporność i ma skutki uboczne, dlatego dawkę tytułuje się do najmniejszej skutecznej.",
+    simpleEn: "A steroid drug that, among other effects, raises blood sugar — that is why it helps in insulinoma.",
+    fullEn: "Prednisolone is a glucocorticoid — a steroid that, among other effects, stimulates gluconeogenesis (glucose production in the liver), raising blood sugar. In insulinoma it is the first-line drug: it prevents hypoglycemia, though it does not cure the tumor. Long-term it weakens immunity and has side effects, so the dose is titrated to the lowest effective.",
+    "source": "https://pl.wikipedia.org/wiki/Prednizolon",
+    "verified": false
+    },
+  {
+    "id": "g-diazoxide",
+    "term": "diazoksyd", termEn: "diazoxide",
+    forms: [],
+    simplePl: "Lek hamujący uwalnianie insuliny — drugi wybór przy insulinomie, gdy prednizolon nie wystarcza.",
+    fullPl: "Diazoksyd otwiera kanały potasowe w komórkach beta trzustki, co hamuje uwalnianie insuliny i tym samym podnosi glukozę we krwi. Stosuje się go w insulinomie, gdy prednizolon jest niewystarczający. Jest droższy i rzadziej pierwszego wyboru.",
+    simpleEn: "A drug that inhibits insulin release — the second choice in insulinoma, when prednisolone is not enough.",
+    fullEn: "Diazoxide opens potassium channels in the pancreatic beta cells, which inhibits insulin release and thereby raises blood glucose. It is used in insulinoma when prednisolone is insufficient. It is more expensive and rarely the first choice.",
+    "source": "https://pl.wikipedia.org/wiki/Diazoksyd",
+    "verified": false
+    },
+  {
+    "id": "g-glukoneogeneza",
+    "term": "glukoneogeneza", termEn: "gluconeogenesis",
+    forms: ["glukoneogenezę", "glukoneogenezy"],
+    simplePl: "Produkowanie glukozy w wątrobie z innych związków — sterydy to przyspieszają, więc podnoszą cukier.",
+    fullPl: "Glukoneogeneza to synteza glukozy z niecukrowych prekursorów (np. aminokwasów) w wątrobie. Glikokortykosteroidy jak prednizolon stymulują ten szlak, dlatego podnoszą poziom glukozy we krwi — użyteczne w hipoglikemii insulinomu.",
+    simpleEn: "Making glucose in the liver from other compounds — steroids speed this up, so they raise sugar.",
+    fullEn: "Gluconeogenesis is the synthesis of glucose from non-sugar precursors (e.g. amino acids) in the liver. Glucocorticoids like prednisolone stimulate this pathway, which is why they raise blood glucose — useful in the hypoglycemia of insulinoma.",
+    "source": "https://pl.wikipedia.org/wiki/Glukoneogeneza",
+    "verified": false
+    },
+  {
+    "id": "g-glukoza",
+    "term": "glukoza", termEn: "glucose",
+    forms: ["glukozę", "glukozy"],
+    simplePl: "Cukier, który organizm zużywa na energię — zwłaszcza mózg.",
+    fullPl: "Glukoza to podstawowy cukier, z którego organizm czerpie energię; mózg jest od niej całkowicie zależny. Jej poziom we krwi utrzymuje insulina (obniża) i glukagon oraz glukoneogeneza (podnoszą). Niedobór to hipoglikemia.",
+    simpleEn: "The sugar the body burns for energy — especially the brain.",
+    fullEn: "Glucose is the basic sugar the body burns for energy; the brain is entirely dependent on it. Its blood level is maintained by insulin (lowers) and glucagon plus gluconeogenesis (raise). Deficiency is hypoglycemia.",
+    "source": "https://pl.wikipedia.org/wiki/Glukoza",
+    "verified": false
+    },
+  {
+    "id": "g-witamina-d3",
+    "term": "witamina D3", termEn: "vitamin D3",
+    forms: ["witaminy D3", "witaminę D3", "witaminie D3"],
+    simplePl: "Witamina, która pozwala jelitom wchłaniać wapń — bez niej kości i pancerze miękną.",
+    fullPl: "Witamina D3 (cholekalcyferol) umożliwia wchłanianie wapnia w jelicie. U gadów powstaje w skórze pod lampą UVB — bez UVB nie ma D3, bez D3 nie ma wchłaniania wapnia, więc kości i pancerz miękną (choroba metaboliczna kości). Suplementacja D3 zastępuje brak słońca/UVB.",
+    simpleEn: "A vitamin that lets the gut absorb calcium — without it bones and shells soften.",
+    fullEn: "Vitamin D3 (cholecalciferol) enables calcium absorption in the gut. In reptiles it is made in the skin under a UVB lamp — no UVB means no D3, no D3 means no calcium absorption, so bones and shell soften (metabolic bone disease). D3 supplementation substitutes for the lack of sun/UVB.",
+    "source": "https://pl.wikipedia.org/wiki/Witamina_D",
+    "verified": false
+    },
+  {
+    "id": "g-cholekalcyferol",
+    "term": "cholekalcyferol", termEn: "cholecalciferol",
+    forms: [],
+    simplePl: "Inna nazwa witaminy D3 — tej, która pozwala wchłaniać wapń.",
+    fullPl: "Cholekalcyferol to chemiczna nazwa witaminy D3, powstającej w skórze pod promieniowaniem UVB. U gadów bez dostępu do słońca/UVB konieczna jest suplementacja.",
+    simpleEn: "Another name for vitamin D3 — the one that lets the body absorb calcium.",
+    fullEn: "Cholecalciferol is the chemical name of vitamin D3, made in the skin under UVB radiation. In reptiles without access to sun/UVB, supplementation is necessary.",
+    "source": "https://pl.wikipedia.org/wiki/Witamina_D",
+    "verified": false
+    },
+  {
+    "id": "g-wapn",
+    "term": "wapń", termEn: "calcium",
+    forms: ["wapnia", "wapniem", "wapniu", "wapniowe", "wapniowy", "wapniowych"],
+    simplePl: "Pierwiastek budujący kości i pancerze — jego braczk i miękną.",
+    fullPl: "Wapń to minerał budujący kości, pancerze żółwi i muszle. Jego wchłanianie w jelicie zależy od witaminy D3, którą gady syntetyzują pod UVB. Niedobór wapnia lub witaminy D3 (często z braku UVB) prowadzi do choroby metabolicznej kości — mięknących kości i piramidowania pancerza.",
+    simpleEn: "The element that builds bones and shells — its lack makes them soften.",
+    fullEn: "Calcium is the mineral that builds bones, tortoise shells and eggshells. Its intestinal absorption depends on vitamin D3, which reptiles synthesize under UVB. A lack of calcium or vitamin D3 (often from no UVB) leads to metabolic bone disease — softening bones and shell pyramiding.",
+    "source": null,
+    "verified": false
+    },
+  {
+    "id": "g-uvb",
+    "term": "UVB", termEn: "UVB",
+    forms: [],
+    simplePl: "Rodzaj światła z lampy/słońca, pod którym gady produkują witaminę D3 — bez niego chorują na kości.",
+    fullPl: "UVB to zakres promieniowania ultrafioletowego, który w skórze gadów napędza syntezę witaminy D3, a ta umożliwia wchłanianie wapnia. Bez lampy UVB w terrarium gady na diecie ubogiej w wapń zapadają na chorobę metaboliczną kości. To klucz elementu husbandry, nie dodatek.",
+    simpleEn: "A kind of light from a lamp/sun, under which reptiles make vitamin D3 — without it their bones sicken.",
+    fullEn: "UVB is the range of ultraviolet radiation that drives vitamin D3 synthesis in reptile skin, which in turn enables calcium absorption. Without a UVB lamp in the terrarium, reptiles on a calcium-poor diet develop metabolic bone disease. It is a key element of husbandry, not an accessory.",
+    "source": null,
+    "verified": false
+    },
+  {
+    "id": "g-martwiktomia",
+    "term": "martwiktomia", termEn: "debridement",
+    forms: ["martwiktomię"],
+    simplePl: "Wycięcie martwych tkanek z rany lub jamy ustnej, by odsłonić zdrową, gojącą się tkankę.",
+    fullPl: "Martwiktomia (debridement) to usunięcie martwych i zanieczyszczonych tkanek z rany lub jamy ustnej (np. masy serowatej przy stomatitis węża). Martwa tkanka jest pożywką dla bakterii i blokuje dostęp leków; jej wycięcie odsłania ukrwioną, zdrową tkankę, która się zagoi. Zabieg poprzedza antyseptyk i antybiotyk.",
+    simpleEn: "Cutting away dead tissue from a wound or mouth, to expose healthy, healing tissue.",
+    fullEn: "Debridement is the removal of dead and contaminated tissue from a wound or the mouth (e.g. caseous material in snake stomatitis). Dead tissue feeds bacteria and blocks drugs from reaching the tissue; cutting it away exposes vascularized, healthy tissue that will heal. The procedure precedes antiseptic and antibiotic.",
+    "source": "https://en.wikipedia.org/wiki/Debridement",
+    "verified": false
+    },
+  {
+    "id": "g-stomatitis",
+    "term": "stomatitis", termEn: "stomatitis",
+    forms: [],
+    simplePl: "Zapalenie jamy ustnej — u węża nazywane „mouth rot”; bakteryjne, z mase serowatą w pysku.",
+    fullPl: "Stomatitis (zapalenie jamy ustnej) to bakteryjne zapalenie śluzówki i tkanek jamy ustnej. U węży bywa nazywana „mouth rot” — w jamie gromadzi się serowata masa (caseous), pysk puchnie, zwierzę nie chce jeść. Często z zanej higieny i złej temperatury terrarium. Leczy się oczyszczeniem (martwiktomią), antyseptykiem i antybiotykiem.",
+    simpleEn: "Inflammation of the mouth — in snakes called „mouth rot”; bacterial, with a cheese-like mass in the mouth.",
+    fullEn: "Stomatitis (oral inflammation) is a bacterial inflammation of the mouth lining and tissues. In snakes it is called „mouth rot” — a caseous mass gathers in the mouth, the mouth swells, the animal refuses food. Often from poor hygiene and wrong terrarium temperature. Treatment is cleaning (debridement), antiseptic, and antibiotic.",
+    "source": "https://en.wikipedia.org/wiki/Stomatitis",
+    "verified": false
+    },
+  {
+    "id": "g-slinotok",
+    "term": "ślinotok", termEn: "drooling",
+    forms: ["ślinotokiem", "ślinotoku"],
+    simplePl: "Nadmiar śliny — ślina leci z pyska, często sygnał bólu lub problemu w jamie ustnej.",
+    fullPl: "Ślinotok (hypersalivation) to nadmierna produkcja lub wyciek śliny z pyska. U węży ze stomatitis ślina zanieczyszczona jest ropą i tkanką; u innych zwierząt ślinotok bywa objawem nudności, bólu w jamie ustnej lub zatrucia. Sam w sobie nie jest diagnozą, lecz sygnałem czegoś w pysku lub żołądku.",
+    simpleEn: "Too much saliva — drool runs from the mouth, often a sign of pain or a mouth problem.",
+    fullEn: "Drooling (hypersalivation) is excess production or flow of saliva from the mouth. In snakes with stomatitis the saliva is mixed with pus and tissue; in other animals drooling can be a sign of nausea, mouth pain, or poisoning. On its own it is not a diagnosis but a sign of something in the mouth or stomach.",
+    "source": null,
+    "verified": false
+    },
+  {
+    "id": "g-zmiennocieplnosc",
+    "term": "zmiennocieplność", termEn: "ectothermy",
+    forms: ["zmiennocieplne", "zmiennocieplnego", "zmiennocieplnych"],
+    simplePl: "Zwierzę uzależnione od otoczenia w utrzymaniu ciepła — dlatego terrarium musi mieć gradient temperatur.",
+    fullPl: "Zmiennocieplność (ektotermia) oznacza, że temperatura ciała zwierzęcia zależy od otoczenia, nie z własnego metabolizmu. Węże i żółwie muszą wygrzewać się pod lampą, by trawić i zwalczać infekcje. Zbyt zimne terrarium spowalnia trawienie i odporność — dlatego stomatitis i choroby układu pokarmowego u gadów bywają zjawiskiem husbandry, nie tylko patologii.",
+    simpleEn: "An animal that depends on its surroundings for body heat — which is why the terrarium needs a temperature gradient.",
+    fullEn: "Ectothermy means the animal's body temperature depends on the environment, not its own metabolism. Snakes and tortoises must bask under a lamp to digest and fight infection. A too-cold terrarium slows digestion and immunity — which is why stomatitis and gut disease in reptiles are often a husbandry problem, not only pathology.",
+    "source": "https://pl.wikipedia.org/wiki/Zmiennocieplno%C5%9B%C4%87",
+    "verified": false
     }
 ];
 

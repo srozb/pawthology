@@ -83,5 +83,44 @@ export const species = [
     wikiPl: "https://pl.wikipedia.org/wiki/Papuga",
     wikiEn: "https://en.wikipedia.org/wiki/Parrot",
     claimIds: ["C-SPC-06"]
+  },
+  {
+    id: "tortoise",
+    labelPl: "Żółw", labelEn: "Tortoise",
+    weightRangeKg: { min: 0.3, max: 2.0 },
+    toxicDrugs: ["ivermectin"],
+    notesPl: "Żółwie (np. śródziemnomorski, Hermanna) to gady zmiennocieplne - potrzebują UVB do syntezy witaminy D3 i wchłaniania wapnia. Iwermektyna jest u nich toksyczna (przenika barierę krew-mózg).",
+    notesEn: "Tortoises (e.g. Hermann's, Mediterranean) are ectothermic reptiles - they need UVB for vitamin D3 synthesis and calcium absorption. Ivermectin is toxic to them (crosses the blood-brain barrier).",
+    infoPl: "Żółwie to gady zmiennocieplne - ich temperatura ciała zależy od otoczenia, dlatego potrzebują terrarium z gradientem temperatur i lampą UVB. Bez promieniowania UVB żółw nie syntetyzuje witaminy D3 w skórze, a bez witaminy D3 nie wchłania wapnia z pokarmu - to prowadzi do choroby metabolicznej kości (MBD): miękki pancerz, zniekształcenia kończyn, piramidowanie płytek.\n\nDieta żółwia śródziemnomorskiego powinna być roślinożerna, bogata w błonnik i wapń (mniszek, babka, chwasty), uboga w białko. Podawanie samej sałaty to błąd - mało wapnia i zły stosunek wapnia do fosforu. Suplementacja wapnia i odpowiednie oświetlenie to fundament zdrowia żółwia w niewoli.\n\nIwermektyna - popularny lek przeciwpasożytniczy u psów i kotów - jest u żółwi toksyczna: przenika barierę krew-mózg (która u gadów przepuszcza większe cząsteczki) i może wywołać śpiączkę i śmierć. Z żółwiem zawsze ostrożnie z lekami.",
+    infoEn: "Tortoises are ectothermic reptiles - their body temperature depends on the environment, so they need a terrarium with a temperature gradient and a UVB lamp. Without UVB radiation a tortoise cannot synthesize vitamin D3 in its skin, and without vitamin D3 it cannot absorb calcium from food - this leads to metabolic bone disease (MBD): soft shell, limb deformities, shell pyramiding.\n\nThe diet of a Mediterranean tortoise should be herbivorous, rich in fiber and calcium (dandelion, plantain, weeds), low in protein. Feeding only lettuce is a mistake - little calcium and a poor calcium-to-phosphorus ratio. Calcium supplementation and proper lighting are the foundation of captive tortoise health.\n\nIvermectin - a popular antiparasitic in dogs and cats - is toxic in tortoises: it crosses the blood-brain barrier (which in reptiles admits larger molecules) and can cause coma and death. Tortoises always call for caution with drugs.",
+    wikiPl: "https://pl.wikipedia.org/wiki/%C5%BB%C3%B3%C5%82w_%C5%9Br%C3%B3dziemnomorski",
+    wikiEn: "https://en.wikipedia.org/wiki/Tortoise",
+    claimIds: ["C-SPC-07"]
+  },
+  {
+    id: "ferret",
+    labelPl: "Fretka", labelEn: "Ferret",
+    weightRangeKg: { min: 0.5, max: 2.0 },
+    toxicDrugs: [],
+    notesPl: "Fretki to drapieżniki z rodziny łasicowatych — bezwzględni mięsożercy (obligate carnivores) o bardzo szybkim metabolizmie. Choroba postępuje szybko: fretka niejedząca od kilku godzin to pacjent. Insulinoma (guz wysepek trzustki) to najczęstszy nowotwór u fretek (wiek 4-5 lat) — powoduje napady hipoglikemii (osłabienie, drżenia, kolaps).",
+    notesEn: "Ferrets are mustelid predators — obligate carnivores with very fast metabolism. Disease progresses quickly: a ferret that has not eaten for a few hours is a patient. Insulinoma (pancreatic beta-cell tumor) is the most common cancer in ferrets (ages 4-5) — it causes episodes of hypoglycemia (weakness, tremors, collapse).",
+    infoPl: "Fretki to bezwzględni mięsożercy z rodziny łasicowatych — ich metabolizm jest bardzo szybki, a jelita krótkie, co oznacza, że pokarm przechodzi szybko i fretka musi jeść często. Kiedy nie je przez kilkanaście godzin, poziom glukozy spada — dlatego fretki są predysponowane do hipoglikemii, a insulinoma (guz komórek beta trzustki nadmiernie wydzielający insulinę) to najczęstszy nowotwór u tego gatunku (typowo wiek 4-5 lat).\n\nInsulinoma to guz neuroendokrynny trzustki: komórki beta wytwarzają insulinę niezależnie od poziomu glukozy — guz pompuje insulinę nawet gdy glukoza już niska. Efekt to napady hipoglikemii: osłabienie tylnych łap, ślinotok, drżenia, a w skrajnych przypadkach drgawki i kolaps. Objawy nasilają się na czczo i przy wysiłku (glukoza spada szybciej). Rozpoznanie to niski poziom glukozy na czczo (<60 mg/dL) w panelu biochemicznym.\n\nFretki różnią się od psów i kotów: są drapieżnikami o hiperdynamicznym metabolizmie — leki działają szybciej, a brak posiłku to szybciej stan nagły. To uczy, że \"osłabienie bez widocznej przyczyny\" u fretki to zawsze powód do badania glukozy.",
+    infoEn: "Ferrets are obligate carnivores of the mustelid family — their metabolism is very fast and their intestines short, which means food passes quickly and a ferret must eat often. When it does not eat for a dozen hours, glucose drops — that is why ferrets are predisposed to hypoglycemia, and insulinoma (a beta-cell tumor of the pancreas that over-secretes insulin) is the most common cancer in this species (typically ages 4-5).\n\nInsulinoma is a neuroendocrine tumor of the pancreas: the beta cells produce insulin regardless of glucose level — the tumor pumps insulin even when glucose is already low. The result is episodes of hypoglycemia: hind-leg weakness, drooling, tremors, and in severe cases seizures and collapse. Signs worsen with fasting and exercise (glucose drops faster). Diagnosis is a low fasting blood glucose (<60 mg/dL) on a biochemistry panel.\n\nFerrets differ from dogs and cats: they are predators with a hyperdynamic metabolism — drugs act faster, and a missed meal becomes an emergency sooner. This teaches that \"unexplained weakness\" in a ferret is always a reason to check glucose.",
+    wikiPl: "https://pl.wikipedia.org/wiki/Fretka",
+    wikiEn: "https://en.wikipedia.org/wiki/Ferret",
+    claimIds: ["C-SPC-08"]
+  },
+  {
+    id: "snake",
+    labelPl: "Wąż", labelEn: "Snake",
+    weightRangeKg: { min: 0.1, max: 1.0 },
+    toxicDrugs: [],
+    notesPl: "Węże to gady zmiennocieplne (ektotermiczne) — ich metabolizm zależy od temperatury otoczenia. W zbyt chłodnym terrarium metabolizm zwalnia, trawienie staje się błędne, a odporność spada. Większość chorób węży to konsekwencja błędów w hodowli (husbandry): zła temperatura, wilgotność lub higiena.",
+    notesEn: "Snakes are ectothermic reptiles — their metabolism depends on ambient temperature. In a too-cool enclosure the metabolism slows, digestion stalls, and immunity drops. Most snake diseases are consequences of poor husbandry: wrong temperature, humidity, or hygiene.",
+    infoPl: "Węże to gady zmiennocieplne — ich ciało pracuje w temperaturze otoczenia, co jest kluczowe dla rozumienia ich chorób. W terrarium zbyt chłodnym metabolizm zwalnia: wąż nie trawi pokarmu (zwraca go lub gnieje w żołądku), odporność spada, a bakterie jamy ustnej — normalnie kontrolowane — rozrastają się w infekcję. To dlatego tzw. „mouth rot” (zapalenie jamy ustnej) to najczęściej choroba błędów hodowlanych, nie przypadku.\n\nMetabolizm gadów jest powolny: leki działają dłużej (dawki w odstępach 24–48h, nie 12h jak u ssaków), a choroba rozwija się wolniej na zewnątrz, ale głębiej wewnątrz. Wąż odmawiający jedzenia to nie kaprys — to sygnał, że coś (temperatura, infekcja, stres) blokuje fizjologię.\n\nWęże zbożowe (corn snake) to popularne węże terraryjne: łagodne, małe (do 1 kg), dobry gatunek na start. Uczą, że u gada „cisza” to nie zdrowie — to często objaw ukrytej choroby, bo gad nie okazuje bólu tak jawnie jak ssak.",
+    infoEn: "Snakes are ectothermic reptiles — their body runs at ambient temperature, which is key to understanding their diseases. In a too-cool enclosure the metabolism slows: the snake cannot digest (it regurgitates or food rots in the stomach), immunity drops, and mouth bacteria — normally controlled — overgrow into infection. That is why so-called „mouth rot” (infectious stomatitis) is mostly a disease of poor husbandry, not bad luck.\n\nReptile metabolism is slow: drugs act longer (doses every 24–48h, not 12h as in mammals), and disease develops more slowly on the outside but deeper within. A snake refusing food is not a whim — it is a signal that something (temperature, infection, stress) is blocking its physiology.\n\nCorn snakes are popular pet snakes: docile, small (up to 1 kg), a good starter species. They teach that in a reptile „quiet” is not health — it is often a sign of hidden disease, because a reptile does not show pain as overtly as a mammal.",
+    wikiPl: "https://pl.wikipedia.org/wiki/Wąż",
+    wikiEn: "https://en.wikipedia.org/wiki/Snake",
+    claimIds: ["C-SPC-09"]
   }
 ];

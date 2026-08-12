@@ -40,7 +40,7 @@ This is a **living schema** — the current state of data. `research/data-model.
 
 ## Add a new drug
 
-A drug is an entry in the `drugs` array in `site/data/drugs.js`. Currently 19 drugs in 8 groups.
+A drug is an entry in the `drugs` array in `site/data/drugs.js`.
 
 ### 1. Entry in `site/data/drugs.js`
 
@@ -102,7 +102,7 @@ Use **real ingredient names**, not descriptive repetitions. Bad: "Ear drops (ant
 
 ## Add a new species
 
-A species is an entry in the `species` array in `site/data/species.js`. Currently 3 (dog, cat, rabbit).
+A species is an entry in the `species` array in `site/data/species.js`.
 
 ```js
 {                                               // EXAMPLE — fictional new species (do not overwrite existing id!)
@@ -125,7 +125,7 @@ A species is an entry in the `species` array in `site/data/species.js`. Currentl
 
 ## Add a new exam
 
-An exam is an entry in the `exams` array in `site/data/exams.js`. Currently 12.
+An exam is an entry in the `exams` array in `site/data/exams.js`.
 
 ```js
 {
@@ -151,7 +151,7 @@ An exam is an entry in the `exams` array in `site/data/exams.js`. Currently 12.
 
 ## Add a new disease
 
-A disease is an entry in the `diseases` array in `site/data/diseases.js`. Currently 15.
+A disease is an entry in the `diseases` array in `site/data/diseases.js`.
 
 ```js
 {
@@ -175,7 +175,7 @@ A disease is an entry in the `diseases` array in `site/data/diseases.js`. Curren
 
 ## Add a new case
 
-A case is an entry in the `cases` array in `site/data/cases.js`. Currently 10. It is the richest entity. Full worked example: `docs/skills/pawthology-onboarding/references/case-authoring-template.md`.
+A case is an entry in the `cases` array in `site/data/cases.js`. It is the richest entity. Full worked example: `docs/skills/pawthology-onboarding/references/case-authoring-template.md`.
 
 ```js
 {
@@ -236,12 +236,13 @@ A case is an entry in the `cases` array in `site/data/cases.js`. Currently 10. I
 1. R-DRUG-SPECIES-TOXIC → **critical** (dominates)
 2. R-PROC-CONTRA → **deteriorating**
 3. R-DOSE-OVER (systemic) → **deteriorating**
-4. R-NO-TREATMENT / R-ABX-IRRATIONAL / R-DRUG-CONTRAINDICATED → **not-responding**
-5. R-DOSE-UNDER / R-DOSE-INVALID → **not-responding**
-6. R-DX-WRONG → **deteriorating** (treatment misses the cause)
-7. R-DX-BLOCKED → **improving** if hit+well treated, **not-responding** if poorly (you got lucky in the dark)
-8. R-DX-CORRECT + R-DRUG-GROUP-MATCH + !procMissing → **recovered**
-9. R-DX-CORRECT (+ matched + procMissing, or just correct) → **improving**
+4. R-DRUG-CONTRAINDICATED / R-ABX-IRRATIONAL → **not-responding**
+5. R-NO-TREATMENT → **not-responding** (exception: supportive-only disease + correct dx + recommendations → **improving**)
+6. R-DOSE-UNDER / R-DOSE-INVALID → **not-responding**
+7. R-DX-WRONG → **deteriorating** (treatment misses the cause)
+8. R-DX-BLOCKED → **not-responding** (wrong diagnosis, made blind without required exams)
+9. correct dx (R-DX-CORRECT **or R-DX-LUCKY**) + R-DRUG-GROUP-MATCH + !procMissing → **recovered** (LUCKY = correct blind guess, treated as correct for outcome; XP still penalized for the missing exam)
+10. correct dx + procMissing, or correct dx + group-MISMATCH → **improving**
 
 Lack of required procedure/surgery (`R-PROC-MISSING` / `R-SURG-MISSING`) blocks recovered → max improving.
 
@@ -260,7 +261,7 @@ This synthesizes canonical correct treatment from case data and shows the outcom
 
 ## Add a procedure / surgery
 
-A procedure (`kind=procedure`) or surgery (`kind=surgery`) is an entry in the `procedures` array in `site/data/procedures.js`. Currently 5 (4 procedures + 1 surgery).
+A procedure (`kind=procedure`) or surgery (`kind=surgery`) is an entry in the `procedures` array in `site/data/procedures.js`.
 
 ```js
 {
@@ -287,7 +288,7 @@ A procedure (`kind=procedure`) or surgery (`kind=surgery`) is an entry in the `p
 
 ## Add a recommendation
 
-A recommendation is an entry in the `recommendations` array in `site/data/procedures.js` (same file as procedures). Currently 14.
+A recommendation is an entry in the `recommendations` array in `site/data/procedures.js` (same file as procedures).
 
 ```js
 {
@@ -306,7 +307,7 @@ A recommendation is an entry in the `recommendations` array in `site/data/proced
 
 ## Add a drug group
 
-A drug group is an entry in the `drugGroups` array in `site/data/drugs.js` (same file). Currently 8. This is the **section banner** in the treatment phase: graphic + title + one-sentence description (what the group is, when to use it).
+A drug group is an entry in the `drugGroups` array in `site/data/drugs.js` (same file). This is the **section banner** in the treatment phase: graphic + title + one-sentence description (what the group is, when to use it).
 
 ```js
 {
@@ -349,7 +350,7 @@ When PNG doesn't exist or fails to load, UI shows fallback (species icon / Lucid
 
 ## Add a glossary term
 
-A glossary term is an entry in the `GLOSSARY` array in `site/data/glossary.js` (export `GLOSSARY`, not `glossary`). Currently 52. These are **tooltips** in content (descriptions of exams, drugs, diseases) — highlighted terms show definitions. Not evaluated by engine.
+A glossary term is an entry in the `GLOSSARY` array in `site/data/glossary.js` (export `GLOSSARY`, not `glossary`). These are **tooltips** in content (descriptions of exams, drugs, diseases) — highlighted terms show definitions. Not evaluated by engine.
 
 ```js
 {
@@ -395,13 +396,13 @@ Case unlocked when `totalXp >= max(unlockThresholds[difficulty], case.unlockXpTh
 
 ### Progressive unlock of drugs and procedures
 
-Besides level/case thresholds, the **drugs, procedures and surgeries** themselves also have a visibility threshold in the treatment catalog. The `minLevel` field (1..3) in `drugs.js` and `procedures.js` determines from which player level the entity appears on the treatment screen. Goal: reduce overwhelm on L1 (18 drugs + 3 procedures), and instead introduce tools gradually.
+Besides level/case thresholds, the **drugs, procedures and surgeries** themselves also have a visibility threshold in the treatment catalog. The `minLevel` field (1..3) in `drugs.js` and `procedures.js` determines from which player level the entity appears on the treatment screen. Goal: reduce overwhelm on L1, and instead introduce tools gradually.
 
-| Level | Drugs | Procedures | Surgeries |
-|---|---|---|---|
-| L1 (0 XP) | 18 (1 hidden: imidocarb L3) | 3 (1 hidden: splint L2) | none (section hidden) |
-| L2 (150 XP) | 18 (1 hidden: imidocarb L3) | 4 (+splint) | 1 (+osteosynthesis) |
-| L3 (400 XP) | 19 (+imidocarb) | 4 | 1 |
+For the current per-level catalog (which drugs/procedures/surgeries unlock at L1/L2/L3), run:
+
+```bash
+node tools/derive_levels.js        # prints the L1/L2/L3 breakdown + verifies minLevel consistency
+```
 
 Mechanics:
 - `levelFromXp(content, totalXp)` → level 1..3 (engine, `site/js/game.js`).
@@ -415,7 +416,7 @@ Convention when adding new entity:
 - toxic trap (antibiotic, human OTC) visible already on L1 — because it's a lesson, not a reward — so `minLevel = 1`.
 - new specific drug (e.g. antiprotozoal) hidden until case that requires it; then `minLevel = D`.
 
-### Full list of rules (28)
+### Full list of rules
 
 | Phase (stage) | Rule | Delta | When |
 |---|---|---|---|
@@ -424,7 +425,8 @@ Convention when adding new entity:
 | exams | R-EXAM-MISSED | −10 | missing required → R-DX-BLOCKED |
 | diagnosis | R-DX-CORRECT | +20 | correct diagnosis (with exams) |
 | diagnosis | R-DX-WRONG | −25 | wrong diagnosis → deteriorating |
-| diagnosis | R-DX-BLOCKED | −15 | diagnosis without required exams (in the dark) |
+| diagnosis | R-DX-BLOCKED | −15 | wrong diagnosis without required exams (in the dark) → not-responding |
+| diagnosis | R-DX-LUCKY | −15 | correct diagnosis without required exams (lucky blind guess; treated as correct for patient outcome, penalized in XP) |
 | treatment | R-DRUG-GROUP-MATCH | +15 | drug from recommendedGroups |
 | treatment | R-DRUG-GROUP-MISMATCH | −10 | drug outside recommended group |
 | treatment | R-DRUG-CONTRAINDICATED | −20 | drug from contraindicatedGroups |

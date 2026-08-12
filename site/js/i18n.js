@@ -178,7 +178,12 @@ export const STRINGS = {
     "encyclopedia.glossary.full": "Pełny opis",
     "encyclopedia.count": "{n} pozycji",
     "encyclopedia.locked": "Poziom {n}+",
-    "encyclopedia.wiki": "Czytaj na Wikipedii"
+    "encyclopedia.wiki": "Czytaj na Wikipedii",
+    // --- Tryb debug (z URL) ---
+    "debug.badge": "DEBUG",
+    "debug.unlockedAll": "Tryb debug: wszyscy pacjenci odblokowani, pełny katalog. XP nie są liczone i nie wpływają na zapis.",
+    "debug.xpSet": "Tryb debug: XP ustawione na {xp} (z URL). XP nie są liczone i nie wpływają na zapis.",
+    "debug.outcomeNote": "Tryb debug (z URL): XP za ten przypadek nie jest liczony i nie zmienia zapisu."
   },
   en: {
     "app.title": "Pawthology",
@@ -357,7 +362,12 @@ export const STRINGS = {
     "encyclopedia.glossary.full": "Full definition",
     "encyclopedia.count": "{n} items",
     "encyclopedia.locked": "Level {n}+",
-    "encyclopedia.wiki": "Read on Wikipedia"
+    "encyclopedia.wiki": "Read on Wikipedia",
+    // --- Debug mode (from URL) ---
+    "debug.badge": "DEBUG",
+    "debug.unlockedAll": "Debug mode: all patients unlocked, full catalog. XP is frozen and does not affect your save.",
+    "debug.xpSet": "Debug mode: XP set to {xp} (from URL). XP is frozen and does not affect your save.",
+    "debug.outcomeNote": "Debug mode (from URL): XP for this case is not counted and does not change your save."
   }
 };
 

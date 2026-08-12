@@ -17,14 +17,14 @@ pawthology/
       main.js                    # DOM render, input, dose slider, localStorage, i18n
       i18n.js                    # pl/en strings, t(key, lang), missingKeys(lang)
     data/                        # CONTENT DIRECTORIES (extended by entries)
-      species.js                 # species (dog, cat, rabbit) + species toxicity
-      exams.js                   # exams (9; cost, time, purpose, graphic)
-      drugs.js                   # drugs (19) + drugGroups (8) — groups, dosing mg/kg per species, toxicity, minLevel (progressive unlock)
-      diseases.js                # diseases (11; differentiation, recommended/contraindicated groups, AMR)
-      cases.js                   # cases (6; signalment, history, 3-paragraph examResults, procedures/recommendations, 3-state graphics)
-      procedures.js              # procedures (kind=procedure, 5) + surgeries (kind=surgery, 1) + recommendations (14) — minLevel in procedures/surgeries
-      rubrics.js                 # scoring config (28 rules) + unlock thresholds + epiloguePl/En per rule
-      glossary.js                # glossary terms (45) with inflection (forms[]) → tooltips in content
+      species.js                 # species + per-species toxicity
+      exams.js                   # exams: cost, time, purpose, graphic
+      drugs.js                   # drugs + drugGroups — groups, dosing mg/kg per species, toxicity, minLevel (progressive unlock)
+      diseases.js                # diseases: differentiation, recommended/contraindicated groups, AMR
+      cases.js                   # cases: signalment, history, 3-paragraph examResults, procedures/recommendations, 3-state graphics
+      procedures.js              # procedures (kind=procedure) + surgeries (kind=surgery) + recommendations — minLevel in procedures/surgeries
+      rubrics.js                 # scoring config (rule deltas) + unlock thresholds + epiloguePl/En per rule
+      glossary.js                # glossary terms with inflection (forms[]) → tooltips in content
       icons.js                   # Lucide icons (bundled, ISC license)
       index.js                   # aggregates → CONTENT (single import for UI/runner)
     img/                         # graphics (generated from art/prompts)
@@ -44,7 +44,8 @@ pawthology/
     validate_game.js             # data consistency + claimIds traceability + winnability (minLevel ≤ difficulty)
     derive_levels.js            # minLevel consistency in data with case dependencies (--check = guard)
     scaffold_case.py             # scaffold of a new case (--new) + completeness verification (--check)
-    _dump.js                    # dumps CONTENT as JSON (for Python validator)
+    _dump.mjs                   # dumps CONTENT as JSON for Python tools (scaffold_case.py)
+    optimize_images.js          # image optimization helper
   art/prompts/                  # graphics PROMPTs (patients, exams, procedures, drug groups) + STYLE-GUIDE
   research/
     brief.md                     # project contract (mission, audience, goals, myths)
@@ -129,20 +130,20 @@ export function diagnosisOptionsFor(caseObj) → string[]       // allowed diagn
 
 Each verdict carries `rule` + `claimId` + `detail` — this is the trail by which **LLM diagnoses evaluation errors** (see [LLM-PIPELINE.md](LLM-PIPELINE.md)).
 
-### Evaluation Rules (R-*) — 28 rules
+### Evaluation Rules (R-*)
 
 The engine evaluates six decision phases, each by predicates in `game.js` with deltas from `rubrics.js`. Full table with comments: `EXTENDING.md` §"Full list of rules".
 
 | Phase | Rules | When |
 |------|--------|-------|
 | exams | R-EXAM-NEEDED (+10) / REDUNDANT (−5) / MISSED (−10) | required ordered / redundant / missing required |
-| diagnosis | R-DX-CORRECT (+20) / WRONG (−25) / BLOCKED (−15) | correct / wrong / without required exams |
+| diagnosis | R-DX-CORRECT (+20) / WRONG (−25) / BLOCKED (−15) / LUCKY (−15) | correct / wrong / wrong without required exams / correct without required exams (lucky blind guess) |
 | treatment | R-DRUG-GROUP-MATCH (+15) / MISMATCH (−10) / CONTRAINDICATED (−20) / DUPLICATE (−5) / NO-TREATMENT (−15) / SPECIES-TOXIC (−40) / DOSE-IN-RANGE (0) / UNDER (−10) / OVER (−25) / INVALID (−20) | group / toxicity / dose |
 | rationality | R-ABX-INDICATED (+5) / IRRATIONAL (−15) | antibiotic + bacterialInfection |
 | procedure | R-PROC-REQUIRED (+10) / MISSING (−10) / EXTRA (−5) / CONTRA (−15) / R-SURG-REQUIRED (+15) / MISSING (−20) / EXTRA (−10) | procedures (kind=procedure) and surgeries (kind=surgery) |
 | recommendation | R-REC-REQUIRED (+5) / MISSING (−5) / EXTRA (−3) | recommendations for caregiver |
 
-`patientOutcome` synthesized from verdicts in `synthesizeOutcome()` in priority order (full order in `EXTENDING.md` §"Patient outcome"): toxic → critical, R-PROC-CONTRA → deteriorating, R-DOSE-OVER → deteriorating, no treatment/irrational abx/wrong dose → not-responding, R-DX-WRONG → deteriorating (if no not-responding above), R-DX-BLOCKED → improving or not-responding (in the dark), R-DX-CORRECT + GROUP-MATCH + !procMissing → recovered. Lack of required procedure/surgery blocks recovered → max improving.
+`patientOutcome` synthesized from verdicts in `synthesizeOutcome()` in priority order (full order in `EXTENDING.md` §"Patient outcome"): toxic → critical, R-PROC-CONTRA → deteriorating, R-DOSE-OVER → deteriorating, contraindicated drug / irrational abx / no treatment / wrong dose → not-responding, R-DX-WRONG → deteriorating, R-DX-BLOCKED → not-responding (wrong, blind), correct dx (R-DX-CORRECT or R-DX-LUCKY) + GROUP-MATCH + !procMissing → recovered. Lack of required procedure/surgery blocks recovered → max improving.
 
 ## Headless Testability Pillar
 
@@ -176,7 +177,7 @@ Key LLM tool: **synthesizes decisions from case data** (no need to write JSON). 
 
 ### Golden suite — `scenarios/*.json`
 
-Executable specification of expected clinical behavior. Each scenario is `decisions` (weight, exams, diagnosis, drugs+doses, procedures, recommendations) + `expected` (XP range, patient outcome, must-contain/must-not-contain verdicts). 41 scenarios cover: correct treatment, antibiotic without infection, species toxic (paracetamol in cat, ibuprofen in dog), overdose, underdose, no exams → diagnosis block, redundant exam, no treatment, alternative splint-instead-of-surgery, procedures/recommendations.
+Executable specification of expected clinical behavior. Each scenario is `decisions` (weight, exams, diagnosis, drugs+doses, procedures, recommendations) + `expected` (XP range, patient outcome, must-contain/must-not-contain verdicts). Scenarios cover: correct treatment, antibiotic without infection, species toxic (paracetamol in cat, ibuprofen in dog), overdose, underdose, no exams → diagnosis block, redundant exam, no treatment, alternative splint-instead-of-surgery, procedures/recommendations.
 
 New content ⇒ new scenarios ⇒ `--check` catches regressions.
 

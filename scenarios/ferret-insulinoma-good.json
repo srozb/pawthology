@@ -1,0 +1,17 @@
+{
+  "id": "ferret-insulinoma-good",
+  "caseId": "case-ferret-insulinoma",
+  "decisions": {
+    "weightKg": 1.0,
+    "exams": ["blood-panel", "physical-exam"],
+    "diagnosis": "insulinoma",
+    "treatments": [{ "drug": "prednisolone", "doseMg": 1.25 }],
+    "procedures": [],
+    "recommendations": ["frequent-small-meals", "monitor-glucose"]
+  },
+  "expected": {
+    "patientOutcome": "recovered",
+    "mustContainVerdicts": ["R-EXAM-NEEDED", "R-DX-CORRECT", "R-DRUG-GROUP-MATCH", "R-DOSE-IN-RANGE", "R-REC-REQUIRED"],
+    "mustNotContainVerdicts": ["R-ABX-IRRATIONAL", "R-DRUG-SPECIES-TOXIC", "R-DRUG-CONTRAINDICATED"]
+  }
+}
