@@ -16,13 +16,13 @@ export const cases = [
     image: "cody-01-intake.webp",
     imageTreated: "cody-02-treated.webp",
     imageDeteriorating: "cody-03-deteriorating.webp",
-    narrativePl: "Właściciel wprowadza psa, który po lesie kuleje na przednią łapę - na poduszce świeże otarcie, czyste, bez ropy i bez obrzęku.",
+    narrativePl: "Właścicielka wprowadza psa, który po lesie kuleje na przednią łapę - na poduszce świeże otarcie, czyste, bez ropy i bez obrzęku.",
     narrativeEn: "The owner brings in a dog that limps on a forelimb after a forest walk — a fresh pad abrasion, clean, no pus and no swelling.",
-    narrativeLongPl: "Po porannym lesie Cody zaczął utykać na przednią łapę - na poduszce świeże otarcie, czyste, bez ropy i bez obrzęku. Pies wita się chętnie, lecz gdy sięgasz po łapę, cofa ją i patrzy prosząco. Właścicielka wzdycha: rano jeszcze biegał, teraz stawia łapę ostrożnie, jak na jajku. Otarcie jest powierzchowne - i właśnie dlatego bolesne, bo przy każdym kroku staje na ranie.",
-    narrativeLongEn: "After a morning in the woods Cody started limping on a forelimb after a forest walk — a fresh pad abrasion, clean, no pus and no swelling. The dog greets you warmly, but when you reach for the paw he pulls it back and looks at you pleadingly. The owner sighs: this morning he was still running, now he sets the paw down gingerly, as if on an egg. The abrasion is superficial — and that is exactly why it hurts: he steps on the wound with every stride.",
+    narrativeLongPl: "Po porannym lesie Cody zaczął utykać na przednią łapę - na poduszce świeże otarcie, czyste, bez ropy i bez obrzęku. Pies wita się chętnie, lecz gdy sięgasz po łapę, cofa ją i patrzy prosząco. Właścicielka wzdycha: rano jeszcze biegał, teraz stawia łapę ostrożnie, jak na jajku. Otarcie jest powierzchowne - i właśnie dlatego bolesne: przy każdym kroku staje na ranie.",
+    narrativeLongEn: "After a morning in the woods Cody started limping on a forelimb — a fresh pad abrasion, clean, no pus and no swelling. The dog greets you warmly, but when you reach for the paw he pulls it back and looks at you pleadingly. The owner sighs: this morning he was still running, now he sets the paw down gingerly, as if on an egg. The abrasion is superficial — and that is exactly why it hurts: he steps on the wound with every stride.",
     signalPl: "Pies, 4 lata, kuleje na przednią łapę.",
     signalEn: "Dog, 4 years, limping on a forelimb.",
-    historyPl: "Właściciel zauważył otarcie poduszki po spacerze w lesie.",
+    historyPl: "Właścicielka zauważyła otarcie poduszki po spacerze w lesie.",
     historyEn: "Owner noticed a pad abrasion after a forest walk.",
     symptomsPl: ["kuleje", "świeże otarcie poduszki", "brak ropnej wydzieliny", "brak obrzęku"],
     symptomsEn: ["limping", "fresh pad abrasion", "no purulent discharge", "no swelling"],
@@ -32,7 +32,7 @@ export const cases = [
       "physical-exam": {
         introPl: "Pacjent niechętnie pokazuje prawą łapę, skomląc żałośnie przy każdym ruchu - ból musi być znaczący. Na szczęście wiesz, jak odwrócić uwagę od cierpienia: nic nie działa tak dobrze jak smakołyk. Właścicielka głaszcze psa po głowie, dzięki czemu Cody stopniowo decyduje się zaufać ci i nie zabiera łapy w trakcie oględzin.",
         findingsPl: "Sama poduszka jest wrażliwa przy dotyku, ale poza tym pacjent w normie - temperatura ciała prawidłowa, węzły chłonne niepowiększone, nie ma bólu przy rotacji stawu. Kuleje więc z powodu rany, a nie głębszego uszkodzenia.",
-        closingPl: "Ból i kuleje mają więc jasne, powierzchowne źródło. Pozostaje przyjrzeć się samej ranie i ocenić, czy domaga się czegoś więcej niż odkażania.",
+        closingPl: "Ból i utykanie mają więc jasne, powierzchowne źródło. Pozostaje przyjrzeć się samej ranie i ocenić, czy wymaga czegoś więcej niż odkażania.",
         introEn: "The patient reluctantly shows his right paw, whining pitifully at every move — the pain must be sharp. Fortunately you know how to distract from suffering: nothing works like a treat. The owner strokes the dog's head, and Cody gradually decides to trust you and keeps the paw still during the exam.",
         findingsEn: "The pad itself is tender to the touch, but otherwise the patient is unremarkable — temperature normal, lymph nodes not enlarged, no pain on joint rotation. So he limps from the wound, not from deeper damage.",
         closingEn: "The pain and the limp have a clear, superficial source. What remains is to look closely at the wound and judge whether it needs more than disinfection.",
@@ -89,7 +89,7 @@ export const cases = [
     image: "dante-01-intake.webp",
     imageTreated: "dante-02-treated.webp",
     imageDeteriorating: "dante-03-deteriorating.webp",
-    narrativePl: "Trzeci dzień nad jeziorem i pies wciąż potrząsa uchem, drapie je i się skarży - z ucha ciecze ciemna wydzielina i bije zapach.",
+    narrativePl: "Trzeci dzień nad jeziorem i pies wciąż potrząsa uchem, drapie je i skarży się - z ucha ciecze ciemna wydzielina i bije zapach.",
     narrativeLongPl: "Trzeci dzień nad jeziorem i pies wciąż potrząsa uchem, drapie je i skarży się - z ucha ciecze ciemna wydzielina i bije od niej zapach. Właścicielce dość już nocnych pobudek: Dante budzi ją od trzech dni, drapiąc o podłogę. Gdy delikatnie odchylasz małżowinę, pies stęka i przyciska głowę do twojej dłoni. Woda w uchu, ciepło i zamknięty kanał - klasyczny przepis na kłopoty po pływaniu.",
     narrativeLongEn: "Third day at the lake and the dog keeps shaking his head, scratching his ear — dark discharge runs from the ear and it smells. The owner has had enough of sleepless nights: for three days Dante wakes her, scratching at the floor. When you gently fold back the pinna, the dog groans and presses his head into your hand. Water in the ear, warmth and a closed canal — a classic recipe for trouble after swimming.",
     narrativeEn: "Third day at the lake and the dog keeps shaking his head, scratching his ear — dark discharge runs from the ear and it smells.",
@@ -186,10 +186,10 @@ export const cases = [
       },
       "physical-exam": {
         introPl: "Wyciągasz Edi z transportera na stół - pozwala się zbadać, choć jest lekko osłabiony. Właścicielka trzyma go delikatnie za łapki.",
-        findingsPl: "Osłabienie łagodne, odżywienie zachowane, błona śluzowa różowa, czas nawrotu kapilarnego w normie - brak cech odwodnienia. Bez bolesności brzucha i bez gorączki.",
-        closingPl: "Stan ogólny nie budzi niepokoju - to nie ostra infekcja z ogólnoustrojowym ciosem. Przyczyna biegunki leży gdzie indziej.",
+        findingsPl: "Osłabienie łagodne, odżywienie zachowane, błona śluzowa różowa, czas powrotu kapilarnego w normie - brak cech odwodnienia. Bez bolesności brzucha i bez gorączki.",
+        closingPl: "Stan ogólny nie budzi niepokoju - to nie jest ostra infekcja ogólnoustrojowa. Przyczyna biegunki leży gdzie indziej.",
         introEn: "You lift Edi from the carrier onto the table — he lets you examine him, though he's mildly weak. The owner holds his paws gently.",
-        findingsEn: "Mild weakness, condition preserved, mucous membranes pink, capillary refill normal — no signs of dehydration. No abdominal tenderness and no fever.",
+        findingsEn: "Mild weakness, good body condition, pink mucous membranes, capillary refill normal — no signs of dehydration. No abdominal tenderness and no fever.",
         closingEn: "The general condition is not alarming — this isn't an acute infection with a systemic blow. The cause of the diarrhea lies elsewhere.",
         flags: {}
       },
@@ -323,7 +323,7 @@ export const cases = [
     signalEn: "Cat, 5 years, scratching, restless.",
     historyPl: "Kot z adopcji; nie odrobaczany od miesięcy; w domu pojawił się drugi kot.",
     historyEn: "Adopted cat; no parasite control for months; second cat arrived home.",
-    symptomsPl: ["drapie się", "stratuje sierść", "czarne kruszki w sierści", "łysie plamy"],
+    symptomsPl: ["drapie się", "traci sierść", "czarne kruszki w sierści", "łysie plamy"],
     symptomsEn: ["scratching", "hair loss", "black specks in coat", "bald patches"],
     trueDiagnosis: "flea-infestation",
     diagnosisOptions: ["flea-infestation", "otitis-externa", "wound-infection", "abscess"],
@@ -394,8 +394,8 @@ export const cases = [
     diagnosisOptions: ["malocclusion", "abscess", "nutritional-deficiency", "wound-infection"],
     examResults: {
       "physical-exam": {
-        introPl: "Dodo siedzi na ręczniku, nienaturalnie spokojna - lecz to nie spokój, to osłabienie od tego, że od kilku dni słabo je. Właścicielka głaszcze ją po uszach; królik pozwala otworzyć pysk.",
-        findingsPl: "Oględziny pyska: górne siekacze wyraźnie prerosły, zakrzywiają się i zahaczają o wargę. Błona śluzowa różowa, brak guzków na żuchwie i bez ropy. Poza zębami pacjentka w normie.",
+        introPl: "Dodo siedzi na ręczniku, nienaturalnie spokojna - lecz to nie spokój, to osłabienie, bo od kilku dni słabo je. Właścicielka głaszcze ją po uszach; królik pozwala otworzyć pysk.",
+        findingsPl: "Oględziny pyska: górne siekacze wyraźnie przerosły, zakrzywiają się i zahaczają o wargę. Błona śluzowa różowa, brak guzków na żuchwie i bez ropy. Poza zębami pacjentka w normie.",
         closingPl: "Problem skupia się w pysku. Przerośnięte siekacze tłumaczą niechęć do jedzenia i ślinienie.",
         introEn: "Dodo sits on the towel, unnaturally calm — but it isn't calm, it's weakness from eating poorly for several days. The owner strokes her ears; the rabbit lets you open her mouth.",
         findingsEn: "Oral exam: the upper incisors are clearly overgrown, curving and catching the lip. Mucous membranes pink, no lumps on the jaw and no pus. Apart from the teeth the patient is unremarkable.",
@@ -445,7 +445,7 @@ export const cases = [
     imageDeteriorating: "bageera-03-deteriorating.webp",
     narrativePl: "Bageera, młody kot ze schroniska. Właścicielka przynosi ją w transporterze - kicha i smarka, a oczy ma przymknięte i łzawiące. Domyślasz się kataru.",
     narrativeEn: "Bageera, a young cat from the shelter. The owner carries her in a carrier — she sneezes and snorts, and her eyes are half-closed and weeping. You suspect a cold.",
-    narrativeLongPl: "Bageera, ośmiomiesięczna kotka przyjęta z schroniska tydzień temu. Właścicielka przynosi ją w transporterze pokrytym chusteczkami - kotka kicha bez przerwy, z nosa cieknie ropnie-półprzezroczysta wydzielina, a oczy są przymknięte i zaczerwienione. W domu są jeszcze dwa koty, a Bageera od wczoraj nie tknęła miski. Schroniskowa przeszłość i stres nowego domu to klasyczny scenariusz kataru kociego.",
+    narrativeLongPl: "Bageera, ośmiomiesięczna kotka przyjęta z schroniska tydzień temu. Właścicielka przynosi ją w transporterze pokrytym chusteczkami - kotka kicha bez przerwy, z nosa cieknie śluzowo-ropna wydzielina, a oczy są przymknięte i zaczerwienione. W domu są jeszcze dwa koty, a Bageera od wczoraj nie tknęła miski. Schroniskowa przeszłość i stres nowego domu to klasyczny scenariusz kataru kociego.",
     narrativeLongEn: "Bageera, an eight-month-old female adopted from the shelter a week ago. The owner carries her in a carrier covered in tissues — the kitten sneezes without pause, a mucopurulent discharge runs from the nose, and the eyes are half-closed and red. Two other cats live at home, and Bageera has not touched her bowl since yesterday. A shelter past and the stress of a new home are the classic setup for feline viral rhinotracheitis.",
     signalPl: "Kot, 8 miesięcy, kichanie, wyciek z nosa, zaczerwienione oczy.",
     signalEn: "Cat, 8 months, sneezing, nasal discharge, red eyes.",
@@ -458,7 +458,7 @@ export const cases = [
     examResults: {
       "physical-exam": {
         introPl: "Bageera siedzi skulona na stole, futro matowe, nos mokry od wydzieliny. Jest osowiała, ale daje się zbadać.",
-        findingsPl: "Gorączka 39,8 °C, węzły chłonne podżuchwowe lekko powiększone; słuchanie płuc i serca bez zmian.",
+        findingsPl: "Gorączka 39,8 °C, węzły chłonne podżuchwowe lekko powiększone; osłuchiwanie płuc i serca bez zmian.",
         closingPl: "Obraz pasuje na infekcję górnych dróg oddechowych - teraz oko powie, czy to herpeswirus.",
         introEn: "Bageera sits hunched on the table, coat dull, nose wet with discharge. She is lethargic but lets you examine her.",
         findingsEn: "Fever 39.8 °C, submandibular lymph nodes slightly enlarged; lung and heart sounds unremarkable.",
@@ -468,7 +468,7 @@ export const cases = [
       "eye-exam": {
         introPl: "Ostrożnie unosisz powiekę - Bageera mruga z bólu. Kropla fluoresceiny i spojrzenie przez lupę.",
         findingsPl: "Spojówki silnie zaczerwienione i obrzęknięte; na rogówce drobne zielone wybarwienia - owrzodzenia dendrytyczne, typowe dla FHV-1.",
-        closingPl: "Fluoresceina potwierdza wirusowe owrzodzenia rogówki - diagnoza kataru kociego (herpeswirus) staje się pewna.",
+        closingPl: "Fluoresceina potwierdza wirusowe owrzodzenia rogówki - rozpoznanie zakażenia herpeswirusem staje się pewne.",
         introEn: "You gently lift the eyelid — Bageera blinks in pain. A drop of fluorescein and a look through the loupe.",
         findingsEn: "Conjunctivae strongly red and swollen; on the cornea small green staining — dendritic ulcers typical of FHV-1.",
         closingEn: "Fluorescein confirms viral corneal ulcers — the diagnosis of feline herpesvirus rhinotracheitis is certain.",
@@ -508,7 +508,7 @@ export const cases = [
     narrativePl: "Marley, labrador po weekendzie w lesie. Właściciel przyprowadza go zmartwiony - pies ledwo drepcze, śluzówki blade jak papier.",
     narrativeEn: "Marley, a Labrador after a weekend in the woods. The owner brings him in worried — the dog can barely trot, mucous membranes pale as paper.",
     narrativeLongPl: "Marley, pięcioletni labrador, wrócił z weekendowego wyjazdu do lasu. Właściciel przyprowadza go na smyczy - pies jest apatyczny, nie chce skakać do samochodu, a w domu oddawał ciemny mocz. Na powitanie liże dłoń, ale brakuje mu sił. Śluzówki dziąseł są żółtawo-blade, a właściciel pamięta, że wyciągał z Marleya kilka kleszczy po powrocie - sezon w pełni.",
-    narrativeLongEn: "Marley, a five-year-old Labrador, came back from a weekend trip to the woods. The owner brings him on a leash — the dog is apathetic, would not jump into the car, and passed dark urine at home. He licks the hand in greeting but lacks the strength. The gum mucous membranes are yellowish-pale, and the owner recalls pulling several ticks off Marley after the trip — peak season.",
+    narrativeLongEn: "Marley, a five-year-old Labrador, came back from a weekend trip to the woods. The owner brings him on a leash — the dog is apathetic, would not jump into the car, and passed dark urine at home. He licks the hand in greeting but lacks the strength. The gums are yellowish-pale, and the owner recalls pulling several ticks off Marley after the trip — peak season.",
     signalPl: "Pies, 5 lat, apatia, blade śluzówki, ciemny mocz.",
     signalEn: "Dog, 5 years, lethargy, pale mucous membranes, dark urine.",
     historyPl: "Powrót z lasu 3 dni temu; kleszcze wyciągnięte; od wczoraj osowiały i ciemny mocz.",
@@ -546,7 +546,7 @@ export const cases = [
         flags: {}
       }
     },
-    epilogueClosingGoodPl: "Marley po leku przeciwpierwotniakowym i odpoczynku wraca do sił w ciągu tygodnia - śluzówki różowieją, mocz jasnieje, a ogon znów merda przy widoku smyczy. Właściciel zakłada obrożę przeciw kleszczom na stałe.",
+    epilogueClosingGoodPl: "Marley po leku przeciwpierwotniakowym i odpoczynku wraca do sił w ciągu tygodnia - śluzówki różowieją, mocz jaśnieje, a ogon znów merda przy widoku smyczy. Właściciel zakłada obrożę przeciw kleszczom na stałe.",
     epilogueClosingGoodEn: "After the anti-protozoal drug and rest Marley recovers within a week — the gums pink up, the urine lightens, and the tail wags again at the sight of the leash. The owner puts a tick collar on him for good.",
     epilogueClosingBadPl: "Marley bez właściwego leku traci coraz więcej krwinek - anemia pogłębia się, mocz robi się czarny, a pies przestaje wstawać. Właściciel wraca z psem w krytycznym stanie, wymaga przetoczenia krwi i hospitalizacji.",
     epilogueClosingBadEn: "Without the right drug Marley loses more and more red cells — the anemia deepens, the urine turns black, and the dog stops rising. The owner returns with a critically ill dog requiring a transfusion and hospitalization.",
@@ -569,7 +569,7 @@ export const cases = [
     imageDeteriorating: "bazyl-03-deteriorating.webp",
     narrativePl: "Bazyl, kot, którego właścicielka przywozi zaniepokojona - od dwóch dni kuweta jest częściej odwiedzana, a w moczu krew.",
     narrativeEn: "Bazyl, a cat brought in worried by the owner — for two days the litter box is visited more often, and there is blood in the urine.",
-    narrativeLongPl: "Bazyl, czteroletni kocur kastrat, którego właścicielka przywozi zaniepokojona. Od dwóch dni Bazyl wchodzi do kuwety kilka razy w godzinę, meczy i miauczy, a w piasku widać różowe plamy krwi. W domu tydzień temu pojawił się nowy kot sąsiadki (przez siatkę na balkonie), a Bazyl od tego czasu chowa się pod kanapą. Właścicielka obawia się infekcji i prosi o antybiotyk.",
+    narrativeLongPl: "Bazyl, czteroletni kocur kastrat, którego właścicielka przywozi zaniepokojona. Od dwóch dni Bazyl wchodzi do kuwety kilka razy w godzinę, napina się i miauczy, a w piasku widać różowe plamy krwi. W domu tydzień temu pojawił się nowy kot sąsiadki (przez siatkę na balkonie), a Bazyl od tego czasu chowa się pod kanapą. Właścicielka obawia się infekcji i prosi o antybiotyk.",
     narrativeLongEn: "Bazyl, a four-year-old neutered male, brought in by a worried owner. For two days Bazyl enters the litter box several times an hour, strains and cries, and pink blood stains the sand. A week ago a new neighbor cat appeared (through the balcony netting), and since then Bazyl hides under the sofa. The owner fears an infection and asks for an antibiotic.",
     signalPl: "Kot, 4 lata, częste parcie, krew w moczu.",
     signalEn: "Cat, 4 years, frequent straining, blood in the urine.",
@@ -608,11 +608,11 @@ export const cases = [
         flags: { redundant: true }
       }
     },
-    epilogueClosingGoodPl: "Bazyl po analgezji, mokrej karmie i fontannie odzyskuje spokój w ciągu kilku dni - kuweta odwiedzana rzadziej, mocz jasnieje, a kot znów wychodzi na balkon. Właścicielka trzyma rutynę i osobne miski.",
+    epilogueClosingGoodPl: "Bazyl po analgezji, mokrej karmie i fontannie odzyskuje spokój w ciągu kilku dni - kuweta odwiedzana rzadziej, mocz jaśnieje, a kot znów wychodzi na balkon. Właścicielka trzyma rutynę i osobne miski.",
     epilogueClosingGoodEn: "After analgesia, wet food and a fountain Bazyl regains his calm within days — the litter box visited less often, the urine lightens, and the cat returns to the balcony. The owner keeps the routine and separate bowls.",
     epilogueClosingBadPl: "Bazyl długo nie łapie ulgi - krew i parcie wracają z każdym stresem, bo przyczyna była w środowisku, nie w infekcji. Bez pełnego planu domowego kot chowa się głębiej pod kanapą z nawrotami co kilka tygodni.",
     epilogueClosingBadEn: "Bazyl finds no quick relief — the blood and straining return with every stress, because the cause was environmental, not infectious. Without a complete home plan the cat hides deeper under the sofa with recurrences every few weeks.",
-    epilogueClosingImprovingPl: "Bazylowi ulżywa powoli - mokra karma i fontanka rozrzedzają mocz, a redukcja stresu przynosi spokój, choć bez analgezji kot jeszcze trochę się męczy. Pełna ulga przychodzi z czasem i rutyną.",
+    epilogueClosingImprovingPl: "Bazylowi ulżywa powoli - mokra karma i fontanna rozrzedzają mocz, a redukcja stresu przynosi spokój, choć bez analgezji kot jeszcze trochę się męczy. Pełna ulga przychodzi z czasem i rutyną.",
     epilogueClosingImprovingEn: "Bazyl finds relief slowly — wet food and a fountain dilute the urine, and stress reduction brings calm, though without analgesia the cat still struggles a little. Full relief comes with time and routine.",
     expectedProcedures: [],
     expectedSurgeries: [],
@@ -707,10 +707,10 @@ export const cases = [
     examResults: {
       "physical-exam": {
         introPl: "Fred leży na dłoni właścicielki, najeżony i nienaturalnie spokojny - to nie spokój, to osłabienie. Ostrożnie obmacywasz brzuch.",
-        findingsPl: "Zad i ogon mokre od wodnistej biegunki; skóra powrócona w fałd (odwodnienie), błony śluzowe blade. Brzuch miękki, bez guzków; uszy czyste, bez wydzieliny. Stosunkowo niskie ciśnienie z odwodnienia.",
+        findingsPl: "Zad i ogon mokre od wodnistej biegunki; skóra powrócona w fałd (odwodnienie), błony śluzowe blade. Brzuch miękki, bez guzków; uszy czyste, bez wydzieliny. Z odwodnienia wynika słaba perfuzja obwodowa.",
         closingPl: "Nagły wodnisty stolec z odwodnieniem u młodego chomika syryjskiego wskazuje na ostry rodzaj biegunki. Może to być bardzo groźna choroba bakteryjna prowadząca do szybkiego odwodnienia - tu nie ma czasu na czekanie.",
         introEn: "Fred lies in the owner's hand, hunched and unnaturally still — not calm but weak. You palpate the abdomen gently.",
-        findingsEn: "The rear and tail are wet with watery diarrhea; the skin tents (dehydration), mucous membranes pale. Abdomen soft, no lumps; ears clean, no discharge. Relatively low perfusion from dehydration.",
+        findingsEn: "The rear and tail are wet with watery diarrhea; the skin tents (dehydration), mucous membranes pale. Abdomen soft, no lumps; ears clean, no discharge. The dehydration also shows as poor peripheral perfusion.",
         closingEn: "Sudden watery stool with dehydration in a young Syrian hamster points to an acute diarrhea. It may be a very dangerous bacterial disease that leads to rapid dehydration — there is no time to wait.",
         flags: { dehydration: true }
       },
@@ -763,7 +763,7 @@ export const cases = [
     diagnosisOptions: ["guinea-pig-mange", "flea-infestation", "abscess", "fungal-infection"],
     examResults: {
       "skin-scrape": {
-        introPl: "Ostrym brzytwą zeskrobujesz płytko naskórek na łysiejącym boku, rozpraszasz próbkę na szkiełku z kroplą oleju i kładziesz pod mikroskopem.",
+        introPl: "Ostrą brzytwą zeskrobujesz płytko naskórek na łysiejącym boku, rozpraszasz próbkę na szkiełku z kroplą oleju i kładziesz pod mikroskopem.",
         findingsPl: "Pod mikroskopem widać owalne roztocza Trixacarus caviae oraz ich jaja - potwierdzenie świerzbowicy. To pasożyt, nie grzyb ani alergia.",
         closingPl: "Roztocza na szkiełku rozstrzygają: to świerzbowica, a nie pchły ani alergia. Idzie na nią lek przeciwpasożytniczy, nie antybiotyk.",
         introEn: "With a sharp blade you lightly scrape the epidermis on the thinning flank, disperse the sample on a slide with a drop of oil, and place it under the microscope.",
@@ -773,7 +773,7 @@ export const cases = [
       },
       "physical-exam": {
         introPl: "Oglądasz Emi w całości - pozwala się zbadać, choć co chwilę drapie.",
-        findingsPl: "Łysienie i strupy na bokach i grzbiecie; uszy i nozdrza czyste; brak widocznych pcheł na skórze. Węzły chłonne nie powiększone; temperatura w normie.",
+        findingsPl: "Łysienie i strupy na bokach i grzbiecie; uszy i nozdrza czyste; brak widocznych pcheł na skórze. Węzły chłonne niepowiększone; temperatura w normie.",
         closingPl: "Świąd i łysienie bez widocznych pcheł kierują ku roztoczom - zeskrobiny skórne muszą pokazać, co to za wróg.",
         introEn: "You examine Emi all over — she lets you, though she scratches every few moments.",
         findingsEn: "Alopecia and crusts on the flanks and back; ears and nostrils clean; no visible fleas on the skin. Lymph nodes not enlarged; temperature normal.",
@@ -808,13 +808,13 @@ export const cases = [
       "image": "max-01-intake.webp",
       "imageTreated": "max-02-treated.webp",
       "imageDeteriorating": "max-03-deteriorating.webp",
-      "narrativePl": "Młody beagle wymiotuje od rana, osowiały, boli go brzuch — właścicielka zgubiła piszczącą zabawkę.",
+      "narrativePl": "Młody beagle wymiotuje od rana, osowiały, boli go brzuch - właścicielka zgubiła piszczącą zabawkę.",
       "narrativeEn": "A young beagle has been vomiting since morning, lethargic, belly painful — the owner is missing a squeaky toy.",
-      "narrativeLongPl": "Max, roczny beagle, wymiotuje za każdym razem, gdy coś zje lub wypije. Wymioty są chaotyczne, właścicielka próbowala podać wodę — zwrot w kilkanaście minut. Pies jest apatyczny, nie chce się ruszać, a gdy dotykasz brzucha, cofa się i cicho jęczy. Brzuch jest napięty i tkliwy, postawa zgarbiona, grzbiet wygięty — jakby próbował odciągnąć uwagę od brzucha.\n\nWłaścicielka wspomina, że rano brakowało piszczącej gumowej zabawki Maxa — znalazła same odgryzki, resztki zgryzienia, ale nie całą. Max jest psem, który wszystko bierze do pyska: skarpetki, patyki, kawałki zabawek. Teraz siedzi zgarbiony, długie uszy opadają, oczy matowe, i co chwilę wzdryga się jak przed kolejnymi wymiotami.\n\nTo nie jest zwykłe rozstrojstwo — wymioty po każdym posiłku, tkliwy brzuch i zaginiona zabawka to sygnał, że coś utknęło. Czas ma znaczenie: to, co utknęło, zamyka światło jelita i dławi je — niedokrwienie rośnie z każdą godziną.",
+      "narrativeLongPl": "Max, roczny beagle, wymiotuje za każdym razem, gdy coś zje lub wypije. Wymioty są częste - właścicielka próbowała podać wodę, ale woda wracała w kilkanaście minut. Pies jest apatyczny, nie chce się ruszać, a gdy dotykasz brzucha, cofa się i cicho jęczy. Brzuch jest napięty i tkliwy, postawa zgarbiona, grzbiet wygięty - jakby próbował odciągnąć uwagę od brzucha.\n\nWłaścicielka wspomina, że rano brakowało piszczącej gumowej zabawki Maxa - znalazła same odgryzki, resztki zgryzienia, ale nie całą. Max jest psem, który wszystko bierze do pyska: skarpetki, patyki, kawałki zabawek. Teraz siedzi zgarbiony, długie uszy opadają, oczy matowe, i co chwilę wzdryga się jak przed kolejnymi wymiotami.\n\nTo nie jest zwykły rozstrój żołądka - wymioty po każdym posiłku, tkliwy brzuch i zaginiona zabawka to sygnał, że coś utknęło. Czas ma znaczenie: to, co utknęło, zamyka światło jelita i dławi je - niedokrwienie rośnie z każdą godziną.",
       "narrativeLongEn": "Max, a one-year-old beagle, vomits every time he eats or drinks. The vomiting is frequent — the owner tried giving water, it came back within minutes. The dog is lethargic, reluctant to move, and when you touch his belly he flinches and whines softly. The abdomen is tense and tender, his posture hunched, back arched — as if trying to draw attention away from his belly.\n\nThe owner mentions that a squeaky rubber toy was missing this morning — she found only chewed fragments, gnawed pieces, but not the whole thing. Max is a dog who puts everything in his mouth: socks, sticks, toy parts. Now he sits hunched, long ears drooping, eyes dull, and every so often he shudders as if bracing for another round of vomiting.\n\nThis is not simple gastroenteritis — vomiting after every meal, a tender belly, and a missing toy are signals that something is stuck. Time matters: what is stuck is closing the intestinal lumen and strangulating it — ischemia grows with every hour.",
       "signalPl": "Pies, 1 rok, wymiotuje i osowiały.",
       "signalEn": "Dog, 1 year, vomiting and lethargic.",
-      "historyPl": "Właściciel zauważył wymioty po każdym posiłku; piszcząca zabawka zaginiona od rana, same odgryzki.",
+      "historyPl": "Właścicielka zauważyła wymioty po każdym posiłku; piszcząca zabawka zaginiona od rana, same odgryzki.",
       "historyEn": "Owner noticed vomiting after every meal; a squeaky toy has been missing since morning, only chewed fragments found.",
       "symptomsPl": [
         "wymioty po jedzeniu",
@@ -837,9 +837,9 @@ export const cases = [
       ],
       "examResults": {
         "physical-exam": {
-          "introPl": "Max stoi na stole zgarbiony, grzbiet wygięty, długie uszy opadają. Gdy sięgasz dłonią ku brzuchowi, cofa się i cicho skomle — brzuch jest wyraźnie tkliwy.",
-          "findingsPl": "Brzuch napięty i bolesny przy palpacji, zwłaszcza w okolicy środkowej. Temperatura w normie, węzły chłonne niepowiększone. Wymioty występują po podaniu wody — to nie zwykłe rozstrojństwo. Postawa zgarbiona i tkliwość brzucha sugerują, że coś mechanicznie drażni lub zatyka.",
-          "closingPl": "Tkliwość i wymioty po każdym łyku wskazują na przeszkodę w przewodzie pokarmowym — coś, co nie przepuszcza treści. To wymaga obrazowania, by zobaczyć, co utknęło.",
+          "introPl": "Max stoi na stole zgarbiony, grzbiet wygięty, długie uszy opadają. Gdy sięgasz dłonią ku brzuchowi, cofa się i cicho skomle - brzuch jest wyraźnie tkliwy.",
+          "findingsPl": "Brzuch napięty i bolesny przy palpacji, zwłaszcza w okolicy środkowej. Temperatura w normie, węzły chłonne niepowiększone. Wymioty występują po podaniu wody - to nie zwykły rozstrój żołądka. Postawa zgarbiona i tkliwość brzucha sugerują, że coś mechanicznie drażni lub zatyka.",
+          "closingPl": "Tkliwość i wymioty po każdym łyku wskazują na przeszkodę w przewodzie pokarmowym - coś, co nie przepuszcza treści. To wymaga obrazowania, by zobaczyć, co utknęło.",
           "introEn": "Max stands on the table hunched, back arched, long ears drooping. When you reach toward his belly he flinches and whines softly — the abdomen is clearly tender.",
           "findingsEn": "The belly is tense and painful on palpation, especially in the mid-abdominal region. Temperature is normal, lymph nodes not enlarged. Vomiting occurs after offering water — this is not simple gastroenteritis. The hunched posture and abdominal tenderness suggest something is mechanically irritating or obstructing.",
           "closingEn": "Tenderness and vomiting after every sip point to a gastrointestinal obstruction — something that does not let contents pass. This calls for imaging to see what is stuck.",
@@ -847,7 +847,7 @@ export const cases = [
         },
         "radiograph": {
           "introPl": "Kładziesz Maxa na boku na stole RTG. Jest niespokojny, ale daje się ułożyć. Prześwietlenie brzucha wykonujesz w dwóch projekcjach.",
-          "findingsPl": "Na zdjęciu widoczne poszerzone pętle jelita cienkiego, gromadzące płyn i gaz — typowy obraz obturacji. W jednym miejscu prześwituje zagęszczony, o jednorodnym kształcie cień — zaginiona gumowa zabawka utknęła w świetle jelita.",
+          "findingsPl": "Na zdjęciu widoczne poszerzone pętle jelita cienkiego, gromadzące płyn i gaz - typowy obraz obturacji. W jednym miejscu prześwituje zagęszczony, o jednorodnym kształcie cień - zaginiona gumowa zabawka utknęła w świetle jelita.",
           "closingPl": "Obraz jest jednoznaczny: mechaniczna obturacja jelita przez ciało obce. Płyn i gaz gromadzą się powyżej przeszkody. Operacja jest jedynym sposobem usunięcia.",
           "introEn": "You position Max on his side on the X-ray table. He is restless but allows positioning. You take two views of the abdomen.",
           "findingsEn": "The image shows distended loops of small intestine, accumulating fluid and gas — a classic obstruction pattern. In one segment a dense, uniformly shaped shadow is visible — the missing rubber toy lodged in the intestinal lumen.",
@@ -855,9 +855,9 @@ export const cases = [
           "flags": {}
         },
         "blood-panel": {
-          "introPl": "Pobierasz krew z żyły przedniej łapy — Max znosi to spokojnie, jest zbyt osowiały, by protestować. Probówka napełnia się gęsto.",
-          "findingsPl": "Wynik pokazuje odwodnienie: podwyższony hematokryt i lekko podwyższona kreatynina. Parametry wątrobowe w normie. To odzwierciedla to, co widać klinicznie — pacjent traci płyny przez wymioty.",
-          "closingPl": "Odwodnienie i lekka azotemia potwierdzają, że pacjent traci płyny. Płyny dożylne przed operacją są wskazane — to stabilizuje przed narkozą.",
+          "introPl": "Pobierasz krew z żyły przedniej łapy - Max znosi to spokojnie, jest zbyt osowiały, by protestować. Probówka napełnia się miarowo.",
+          "findingsPl": "Wynik pokazuje odwodnienie: podwyższony hematokryt i lekko podwyższona kreatynina. Parametry wątrobowe w normie. To odzwierciedla to, co widać klinicznie - pacjent traci płyny przez wymioty.",
+          "closingPl": "Odwodnienie i lekka azotemia potwierdzają, że pacjent traci płyny. Płyny dożylne przed operacją są wskazane - to stabilizuje przed narkozą.",
           "introEn": "You draw blood from a forelimb vein — Max tolerates it calmly, too lethargic to protest. The tube fills steadily.",
           "findingsEn": "The result shows dehydration: elevated hematocrit and slightly elevated creatinine. Liver parameters are normal. This reflects what is seen clinically — the patient is losing fluids through vomiting.",
           "closingEn": "Dehydration and mild azotemia confirm the patient is losing fluids. IV fluids before surgery are indicated — this stabilizes before anesthesia.",
@@ -866,9 +866,9 @@ export const cases = [
           }
         }
       },
-      "epilogueClosingGoodPl": "Po enterotomii ciało obce usunięte — gumowa zabawka, która utknęła w jelicie. Max je już następnego dnia, a po dwóch dniach wraca do domu z zaleceniem spokoju i zapobiegania. Właścicielka obiecuje odpowiednio dobrane zabawki i nadzór.",
+      "epilogueClosingGoodPl": "Po enterotomii ciało obce usunięte - gumowa zabawka, która utknęła w jelicie. Max je już następnego dnia, a po dwóch dniach wraca do domu z zaleceniem spokoju i zapobiegania. Właścicielka obiecuje odpowiednio dobrane zabawki i nadzór.",
       "epilogueClosingGoodEn": "After enterotomy the foreign body is removed — the rubber toy that lodged in the intestine. Max eats the next day, and goes home after two days with a recommendation for rest and prevention. The owner promises appropriately sized toys and supervision.",
-      "epilogueClosingBadPl": "Bez operacji obturacja prowadzi do niedokrwienia jelita, martwicy i zapalenia otrzewnej. Max pogarsza się szybko — gorączka, silniejszy ból, wstrząs. To stan zagrażający życiu.",
+      "epilogueClosingBadPl": "Bez operacji obturacja prowadzi do niedokrwienia jelita, martwicy i zapalenia otrzewnej. Max pogarsza się szybko - gorączka, silniejszy ból, wstrząs. To stan zagrażający życiu.",
       "epilogueClosingBadEn": "Without surgery the obstruction leads to intestinal ischemia, necrosis, and peritonitis. Max deteriorates rapidly — fever, severe pain, shock. This is a life-threatening condition.",
       "epilogueClosingImprovingPl": "Operacja udana, ciało obce usunięte, ale bez zalecenia zapobiegania właścicielka wraca z następną zabawką. Max goi się powoli, ale ryzyko powtórki zostaje.",
       "epilogueClosingImprovingEn": "Surgery successful, foreign body removed, but without a prevention recommendation the owner returns with the next toy. Max heals slowly, but the risk of recurrence remains.",
@@ -900,18 +900,18 @@ export const cases = [
       "image": "felix-01-intake.webp",
       "imageTreated": "felix-02-treated.webp",
       "imageDeteriorating": "felix-03-deteriorating.webp",
-      "narrativePl": "Właścicielka przynosi kota w ciągu 30 minut od podejrzenia zjedzenia trutki na ślimaki — kot wygląda zupełnie normalnie.",
+      "narrativePl": "Właścicielka przynosi kota w ciągu 30 minut od podejrzenia zjedzenia trutki na ślimaki - kot wygląda zupełnie normalnie.",
       "narrativeEn": "The owner brings the cat within 30 minutes of suspected slug bait ingestion — the cat looks completely normal.",
-      "narrativeLongPl": "Właścicielka wbiega do gabinetu z Felixem na rękach, a w oczach ma strach. Mówi, że przed pół godziną widziała go w ogrodzie przy granulacie trutki na ślimaki — niektóre pellety rozsypane, a kot lizał wokół nich. Nie wie, czy coś zjadł, ale woli nie ryzykować.\n\nFelix siedzi na stole badawczym spokojnie — jasne oczy, równy oddech, żadnych drgnieć, żadnej śliny. Wygląda na zupełnie zdrowego kota. I to jest właśnie klucz: trucizna mogła zostać połknięta, ale jeszcze się nie wchłonęła. Jest okno — może pół godziny, może godzina — w którym można działać, zanim trucizna trafi do krwi. Gdyby kot przyszedł później, z drgnieniami i ślinotokiem, byłoby już za późno na dekontaminację.\n\nTo jest moment, w którym decyzja waży więcej niż lek. Kot bez objawów, ale z historią toksycznej ekspozycji — trzeba działać teraz.",
-      "narrativeLongEn": "The owner rushes into the clinic with Felix in her arms, fear in her eyes. She says that half an hour ago she saw him in the garden near slug bait granules — some pellets scattered, and the cat was licking around them. She does not know if he ate any, but she would rather not risk it.\n\nFelix sits on the exam table calmly — bright eyes, even breathing, no tremors, no salivation. He looks like a perfectly healthy cat. And that is exactly the key: the poison may have been ingested, but it has not yet been absorbed. There is a window — maybe half an hour, maybe an hour — in which one can act before the toxin reaches the blood. Had the cat come in later, with tremors and drooling, it would already be too late for decontamination.\n\nThis is the moment where the decision weighs more than any drug. An asymptomatic cat with a history of toxic exposure — act now.",
+      "narrativeLongPl": "Właścicielka wbiega do gabinetu z Felixem na rękach, a w oczach ma strach. Mówi, że przed pół godziną widziała go w ogrodzie przy granulacie trutki na ślimaki - niektóre pellety rozsypane, a kot lizał wokół nich. Nie wie, czy coś zjadł, ale woli nie ryzykować.\n\nFelix siedzi na stole badawczym spokojnie - jasne oczy, równy oddech, żadnych drgnieć, żadnej śliny. Wygląda na zupełnie zdrowego kota. I to jest właśnie klucz: trucizna mogła zostać połknięta, ale jeszcze się nie wchłonęła. Jest okno - może pół godziny, może godzina - w którym można działać, zanim trucizna trafi do krwi. Gdyby kot przyszedł później, z drgnieniami i ślinotokiem, byłoby już za późno na dekontaminację.\n\nTo jest moment, w którym decyzja waży więcej niż lek. Kot bez objawów, ale z historią toksycznej ekspozycji - trzeba działać teraz.",
+      "narrativeLongEn": "The owner rushes into the clinic with Felix in her arms, fear in her eyes. She says that half an hour ago she saw him in the garden near slug bait granules — some pellets scattered, and the cat was licking around them. She does not know if he ate any, but she would rather not risk it.\n\nFelix sits on the exam table calmly — bright eyes, even breathing, no tremors, no salivation. He looks like a perfectly healthy cat. And that is exactly the key: the poison may have been ingested, but it has not yet been absorbed. There is a window — maybe half an hour, maybe an hour — in which one can act before the toxin reaches the blood. Had the cat come in later, with tremors and drooling, it would already be too late for decontamination.\n\nThis is the moment when the decision weighs more than any drug. An asymptomatic cat with a history of toxic exposure — act now.",
       "signalPl": "Kot, 3 lata, podejrzenie połknięcia trutki na ślimaki (bez objawów).",
       "signalEn": "Cat, 3 years, suspected slug bait ingestion (asymptomatic).",
       "historyPl": "Właścicielka widziała kota przy trutce na ślimaki 30 minut temu, niektóre pellety rozsypane, kot lizał w pobliżu. Wygląda normalnie.",
-      "historyEn": "Owner saw the cat near slug bait 30 minutes ago, some pellets scattered, cat was licking nearby. Looks normal.",
+      "historyEn": "Owner saw the cat near slug bait 30 minutes ago, some pellets scattered, the cat was licking around them. Looks normal.",
       "symptomsPl": [
         "brak objawów (asymptomatyczny)",
         "niedawna ekspozycja (<30 min)",
-        "wyobraźnia właściciela"
+        "czujność właścicielki"
       ],
       "symptomsEn": [
         "no symptoms (asymptomatic)",
@@ -927,18 +927,18 @@ export const cases = [
       ],
       "examResults": {
         "physical-exam": {
-          "introPl": "Felix siedzi spokojnie na stole, pozwala na głaskanie. Patrzy na ciebie jasnymi, czujnymi oczami — żadnych oznak stresu ani choroby.",
-          "findingsPl": "Temperatura w normie, śluzówki różowe i wilgotne, oddech równy, brak drgnieć mięśniowych, brak ślinotoku, brak zaniepokojenia. Brzuch miękki, niebolesny. Kot jest w pełni bez objawów — ale wywiad jest jednoznaczny: ekspozycja na toksynę mniej niż 30 minut temu.",
-          "closingPl": "Kot jest bez objawów — ale wywiad wskazuje na niedawną ekspozycję na toksynę. To okno na interwencję, zanim trucizna się wchłonie. Trzeba działać teraz — nie czekać na objawy.",
+          "introPl": "Felix siedzi spokojnie na stole, pozwala na głaskanie. Patrzy na ciebie jasnymi, czujnymi oczami - żadnych oznak stresu ani choroby.",
+          "findingsPl": "Temperatura w normie, śluzówki różowe i wilgotne, oddech równy, brak drgnieć mięśniowych, brak ślinotoku, brak zaniepokojenia. Brzuch miękki, niebolesny. Kot jest w pełni bez objawów - ale wywiad jest jednoznaczny: ekspozycja na toksynę mniej niż 30 minut temu.",
+          "closingPl": "Kot jest bez objawów - ale wywiad wskazuje na niedawną ekspozycję na toksynę. To okno na interwencję, zanim trucizna się wchłonie. Trzeba działać teraz - nie czekać na objawy.",
           "introEn": "Felix sits calmly on the table, allowing petting. He looks at you with bright, alert eyes — no signs of stress or illness.",
           "findingsEn": "Temperature normal, mucous membranes pink and moist, breathing even, no muscle tremors, no salivation, no anxiety. Abdomen soft, non-painful. The cat is completely asymptomatic — but the history is clear: toxin exposure less than 30 minutes ago.",
           "closingEn": "The cat is asymptomatic — but the history indicates recent toxin exposure. This is the window for intervention before the poison is absorbed. Act now — do not wait for symptoms.",
           "flags": {}
         },
         "blood-panel": {
-          "introPl": "Zlecasz panel krwi na wszelki wypadek. Felix znosi pobranie spokojnie — jest tak zdrowy, że nawet nie mruczy.",
-          "findingsPl": "Wynik wraca bez odchyleń: morfologia i biochemia w normie. Krew nie pokazuje żadnych śladów toksyny — co jest oczywiste, bo metaldehyd jeszcze się nie wchłonął. Panel nie odpowiada na pytanie, które tu stoi.",
-          "closingPl": "Zleczone z ostrożności, ale w momencie gdy liczy się czas, krew nie była potrzebna. Trucizna nie pokazuje się w parametrach, zanim się wchłonie — a wtedy jest już za późno na dekontaminację.",
+          "introPl": "Zlecasz panel krwi na wszelki wypadek. Felix znosi pobranie spokojnie - jest tak zdrowy, że nawet nie mruczy.",
+          "findingsPl": "Wynik wraca bez odchyleń: morfologia i biochemia w normie. Krew nie pokazuje żadnych śladów toksyny - co jest oczywiste, bo metaldehyd jeszcze się nie wchłonął. Panel nie odpowiada na pytanie, które tu stoi.",
+          "closingPl": "Zleczone z ostrożności, ale w momencie gdy liczy się czas, krew nie była potrzebna. Trucizna nie pokazuje się w parametrach, zanim się wchłonie - a wtedy jest już za późno na dekontaminację.",
           "introEn": "You order a blood panel just in case. Felix takes the draw calmly — he is so healthy he does not even purr.",
           "findingsEn": "The result comes back unremarkable: hematology and biochemistry normal. The blood shows no trace of toxin — which is obvious, because the metaldehyde has not yet been absorbed. The panel does not answer the question at hand.",
           "closingEn": "Ordered out of caution, but when time matters, blood was not needed. The toxin does not show in parameters until it is absorbed — and by then it is too late for decontamination.",
@@ -947,9 +947,9 @@ export const cases = [
           }
         },
         "radiograph": {
-          "introPl": "Zlecasz prześwietlenie, by sprawdzić, czy coś utknęło w żołądku. Felix ułożony na plecach na płycie RTG — znosi to bez słowa.",
-          "findingsPl": "RTG pokazuje pusty żołądek — granulat trutki nie jest radioczuczny i nie widać go na zdjęciu. Prześwietlenie nie wnosi żadnych informacji, a zajęło cenny czas.",
-          "closingPl": "Metaldehyd nie widać na RTG — to nie ciało obce. Badanie zbędne, gdy wywiad jest jasny i liczy się czas.",
+          "introPl": "Zlecasz prześwietlenie, by sprawdzić, czy coś utknęło w żołądku. Felix ułożony na plecach na płycie RTG - znosi to bez słowa.",
+          "findingsPl": "RTG pokazuje pusty żołądek - granulat trutki nie jest radioczuczny i nie widać go na zdjęciu. Prześwietlenie nie wnosi żadnych informacji, a zajęło cenny czas.",
+          "closingPl": "Metaldehyd nie widać na RTG - to nie ciało obce. Badanie zbędne, gdy wywiad jest jasny i liczy się czas.",
           "introEn": "You order a radiograph to check if something is stuck in the stomach. Felix placed on his back on the X-ray plate — he takes it without a word.",
           "findingsEn": "The radiograph shows an empty stomach — slug bait granules are not radiopaque and are not visible on the image. The scan provides no information and took precious time.",
           "closingEn": "Metaldehyde is not visible on X-ray — it is not a foreign body. The exam is redundant when the history is clear and time matters.",
@@ -958,11 +958,11 @@ export const cases = [
           }
         }
       },
-      "epilogueClosingGoodPl": "Wywołano wymioty — Felix zwraca granulat trutki. Kot jest obserwowany przez 24 godziny, żadne objawy się nie pojawiają. Właścicielka dowiaduje się, że trutka na ślimaki musi być niedostępna dla zwierząt — i że przyszła na czas. Gdyby zaczekała godzinę dłużej, z drgnieniami i ślinotokiem, wymioty byłyby już za późno — trucizna wchłonęłaby się, a leczenie sprowadzałoby się do płynów i chłodzenia.",
+      "epilogueClosingGoodPl": "Wywołano wymioty - Felix zwraca granulat trutki. Kot jest obserwowany przez 24 godziny, żadne objawy się nie pojawiają. Właścicielka dowiaduje się, że trutka na ślimaki musi być niedostępna dla zwierząt - i że przyszła na czas. Gdyby zaczekała godzinę dłużej, z drgnieniami i ślinotokiem, wymioty byłyby już za późno - trucizna wchłonęłaby się, a leczenie sprowadzałoby się do płynów i chłodzenia.",
       "epilogueClosingGoodEn": "Emesis induced — Felix vomits the bait pellets. The cat is observed for 24 hours, no symptoms develop. The owner learns that slug bait must be inaccessible to pets — and that she came in time. Had she waited an hour longer, with tremors and salivation, emesis would have been too late — the toxin would have been absorbed, and treatment would have meant fluids and cooling.",
-      "epilogueClosingBadPl": "Bez wywołania wymiotów metaldehyd wchłania się — pojawiają się ślinotok, niepokój, drgnienia mięśniowe, a potem drgawki i hipertermia. Wymaga hospitalizacji, płynów dożylnych i chłodzenia. Felix przeżywa, ale cudem — i kosztem kilku dni w klinice.",
+      "epilogueClosingBadPl": "Bez wywołania wymiotów metaldehyd wchłania się - pojawiają się ślinotok, niepokój, drgnienia mięśniowe, a potem drgawki i hipertermia. Wymaga hospitalizacji, płynów dożylnych i chłodzenia. Felix przeżywa, ale cudem - i kosztem kilku dni w klinice.",
       "epilogueClosingBadEn": "Without inducing emesis, the metaldehyde absorbs — salivation, anxiety, muscle tremors, then seizures and hyperthermia develop. Hospitalization, IV fluids and cooling are required. Felix survives, but barely — and at the cost of several days in the clinic.",
-      "epilogueClosingImprovingPl": "Felix jest obserwowany, ale trucizna nie została usunięta — liczy się czas, w którym metaldehyd się wchłania. Ryzykowne: może się objawić za kilka godzin. Wymaga ścisłej obserwacji i gotowości na płyny.",
+      "epilogueClosingImprovingPl": "Felix jest obserwowany, ale trucizna nie została usunięta - liczy się czas, w którym metaldehyd się wchłania. Ryzykowne: może się objawić za kilka godzin. Wymaga ścisłej obserwacji i gotowości na płyny.",
       "epilogueClosingImprovingEn": "Felix is observed, but the toxin was not removed — the clock is ticking as the metaldehyde absorbs. Risky: symptoms may appear in a few hours. Requires close monitoring and readiness for fluids.",
       "expectedProcedures": [
         "induce-emesis"
@@ -991,9 +991,9 @@ export const cases = [
       "image": "teo-01-intake.webp",
       "imageTreated": "teo-02-treated.webp",
       "imageDeteriorating": "teo-03-deteriorating.webp",
-      "narrativePl": "Właściciel przynosi papużkę na rutynowe spiłowanie dzioba — przerośnięty i łuskowaty, z grubą skorupą na woskówce.",
+      "narrativePl": "Właścicielka przynosi papużkę na rutynowe spiłowanie dzioba - przerośnięty i łuskowaty, z grubą skorupą na woskówce.",
       "narrativeEn": "The owner brings a budgerigar for a routine beak trim — overgrown and scaly, with a thick crust on the cere.",
-      "narrativeLongPl": "Teo — dwuletnia papużka falista — siedzi na palcu u właściciela, jasne oczy, sprawnie się rozgląda. Właścicielka mówi, że dziób roślł krzywo od kilku tygodni i zrobił się „suchy i szorstki”, więc przyszła tylko go spiłować. Na pierwszy rzut oka to faktycznie przerost — ale łuski na woskówce i dziobie mają strukturę plastra miodu, a na stopach też widać drobne, białe łuski. Teo łapie ziarno, choć dziób już nie domyka się tak jak powinien. Coś tu jest bardziej niż mechaniczne — warto przyjrzeć się pod mikroskopem, zanim sięgnę po frez.",
+      "narrativeLongPl": "Teo - dwuletnia papużka falista - siedzi na palcu u właścicielki, jasne oczy, sprawnie się rozgląda. Właścicielka mówi, że dziób rósł krzywo od kilku tygodni i zrobił się „suchy i szorstki”, więc przyszła tylko go spiłować. Na pierwszy rzut oka to faktycznie przerost - ale łuski na woskówce i dziobie mają strukturę plastra miodu, a na stopach też widać drobne, białe łuski. Teo łapie ziarno, choć dziób już nie domyka się tak jak powinien. Coś tu jest bardziej niż mechaniczne - warto przyjrzeć się pod mikroskopem, zanim sięgnę po frez.",
       "narrativeLongEn": "Teo — a two-year-old budgerigar — perches on the owner's finger, bright-eyed and alert. The owner says the beak has been growing crooked for a few weeks and turned “dry and rough,” so she came only to have it trimmed. At first glance it is indeed overgrowth — but the scales on the cere and beak have a honeycomb texture, and the feet too show fine white scales. Teo still cracks seed, though the beak no longer closes properly. Something here is more than mechanical — worth a look under the microscope before reaching for the bur.",
       "signalPl": "Papużka, 2 lata, przerośnięty, łuskowaty dziób.",
       "signalEn": "Budgerigar, 2 years, overgrown scaly beak.",
@@ -1020,9 +1020,9 @@ export const cases = [
       ],
       "examResults": {
         "physical-exam": {
-          "introPl": "Oglądasz Teo w całości — sprawnie skacze po palcu, jasne oczy, pióro gęste i lśniące. Pozwala się zbadać.",
-          "findingsPl": "Dziób wyraźnie przerośnięty, na woskówce i u nasady dzioba szarobiała skóra o strukturze plastra miodu — porowata, z suchymi łuskami. Na stopach też drobne, białe łuski. Poza tym ptak w normie — temperatura prawidłowa, nozdrza czyste, bez świerzenia ogólnego.",
-          "closingPl": "Przerost i łuski wyglądają na coś więcej niż mechaniczny — warto zerknąć pod mikroskop.",
+          "introPl": "Oglądasz Teo w całości - sprawnie skacze po palcu, jasne oczy, pióro gęste i lśniące. Pozwala się zbadać.",
+          "findingsPl": "Dziób wyraźnie przerośnięty, na woskówce i u nasady dzioba szarobiała skóra o strukturze plastra miodu - porowata, z suchymi łuskami. Na stopach też drobne, białe łuski. Poza tym ptak w normie - temperatura prawidłowa, nozdrza czyste, bez świerzenia ogólnego.",
+          "closingPl": "Przerost i łuski wyglądają na coś więcej niż mechaniczny - warto zerknąć pod mikroskop.",
           "introEn": "You examine Teo all over — he hops briskly on the finger, bright-eyed, feathering thick and glossy. He lets you examine him.",
           "findingsEn": "The beak is clearly overgrown; on the cere and beak base the skin is grey-white with a honeycomb texture — porous, with dry scales. The feet too show fine white scaling. Otherwise the bird is unremarkable — temperature normal, nares clean, no general itch.",
           "closingEn": "The overgrowth and scales look like more than mechanical — worth a look under the microscope.",
@@ -1030,21 +1030,21 @@ export const cases = [
         },
         "skin-scrape": {
           "introPl": "Ostrym skrobakiem delikatnie zeskrobujesz łuskowatą warstwę z woskówki, rozpraszasz na szkiełku z kroplą oleju i kładziesz pod mikroskopem.",
-          "findingsPl": "Pod mikroskopem widać okrągłe roztocza Knemidokoptes pilae oraz ich jaja w naskórku — potwierdzenie świerzbu twarzowego. To pasożyt, nie deficyt ani infekcja grzybicza.",
-          "closingPl": "Pod mikroskopem widać roztocza — to świerzb, nie tylko przerost. Spiłowanie dzioba nie wystarczy.",
+          "findingsPl": "Pod mikroskopem widać okrągłe roztocza Knemidokoptes pilae oraz ich jaja w naskórku - potwierdzenie świerzbu twarzowego. To pasożyt, nie deficyt ani infekcja grzybicza.",
+          "closingPl": "Pod mikroskopem widać roztocza - to świerzb, nie tylko przerost. Spiłowanie dzioba nie wystarczy.",
           "introEn": "With a sharp scraper you gently remove the scaly layer from the cere, disperse it on a slide with a drop of oil, and place it under the microscope.",
           "findingsEn": "Under the microscope round Knemidokoptes pilae mites and their eggs are visible in the epidermis — confirmation of scaly face. It is a parasite, not a deficiency or a fungal infection.",
-          "closingEn": "Under the microscope mites are visible — it's scaly face mites, not just overgrowth. Trimming alone won't suffice.",
+          "closingEn": "Under the microscope mites are visible — they're scaly face mites, not just overgrowth. Trimming alone won't suffice.",
           "flags": {
             "parasites": true
           }
         }
       },
-      "epilogueClosingGoodPl": "Iwermektyna spot-on i spiłowanie dzioba — roztocza znikają w dwa tygodnie, a dziób odrasta gładki i prawidłowy. Teo znów domyka dziób i łapie ziarno. Właścicielka dowiaduje się, że przerośnięty dziób u papugi rzadko jest „tylko mechaniczny” — zawsze warto szukać roztoczy.",
+      "epilogueClosingGoodPl": "Iwermektyna spot-on i spiłowanie dzioba - roztocza znikają w dwa tygodnie, a dziób odrasta gładki i prawidłowy. Teo znów domyka dziób i łapie ziarno. Właścicielka dowiaduje się, że przerośnięty dziób u papugi rzadko jest „tylko mechaniczny” - zawsze warto szukać roztoczy.",
       "epilogueClosingGoodEn": "Ivermectin spot-on and a beak trim — the mites clear in two weeks, and the beak regrows smooth and normal. Teo closes his beak and cracks seed again. The owner learns that an overgrown beak in a budgerigar is rarely “just mechanical” — always look for mites.",
-      "epilogueClosingBadPl": "Bez leczenia roztocza rosną dalej — skorupa na dziobie grubieje, dziób deformuje się i Teo nie domyka go, nie potrafi jeść. Stan ptaka się pogarsza.",
+      "epilogueClosingBadPl": "Bez leczenia roztocza rosną dalej - skorupa na dziobie grubieje, dziób deformuje się i Teo nie domyka go, nie potrafi jeść. Stan ptaka się pogarsza.",
       "epilogueClosingBadEn": "Without treatment the mites keep growing — the crust on the beak thickens, the beak deforms, and Teo can no longer close it or eat. The bird's condition worsens.",
-      "epilogueClosingImprovingPl": "Roztocza giną, ale dziób nadal przerośnięty — bez spiłowania nie domyka się i utrudnia jedzenie. Trzeba go skrócić, by przywrócić funkcję.",
+      "epilogueClosingImprovingPl": "Roztocza giną, ale dziób nadal przerośnięty - bez spiłowania nie domyka się i utrudnia jedzenie. Trzeba go skrócić, by przywrócić funkcję.",
       "epilogueClosingImprovingEn": "The mites are dying, but the beak is still overgrown — without trimming it does not close and hinders eating. It must be shortened to restore function.",
       "expectedProcedures": [
         "beak-trim"
@@ -1087,7 +1087,7 @@ export const cases = [
         "napinanie się",
         "osłabienie nóg",
         "powiększony brzuch",
-        "stroszona sierść"
+        "stroszone pióra"
       ],
       "symptomsEn": [
         "sitting on cage floor",
@@ -1115,11 +1115,11 @@ export const cases = [
         },
         "radiograph": {
           "introPl": "Kładziesz Oreo na boku na kasecie RTG. Jest na tyle mała, że jedno zdjęcie pokazuje cały tułów.",
-          "findingsPl": "Na zdjęciu widać wyraźne, owalne, gęste ciało obce w jamie ciała, odpowiadające jaju w jajowodzie. Nie ma wolnego płynu w jamie brzusznej, co wyklucza pęknięcie. Pętne jelitowe nie są poszerzone.",
+          "findingsPl": "Na zdjęciu widać wyraźne, owalne, gęste ciało obce w jamie ciała, odpowiadające jaju w jajowodzie. Nie ma wolnego płynu w jamie brzusznej, co wyklucza pęknięcie. Pętle jelitowe nie są poszerzone.",
           "closingPl": "Na RTG widać jajo w jajowodzie. To zatrzymanie, ale kluczowe pytanie brzmi: dlaczego jajo utknęło? Odpowiedź leży we krwi.",
           "introEn": "You lay Oreo on her side on the X-ray cassette. She is small enough that one shot shows the whole torso.",
           "findingsEn": "On the image a clear, oval, dense foreign body is visible in the coelomic cavity, corresponding to an egg in the oviduct. There is no free fluid in the abdomen, ruling out rupture. The bowel loops are not distended.",
-          "closingEn": "On the X-ray an egg is visible in the oviduct. This is a binding, but the key question is: why did the egg stall? The answer lies in the blood.",
+          "closingEn": "On the X-ray an egg is visible in the oviduct. This is egg binding, but the key question is: why did the egg stall? The answer lies in the blood.",
           "flags": {}
         },
         "blood-panel": {
@@ -1168,7 +1168,7 @@ export const cases = [
       "image": "shelldon-01-intake.webp",
       "imageTreated": "shelldon-02-treated.webp",
       "imageDeteriorating": "shelldon-03-deteriorating.webp",
-      "narrativePl": "Shelldon, młody żółw śródziemnomorski, trafił do gabinetu osowiały i z miękkim pancerzem. Właścicielka trzyma go od roku w terrarium bez lampy UVB i karmi głównie sałatą — ostatnio żółw słabiej na nogi i prawie nie rusza się z cienia.",
+      "narrativePl": "Shelldon, młody żółw śródziemnomorski, trafił do gabinetu osowiały i z miękkim pancerzem. Właścicielka trzyma go od roku w terrarium bez lampy UVB i karmi głównie sałatą - ostatnio żółw słabiej na nogi i prawie nie rusza się z cienia.",
       "narrativeLongPl": "Shelldon, młody żółw śródziemnomorski wielkości dłoni, trafił do gabinetu osowiały i z miękkim pancerzem. Właścicielka trzyma go od roku w terrarium bez lampy UVB, przy zwykłej żarówce, i karmi głównie sałatą lodową z supermarketu. Od kilku tygodni żółw coraz rzadziej rusza się z cienia, słabiej na nogi i niechętnie je. Pancerz na dotyk ustępuje pod palcem, a płytki zaczęły piramidować. To klasyczny, wynikający z warunków obraz: bez UVB nie ma witaminy D3, bez D3 nie ma wapnia w kościach.",
       "narrativeLongEn": "Shelldon, a young Hermann's tortoise the size of a hand, arrives lethargic with a soft shell. The owner has kept him for a year in a terrarium without a UVB lamp, with an ordinary bulb, and feeds him mostly iceberg lettuce from the supermarket. For weeks the tortoise moves less and less from the shade, is weak on his legs and reluctant to eat. The shell gives under a finger, and the plates have begun to pyramid. This is a classic, husbandry-driven picture: no UVB means no vitamin D3, and no D3 means no calcium in the bones.",
       "narrativeEn": "Shelldon, a young Hermann's tortoise, arrives lethargic with a soft shell. The owner keeps him without a UVB lamp and feeds mostly lettuce — the tortoise is weak on his legs and barely leaves the shade.",
@@ -1184,7 +1184,7 @@ export const cases = [
         "physical-exam": {
           "introPl": "Shelldon leży na dłoni właścicielki, wciąga głowę i nogi pod pancerz. Ostrożnie obmacywasz pancerz i kończyny.",
           "findingsPl": "Pancerz na dotyk miękki, ustępuje pod palcem na brzegach; płytki kostne piramidują, a brzegi pancerza uginają się. Kończyny chude, osłabione; żółw ledwo się podnosi. Błony śluzowe blade, ale bez cech odwodnienia.",
-          "closingPl": "Miękki, piramidujący pancerz i osłabione kończyny u młodego żółwia bez lampy UVB to klasyczny obraz choroby metabolicznej kości — organizm zużywa wapń z kości, bo nie wchłania go z pokarmu.",
+          "closingPl": "Miękki, piramidujący pancerz i osłabione kończyny u młodego żółwia bez lampy UVB to klasyczny obraz choroby metabolicznej kości - organizm zużywa wapń z kości, bo nie wchłania go z pokarmu.",
           "introEn": "Shelldon lies in the owner's hand, pulling his head and legs under the shell. You carefully palpate the shell and limbs.",
           "findingsEn": "The shell is soft, giving under a finger at the edges; the plates pyramid, and the shell margins flex. The limbs are thin and weak; the tortoise barely lifts himself. Mucous membranes pale but not dehydrated.",
           "closingEn": "A soft, pyramiding shell and weak limbs in a young tortoise without a UVB lamp is a classic picture of metabolic bone disease — the body draws calcium from bone because it cannot absorb it from food.",
@@ -1192,17 +1192,17 @@ export const cases = [
         },
         "radiograph": {
           "introPl": "Kładziesz żółwia na boku na kasetę RTG, by ocenić strukturę kości i pancerza.",
-          "findingsPl": "Struktura kości na RTG zubożona — grubość kory cienka, a kości długie mają rozmyte zarysy. Pancerz w przekroju ma mniejszą gęstość niż u zdrowego żółwia. Brak złamań, ale wyraźna demineralizacja.",
-          "closingPl": "RTG potwierdza demineralizację — organizm rozpuszcza własne kości, by utrzymać poziom wapnia we krwi. To objaw, nie przyczyna; przyczyną jest brak wapnia w diecie i brak UVB.",
+          "findingsPl": "Struktura kości na RTG zubożona - warstwa korowa cienka, a kości długie mają rozmyte zarysy. Pancerz w przekroju ma mniejszą gęstość niż u zdrowego żółwia. Brak złamań, ale wyraźna demineralizacja.",
+          "closingPl": "RTG potwierdza demineralizację - organizm rozpuszcza własne kości, by utrzymać poziom wapnia we krwi. To skutek, nie przyczyna - przyczyną jest brak wapnia w diecie i UVB.",
           "introEn": "You place the tortoise on its side on the X-ray cassette to assess the bone and shell structure.",
           "findingsEn": "The bone structure on X-ray is depleted — the cortical thickness is thin, and the long bones have blurred outlines. The shell in cross-section is less dense than in a healthy tortoise. No fractures, but clear demineralization.",
           "closingEn": "The X-ray confirms demineralization — the body dissolves its own bones to keep blood calcium levels. This is a symptom, not the cause; the cause is dietary calcium deficiency and lack of UVB.",
           "flags": { "redundant": false }
         }
       },
-      "epilogueClosingGoodPl": "Shelldon po suplementacji wapnia, witaminy D3 i instalacji lampy UVB w terrarium powoli wraca do sił. Po kilku tygodniach pancerz twardnieje, a żółw znów chodzi po terrarium — tym razem z miejscem do wygrzewania i dietą pełną mniszka.",
+      "epilogueClosingGoodPl": "Shelldon po suplementacji wapnia, witaminy D3 i instalacji lampy UVB w terrarium powoli wraca do sił. Po kilku tygodniach pancerz twardnieje, a żółw znów chodzi po terrarium - tym razem z miejscem do wygrzewania i dietą pełną mniszka.",
       "epilogueClosingGoodEn": "After calcium supplementation, vitamin D3, and a UVB lamp in the terrarium, Shelldon slowly regains strength. Over weeks the shell hardens and the tortoise walks again — this time with a basking spot and a diet full of dandelion.",
-      "epilogueClosingBadPl": "Bez korekcji warunków i suplementacji wapnia i D3, Shelldon słabnie z tygodnia na tydzień — pancerz coraz bardziej mięknie, a kończyny przestają nosić. Choroba metaboliczna kości bez leczenia prowadzi do trwałych zniekształceń i złamań.",
+      "epilogueClosingBadPl": "Bez korekcji warunków i suplementacji wapnia i D3, Shelldon słabnie z tygodnia na tydzień - pancerz coraz bardziej mięknie, a kończyny przestają nosić. Choroba metaboliczna kości bez leczenia prowadzi do trwałych zniekształceń i złamań.",
       "epilogueClosingBadEn": "Without correcting the conditions and supplementing calcium and D3, Shelldon weakens week by week — the shell softens further and the legs stop carrying him. Metabolic bone disease without treatment leads to permanent deformities and fractures.",
       "expectedProcedures": [],
       "expectedSurgeries": [],
@@ -1225,13 +1225,13 @@ export const cases = [
       "image": "luna-01-intake.webp",
       "imageTreated": "luna-02-treated.webp",
       "imageDeteriorating": "luna-03-deteriorating.webp",
-      "narrativePl": "Luna, pięcioletnia fretka, trafia do gabinetu po tym, jak właścicielka znalazła ją rano w klatce słabą, z opadającymi tylnymi kończynami i mokrym pyszczkiem od śliny. Wczoraj fretka nie zjadła kolacji — a dla fretki pominąć posiłek to jak dla psa pominąć tydzień.",
-      "narrativeLongPl": "Luna, pięcioletnia fretka domowa, trafia do gabinetu po tym, jak właścicielka znalazła ją rano w klatce słabą, z opadającymi tylnymi kończynami i mokrym pyszczkiem od śliny. Fretka nie zjadła kolacji — a dla fretki, bezwzględnego mięsożercy o hiperdynamicznym metabolizmie, pominąć posiłek to jak dla psa pominąć tydzień. Właścicielka wspomina, że od kilku tygodni Luna miała \"dziwne epizody\" — czasem po zabawie szła na boki albo \"gubiła\" tylną łapę, ale po jedzeniu wracała do siebie. Dziś nie wróciła.",
+      "narrativePl": "Luna, pięcioletnia fretka, trafia do gabinetu po tym, jak właścicielka znalazła ją rano w klatce słabą, z opadającymi tylnymi kończynami i mokrym pyszczkiem od śliny. Wczoraj fretka nie zjadła kolacji - a dla fretki pominąć posiłek to jak dla psa pominąć tydzień.",
+      "narrativeLongPl": "Luna, pięcioletnia fretka domowa, trafia do gabinetu po tym, jak właścicielka znalazła ją rano w klatce słabą, z opadającymi tylnymi kończynami i mokrym pyszczkiem od śliny. Fretka nie zjadła kolacji - a dla fretki, bezwzględnego mięsożercy o hiperdynamicznym metabolizmie, pominąć posiłek to jak dla psa pominąć tydzień. Właścicielka wspomina, że od kilku tygodni Luna miała \"dziwne epizody\" - czasem po zabawie szła na boki albo \"gubiła\" tylną łapę, ale po jedzeniu wracała do siebie. Dziś nie wróciła.",
       "narrativeLongEn": "Luna, a five-year-old domestic ferret, arrives at the clinic after the owner found her in the cage in the morning, weak, with her hind legs giving way and a wet muzzle from drooling. The ferret did not eat dinner — and for a ferret, an obligate carnivore with a hyperdynamic metabolism, skipping a meal is like a dog skipping a week. The owner recalls that for a few weeks Luna had \"weird episodes\" — sometimes after play she would sway or \"lose\" a hind leg, but after eating she bounced back. Today she did not.",
       "narrativeEn": "Luna, a five-year-old ferret, arrives at the clinic after the owner found her in the cage in the morning, weak, with her hind legs giving way and a wet muzzle from drooling. The ferret did not eat dinner — and for a ferret, skipping a meal is like a dog skipping a week.",
       "signalPl": "Fretka domowa, 5 lat, osłabienie tylnych łap, ślinotok, kolaps po nocnej przerwie w jedzeniu.",
       "signalEn": "Domestic ferret, 5 years, hind-leg weakness, drooling, collapse after an overnight fast.",
-      "historyPl": "Od kilku tygodni epizody osłabienia po zabawie, ustępujące po jedzeniu. Dziś nie zjadła kolacji — rano znaleziona słaba w klatce, opada na tył, ślini się. Pojedyncza fretka, karmiona karmą komercyjną i surowym mięsem.",
+      "historyPl": "Od kilku tygodni epizody osłabienia po zabawie, ustępujące po jedzeniu. Dziś nie zjadła kolacji - rano znaleziona słaba w klatce, opada na tył, ślini się. Pojedyncza fretka, karmiona karmą komercyjną i surowym mięsem.",
       "historyEn": "For several weeks episodes of weakness after play, resolving after food. Today she did not eat dinner — found weak in the cage in the morning, hind legs giving way, drooling. Solitary ferret, fed commercial food and raw meat.",
       "symptomsPl": ["osłabienie", "opadanie tylnych łap", "ślinotok", "drżenia", "kolaps"],
       "symptomsEn": ["weakness", "hind-leg paresis", "drooling", "tremors", "collapse"],
@@ -1239,27 +1239,27 @@ export const cases = [
       "diagnosisOptions": ["insulinoma", "poisoning", "gastroenteritis", "pancreatitis"],
       "examResults": {
         "blood-panel": {
-          "introPl": "Pobierasz krew na czczo — Luna nie jadła od wieczora, więc to naturalny stan fasting. Panel biochemiczny rusza.",
-          "findingsPl": "Glukoza 38 mg/dL — wyraźnie poniżej normy (norma 80-120, krytyczna poniżej 60). Pozostałe parametry w normie; wątroba i nerki bez zmian. Niska glukoza na czczo u fretki z napadami osłabienia to klasyczny obraz insulinomu.",
-          "closingPl": "Hipoglikemia na czczo (<60 mg/dL) u starszej fretki z epizodami osłabienia ustępującymi po jedzeniu to obraz klasyczny dla guzu wysepek trzustki (insulinoma). Guz wydziela insulinę niezależnie od glukozy — na czczo pompuje insulinę i cukier spada. To nie zatrucie, nie zapalenie żołądka — to trzustka.",
+          "introPl": "Pobierasz krew na czczo - Luna nie jadła od wieczora, więc to naturalny stan fasting. Panel biochemiczny rusza.",
+          "findingsPl": "Glukoza 38 mg/dL - wyraźnie poniżej normy (norma 80-120, krytyczna poniżej 60). Pozostałe parametry w normie; wątroba i nerki bez zmian. Niska glukoza na czczo u fretki z napadami osłabienia to klasyczny obraz insulinomu.",
+          "closingPl": "Hipoglikemia na czczo (<60 mg/dL) u starszej fretki z epizodami osłabienia ustępującymi po jedzeniu to obraz klasyczny dla guzu wysepek trzustki (insulinoma). Guz wydziela insulinę niezależnie od glukozy - na czczo pompuje insulinę i cukier spada. To nie zatrucie, nie zapalenie żołądka - to trzustka.",
           "introEn": "You draw fasting blood — Luna has not eaten since evening, so this is a natural fasting state. The biochemistry panel runs.",
           "findingsEn": "Glucose 38 mg/dL — clearly below normal (range 80-120, critical below 60). The rest of the panel is unremarkable; liver and kidneys are fine. Low fasting glucose in a ferret with episodes of weakness is a classic picture of insulinoma.",
           "closingEn": "Fasting hypoglycemia (<60 mg/dL) in an older ferret with episodes of weakness that resolve after eating is the classic picture of a pancreatic islet-cell tumor (insulinoma). The tumor secretes insulin regardless of glucose — on fasting it pumps insulin and sugar drops. This is not poisoning, not gastroenteritis — it is the pancreas.",
           "flags": { "hypoglycemia": true }
         },
         "physical-exam": {
-          "introPl": "Kładziesz Lunę na stole — jest wiotka, osowiała, opiera się na przednich łapach, ale tylne podwijają się pod nią.",
-          "findingsPl": "Osłabienie tylnych łap, mokry pyszczek od ślinienia się, delikatne drżenia mięśniowe. Błony śluzowe blade (od niskiej glukozy). Brzuch miękki, bez guzków. Temperatura w normie. Odruchy zachowane, ale powolne. To nie uszkodzenie neurologiczne strukturalne — to metaboliczne (cukier).",
-          "closingPl": "Osłabienie tylnych kończyn z drżeniami i ślinotokiem u fretki, która pominęła posiłek, pasuje do hipoglikemii, nie do urazu czy padaczki. Objawy ustępują po podaniu glukozy — ale bez wyniku panelu to hipoteza. Badanie kliniczne wskazuje, panel potwierdza.",
+          "introPl": "Kładziesz Lunę na stole - jest wiotka, osowiała, opiera się na przednich łapach, ale tylne podwijają się pod nią.",
+          "findingsPl": "Osłabienie tylnych łap, mokry pyszczek od ślinienia się, delikatne drżenia mięśniowe. Błony śluzowe blade (od niskiej glukozy). Brzuch miękki, bez guzków. Temperatura w normie. Odruchy zachowane, ale powolne. To nie uszkodzenie neurologiczne strukturalne - to metaboliczne (cukier).",
+          "closingPl": "Osłabienie tylnych kończyn z drżeniami i ślinotokiem u fretki, która pominęła posiłek, pasuje do hipoglikemii, nie do urazu czy padaczki. Objawy ustępują po podaniu glukozy - ale bez wyniku panelu to hipoteza. Badanie kliniczne wskazuje, panel potwierdza.",
           "introEn": "You lay Luna on the table — she is limp, listless, leaning on her front legs but the hind ones fold under her.",
           "findingsEn": "Hind-leg weakness, wet muzzle from drooling, fine muscle tremors. Mucous membranes pale (from low glucose). Abdomen soft, no lumps. Temperature normal. Reflexes present but slow. This is not a structural neurological lesion — it is metabolic (sugar).",
           "closingEn": "Hind-limb weakness with tremors and drooling in a ferret that missed a meal fits hypoglycemia, not trauma or epilepsy. The signs resolve after glucose — but without the panel it is a hypothesis. The clinical exam points, the panel confirms.",
           "flags": { "hypoglycemia": true }
         }
       },
-      "epilogueClosingGoodPl": "Luna na prednizolonie w ciągu doby odzyskała siły — tylna łapa przestała podwijać się pod nią, a epizody ślinienia i drżenia ustały. Leczenie insulinomu jest paliatywne: prednizolon kontroluje hipoglikemię, a fretka żyje z guzem miesiącami, a czasem latami w dobrej kondycji. Jedynym potencjalnym lekarstwem jest chirurgiczne usunięcie guzu — to procedura specjalistyczna (referral), którą właścicielka umawia w klinice chirurgicznej.",
+      "epilogueClosingGoodPl": "Luna na prednizolonie w ciągu doby odzyskała siły - tylna łapa przestała podwijać się pod nią, a epizody ślinienia i drżenia ustały. Leczenie insulinomu jest paliatywne: prednizolon kontroluje hipoglikemię, a fretka żyje z guzem miesiącami, a czasem latami w dobrej kondycji. Jedynym potencjalnym lekarstwem jest chirurgiczne usunięcie guzu - to procedura specjalistyczna (referral), którą właścicielka umawia w klinice chirurgicznej.",
       "epilogueClosingGoodEn": "On prednisolone Luna regained strength within a day — the hind leg stopped folding under her, and the drooling and tremor episodes ceased. Treatment of insulinoma is palliative: prednisolone controls the hypoglycemia, and the ferret lives with the tumor for months, sometimes years, in good condition. The only potential cure is surgical removal of the tumor — a specialist (referral) procedure that the owner schedules at a surgical clinic.",
-      "epilogueClosingBadPl": "Bez rozpoznania hipoglikemii i bez prednizolonu Luna miała kolejny napad — tym razem drgawki, z których nie wróciła. Insulinoma u fretek rośnie i bez leczenia każdy napad hipoglikemii jest groźniejszy: guz pompuje więcej insuliny, glukoza spada niżej, a mózg bez cukru ulega uszkodzeniu. Kolaps to nie koniec choroby — to początek końca bez leczenia.",
+      "epilogueClosingBadPl": "Bez rozpoznania hipoglikemii i bez prednizolonu Luna miała kolejny napad - tym razem drgawki, z których nie wróciła. Insulinoma u fretek rośnie i bez leczenia każdy napad hipoglikemii jest groźniejszy: guz pompuje więcej insuliny, glukoza spada niżej, a mózg bez cukru ulega uszkodzeniu. Kolaps to nie koniec choroby - to początek końca bez leczenia.",
       "epilogueClosingBadEn": "Without recognizing the hypoglycemia and without prednisolone Luna had another episode — this time seizures she did not come back from. Insulinoma in ferrets grows, and without treatment each hypoglycemic episode is worse: the tumor pumps more insulin, glucose drops lower, and the brain without sugar is damaged. Collapse is not the end of the disease — it is the beginning of the end without treatment.",
       "expectedProcedures": [],
       "expectedSurgeries": [],
@@ -1282,9 +1282,9 @@ export const cases = [
       "image": "vader-01-intake.webp",
       "imageTreated": "vader-02-treated.webp",
       "imageDeteriorating": "vader-03-deteriorating.webp",
-      "narrativePl": "Vader, wąż zbożowy, trafił do gabinetu po dwóch tygodniach bez jedzenia. Właścicielka zauważyła ślina na pysku i coś białego w środku — wąż nie chce otworzyć gęby.",
+      "narrativePl": "Vader, wąż zbożowy, trafił do gabinetu po dwóch tygodniach bez jedzenia. Właścicielka zauważyła ślina na pysku i coś białego w środku - wąż nie chce otworzyć gęby.",
       "narrativeEn": "Vader, a corn snake, arrived after two weeks off food. The owner noticed drool on the muzzle and something white inside — the snake refuses to open its mouth.",
-      "narrativeLongPl": "Vader, wąż zbożowy właścicielki od czterech lat, trafił do gabinetu po dwóch tygodniach bez jedzenia. Właścicielka mówi, że ostatnio było chłodniej w pokoju — grzejnik się zepsuł, a terrarium nie ma maty grzewczej, tylko lampę na timer. Wczoraj zauważyła ślina na szklanym pokrywie i coś białego, jak twaróg, wokół pysku węża. Vader nieruchomieje, nie reaguje tak żwawo jak zwykle — a gdy próbuje zajrzeć mu do gęby, wąż zaciska szczęki. To nie kaprys — boli.",
+      "narrativeLongPl": "Vader, wąż zbożowy właścicielki od czterech lat, trafił do gabinetu po dwóch tygodniach bez jedzenia. Właścicielka mówi, że ostatnio było chłodniej w pokoju - grzejnik się zepsuł, a terrarium nie ma maty grzewczej, tylko lampę na timer. Wczoraj zauważyła ślina na szklanym pokrywie i coś białego, jak twaróg, wokół pysku węża. Vader nieruchomieje, nie reaguje tak żwawo jak zwykle - a gdy próbuje zajrzeć mu do gęby, wąż zaciska szczęki. To nie kaprys - boli.",
       "narrativeLongEn": "Vader, a corn snake the owner has had for four years, arrived after two weeks off food. She says it was cooler in the room lately — the heater broke, and the terrarium has no heat mat, only a lamp on a timer. Yesterday she noticed drool on the glass lid and something white, like cottage cheese, around the snake's mouth. Vader lies still, not as responsive as usual — and when she tries to look in his mouth, the snake clamps shut. This is not a whim — it hurts.",
       "signalPl": "Wąż zbożowy, 4 lata, odmowa jedzenia od 2 tyg., ślinotok, biała masa w pysku.",
       "signalEn": "Corn snake, 4 years, off food for 2 weeks, drooling, white mass in the mouth.",
@@ -1296,18 +1296,18 @@ export const cases = [
       "diagnosisOptions": ["infectious-stomatitis", "wound-infection", "poisoning", "gastroenteritis"],
       "examResults": {
         "physical-exam": {
-          "introPl": "Vader leży nieruchomo na stole — chłodny w dotyku, co u węża w gabinecie bez maty grzewczej nie pomaga. Ostrożnie, z opaską, otwierasz jamę ustną.",
-          "findingsPl": "Błona śluzowa jamy ustnej przekrwiona i obrzęnięta. Zalega w niej biała, serowata masa (caseous) — to martwa tkanka i ropa, typowa dla bakteryjnego zapalenia jamy ustnej. Ślinotok obfity, z mikroskopijnymi smugami krwi. Bez widocznych ran ciała, łuski gładkie, brak guzków.",
-          "closingPl": "Serowata masa w przekrwionej jamie ustnej węża odmawiającego jedzenia w chłodnym terrarium to klasyczny obraz infekcji bakteryjnej jamy ustnej (stomatitis, „mouth rot”). Chłód osłabił odporność, bakterie wzięły górę — a bez jedzenia i w chłodzie wąż nie ma siły się bronić.",
+          "introPl": "Vader leży nieruchomo na stole - chłodny w dotyku, co u węża w gabinecie bez maty grzewczej nie pomaga. Ostrożnie, z opaską, otwierasz jamę ustną.",
+          "findingsPl": "Błona śluzowa jamy ustnej przekrwiona i obrzęnięta. Zalega w niej biała, serowata masa (caseous) - to martwa tkanka i ropa, typowa dla bakteryjnego zapalenia jamy ustnej. Ślinotok obfity, z drobnymi smugami krwi. Bez widocznych ran ciała, łuski gładkie, brak guzków.",
+          "closingPl": "Serowata masa w przekrwionej jamie ustnej węża odmawiającego jedzenia w chłodnym terrarium to klasyczny obraz infekcji bakteryjnej jamy ustnej (stomatitis, „mouth rot”). Chłód osłabił odporność, bakterie wzięły górę - a bez jedzenia i w chłodzie wąż nie ma siły się bronić.",
           "introEn": "Vader lies motionless on the table — cool to the touch, which in a snake in a clinic without a heat mat does not help. Gently, with a spatula, you open the mouth.",
           "findingsEn": "The oral mucosa is inflamed and swollen. A white, caseous mass fills the mouth — dead tissue and pus, typical of bacterial stomatitis. Drooling is profuse, with tiny streaks of blood. No visible wounds on the body, scales smooth, no lumps.",
           "closingEn": "A caseous mass in an inflamed mouth of a snake off food in a cool enclosure is the classic picture of bacterial mouth infection (stomatitis, „mouth rot”). The cold weakened the immunity, bacteria took over — and without food and warmth the snake cannot fight back.",
           "flags": { "bacterialInfection": true }
         }
       },
-      "epilogueClosingGoodPl": "Po oczyszczeniu jamy ustnej, antyseptyku i antybiotyku Vader w ciągu kilku dni zaczął reagować. Gdy właścicielka naprawiła grzejnik i ustawiła matę grzewczą z gradientem temperatur, wąż odzyskał siły — po tygodniu przyjął pierwszą mysz. Stomatitis ustąpiła, a z czystym terrarium i prawidłowym ciepłem nie wróciła.",
+      "epilogueClosingGoodPl": "Po oczyszczeniu jamy ustnej, antyseptyku i antybiotyku Vader w ciągu kilku dni zaczął reagować. Gdy właścicielka naprawiła grzejnik i ustawiła matę grzewczą z gradientem temperatur, wąż odzyskał siły - po tygodniu przyjął pierwszą mysz. Stomatitis ustąpiła, a z czystym terrarium i prawidłowym ciepłem nie wróciła.",
       "epilogueClosingGoodEn": "After mouth cleaning, antiseptic and antibiotic Vader began to respond within days. Once the owner fixed the heater and set up a heat mat with a temperature gradient, the snake regained strength — after a week he took his first mouse. The stomatitis cleared, and with a clean enclosure and correct heat it did not return.",
-      "epilogueClosingBadPl": "Bez oczyszczenia jamy ustnej antybiotyk nie dotarł do bakterii pod serowatą tarczą. Infekcja szerzyła się głębiej — z jamy ustnej do krwiobiegu. W chłodnym terrarium odporność nie wróciła, a wąż bez jedzenia i ciepła słabł z dnia na dzień, aż przestał reagować. U gadów cisza to nie zdrowie — to często ostatni etap przed utratą pacjenta.",
+      "epilogueClosingBadPl": "Bez oczyszczenia jamy ustnej antybiotyk nie dotarł do bakterii pod serowatą tarczą. Infekcja szerzyła się głębiej - z jamy ustnej do krwiobiegu. W chłodnym terrarium odporność nie wróciła, a wąż bez jedzenia i ciepła słabł z dnia na dzień, aż przestał reagować. U gadów cisza to nie zdrowie - to często ostatni etap przed utratą pacjenta.",
       "epilogueClosingBadEn": "Without mouth cleaning the antibiotic never reached the bacteria under the caseous shield. The infection spread deeper — from the mouth into the bloodstream. In the cool enclosure immunity did not recover, and the snake without food and warmth weakened day by day, until he stopped responding. In reptiles silence is not health — it is often the last stage before losing the patient.",
       "expectedProcedures": ["mouth-cleaning"],
       "expectedSurgeries": [],
