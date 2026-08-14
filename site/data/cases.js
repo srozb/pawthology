@@ -18,7 +18,7 @@ export const cases = [
     imageDeteriorating: "cody-03-deteriorating.webp",
     narrativePl: "Właścicielka wprowadza psa, który po lesie kuleje na przednią łapę - na poduszce świeże otarcie, czyste, bez ropy i bez obrzęku.",
     narrativeEn: "The owner brings in a dog that limps on a forelimb after a forest walk — a fresh pad abrasion, clean, no pus and no swelling.",
-    narrativeLongPl: "Po porannym lesie Cody zaczął utykać na przednią łapę - na poduszce świeże otarcie, czyste, bez ropy i bez obrzęku. Pies wita się chętnie, lecz gdy sięgasz po łapę, cofa ją i patrzy prosząco. Właścicielka wzdycha: rano jeszcze biegał, teraz stawia łapę ostrożnie, jak na jajku. Otarcie jest powierzchowne - i właśnie dlatego bolesne: przy każdym kroku staje na ranie.",
+    narrativeLongPl: "Po porannym spacerze w lesie Cody zaczął utykać na przednią łapę. Na poduszce widać świeże otarcie - rana jest czysta, bez ropy i bez obrzęku. Pies wita się chętnie, lecz gdy sięgasz po łapę, cofa ją i patrzy prosząco. Właścicielka wzdycha: rano jeszcze biegał, teraz stawia łapę ostrożnie, jak na jajku. Otarcie jest powierzchowne - i właśnie dlatego bolesne: przy każdym kroku staje na ranie.",
     narrativeLongEn: "After a morning in the woods Cody started limping on a forelimb — a fresh pad abrasion, clean, no pus and no swelling. The dog greets you warmly, but when you reach for the paw he pulls it back and looks at you pleadingly. The owner sighs: this morning he was still running, now he sets the paw down gingerly, as if on an egg. The abrasion is superficial — and that is exactly why it hurts: he steps on the wound with every stride.",
     signalPl: "Pies, 4 lata, kuleje na przednią łapę.",
     signalEn: "Dog, 4 years, limping on a forelimb.",
