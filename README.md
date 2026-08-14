@@ -27,7 +27,7 @@ python3 -m http.server 8000
 
 Open `http://localhost:8000/site/` in your browser.
 
-> The game is a static site (vanilla HTML/CSS/JS, ES modules, no build process, no runtime network, no analytics). Serve it via any HTTP server — ES modules require a server, not `file://`.
+> The game is a static site (vanilla HTML/CSS/JS, ES modules, no build process, no runtime network, privacy-friendly analytics (GoatCounter)). Serve it via any HTTP server — ES modules require a server, not `file://`.
 
 ## Debug mode (URL)
 
