@@ -2,7 +2,7 @@
 
 **Small Animal Clinical Decision Simulator (SPA / JS)** — gamification of small animal veterinary education. You take over a shift at the clinic: you admit the patient, order tests, make a diagnosis, prescribe treatment with real medications in mg/kg doses — and face the real consequences of every decision.
 
-**Play online:** <https://srozb.github.io/pawthology/>
+**Play online:** <https://pawthology.online>
 
 ## What is it about
 
@@ -76,7 +76,7 @@ XP accumulates per case (best score) and unlocks more difficult cases and a broa
 
 ## Free and open source
 
-The game is **free and open source**, hosted on GitHub at [`srozb/pawthology`](https://github.com/srozb/pawthology) and deployed at <https://srozb.github.io/pawthology/>. The code and content are deliberately structured so that new content can be added **agentically** — using an LLM that generates a candidate (a drug, a case, a disease) and then verifies the facts against authoritative sources before merge (see [docs/LLM-PIPELINE.md](docs/LLM-PIPELINE.md)). Contributions are welcome.
+The game is **free and open source**, hosted on GitHub at [`srozb/pawthology`](https://github.com/srozb/pawthology) and deployed at <https://pawthology.online>. The code and content are deliberately structured so that new content can be added **agentically** — using an LLM that generates a candidate (a drug, a case, a disease) and then verifies the facts against authoritative sources before merge (see [docs/LLM-PIPELINE.md](docs/LLM-PIPELINE.md)). Contributions are welcome.
 
 ## Limitations and epistemics
 
@@ -98,5 +98,5 @@ Verification status: `reviewStatus` in `claims.md` — `draft` (to be verified) 
 ## Author and license
 
 - Author: `srozb` (`github@rozbicki.eu`)
-- Repo: [`srozb/pawthology`](https://github.com/srozb/pawthology) (public) — live: <https://srozb.github.io/pawthology/>
+- Repo: [`srozb/pawthology`](https://github.com/srozb/pawthology) (public) — live: <https://pawthology.online>
 - Stack: vanilla HTML/CSS/JS (ES modules), Node 25+ (tests), Python 3 (validator)
