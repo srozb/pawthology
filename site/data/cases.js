@@ -1301,7 +1301,7 @@ export const cases = [
           "closingPl": "Serowata masa w przekrwionej jamie ustnej węża odmawiającego jedzenia w chłodnym terrarium to klasyczny obraz infekcji bakteryjnej jamy ustnej (stomatitis, „mouth rot”). Chłód osłabił odporność, bakterie wzięły górę - a bez jedzenia i w chłodzie wąż nie ma siły się bronić.",
           "introEn": "Vader lies motionless on the table — cool to the touch, which in a snake in a clinic without a heat mat does not help. Gently, with a spatula, you open the mouth.",
           "findingsEn": "The oral mucosa is inflamed and swollen. A white, caseous mass fills the mouth — dead tissue and pus, typical of bacterial stomatitis. Drooling is profuse, with tiny streaks of blood. No visible wounds on the body, scales smooth, no lumps.",
-          "closingEn": "A caseous mass in an inflamed mouth of a snake off food in a cool enclosure is the classic picture of bacterial mouth infection (stomatitis, „mouth rot”). The cold weakened the immunity, bacteria took over — and without food and warmth the snake cannot fight back.",
+          "closingEn": "A caseous mass in an inflamed mouth of a snake off food in a cool enclosure is the classic picture of bacterial mouth infection (stomatitis, “mouth rot”). The cold weakened the immunity, bacteria took over — and without food and warmth the snake cannot fight back.",
           "flags": { "bacterialInfection": true }
         }
       },

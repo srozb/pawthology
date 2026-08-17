@@ -947,8 +947,8 @@ export const GLOSSARY = [
     forms: [],
     simplePl: "Zapalenie jamy ustnej — u węża nazywane „mouth rot”; bakteryjne, z masą serowatą w pysku.",
     fullPl: "Stomatitis (zapalenie jamy ustnej) to bakteryjne zapalenie śluzówki i tkanek jamy ustnej. U węży bywa nazywana „mouth rot” — w jamie gromadzi się serowata masa (caseous), pysk puchnie, zwierzę nie chce jeść. Często ze złej higieny i niewłaściwej temperatury terrarium. Leczy się oczyszczeniem (martwiktomią), antyseptykiem i antybiotykiem.",
-    simpleEn: "Inflammation of the mouth — in snakes called „mouth rot”; bacterial, with a cheese-like mass in the mouth.",
-    fullEn: "Stomatitis (oral inflammation) is a bacterial inflammation of the mouth lining and tissues. In snakes it is called „mouth rot” — a caseous mass gathers in the mouth, the mouth swells, the animal refuses food. Often from poor hygiene and wrong terrarium temperature. Treatment is cleaning (debridement), antiseptic, and antibiotic.",
+    simpleEn: "Inflammation of the mouth — in snakes called “mouth rot”; bacterial, with a cheese-like mass in the mouth.",
+    fullEn: "Stomatitis (oral inflammation) is a bacterial inflammation of the mouth lining and tissues. In snakes it is called “mouth rot” — a caseous mass gathers in the mouth, the mouth swells, the animal refuses food. Often from poor hygiene and wrong terrarium temperature. Treatment is cleaning (debridement), antiseptic, and antibiotic.",
     "source": "https://en.wikipedia.org/wiki/Stomatitis",
     "verified": false
     },
