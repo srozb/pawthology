@@ -97,7 +97,7 @@ export const rubricConfig = {
   "R-ABX-INDICATED": {
     delta: +5, claimId: "C-AMR-01",
     epiloguePl: "Antybiotyk był uzasadniony potwierdzoną infekcją - to celowo dobrane leczenie.",
-    epilogueEn: "The antibiotic was justified by confirmed infection — it was appropriately chosen treatment."
+    epilogueEn: "The antibiotic was justified by confirmed infection — it was an appropriately chosen treatment."
   },
   "R-DRUG-DUPLICATE": {  // duplikat tego samego leku (M4)
     delta: -5, claimId: "C-RUB-DRUG",
@@ -108,7 +108,7 @@ export const rubricConfig = {
   "R-PROC-REQUIRED": {
     delta: +10, claimId: "C-RUB-PROC",
     epiloguePl: "Zlecono wymagany zabieg - usuwa przyczynę lub warunek powodzenia leczenia.",
-    epilogueEn: "A required procedure was ordered — it removes the cause or a condition for treatment success."
+    epilogueEn: "A required procedure was ordered — it removes the cause or a prerequisite for successful treatment."
   },
   "R-PROC-MISSING": {
     delta: -10, claimId: "C-RUB-PROC",

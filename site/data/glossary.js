@@ -212,7 +212,7 @@ export const GLOSSARY = [
     forms: ["fluorochinolony", "fluorochinolonów", "fluorochinolonom", "fluorochinolonami"],
     simplePl: "Silny antybiotyk rezerwy; u młodych zwierząt psuje chrząstkę stawów, u kotów w dużych dawkach - wzrok.",
     fullPl: "Fluorochinolony (np. enrofloksacyna) to antybiotyki rezerwy; u młodych zwierząt w fazie wzrostu uszkadzają chrząstkę stawową, u kotów w dużych dawkach powodują degenerację siatkówki i ślepotę.",
-    simpleEn: "A strong reserve antibiotic; in young animals it damages joint cartilage, in cats high doses — vision.",
+    simpleEn: "A strong reserve antibiotic; in young animals it damages joint cartilage, in cats high doses damage vision.",
     fullEn: "Fluoroquinolones (e.g. enrofloxacin) are reserve antibiotics; in growing young animals they damage joint cartilage, in cats high doses cause retinal degeneration and blindness.",
     source: "https://www.merckvetmanual.com/pharmacology/antibacterial-agents/quinolones-including-fluoroquinolones-for-use-in-animals",
     verified: true
@@ -563,7 +563,7 @@ export const GLOSSARY = [
     simplePl: "Pokazuje, jak kwaśne lub zasadowe jest coś - na przykład mocz. 7 to obojętne, poniżej kwaśne, powyżej zasadowe.",
     fullPl: "pH to skala od 0 do 14 określająca kwasowość roztworu: 7 to odczyn obojętny, poniżej 7 kwaśny, powyżej 7 zasadowy. W weterynarii najczęściej mierzy się pH moczu: u zdrowego kota mocz jest lekko kwaśny (ok. 6,0-6,5). Kryształy struwitu tworzą się w moczu zasadowym, dlatego dieta moczowa zakwasza mocz, by je rozpuścić. pH krwi utrzymuje się w wąskim zakresie 7,35-7,45 - jego przekroczenie zagraża życiu.",
     simpleEn: "Measures how acidic or alkaline something is — like urine. 7 is neutral, below is acidic, above is alkaline.",
-    fullEn: "pH is a 0-14 scale of acidity: 7 is neutral, below 7 acidic, above 7 alkaline. In veterinary medicine urine pH is measured: in healthy cats it is slightly acidic (around 6.0-6.5). Struvite crystals form in alkaline urine, so a urinary diet acidifies the urine to dissolve them. Blood pH stays in a narrow 7.35-7.45 range — leaving it threatens life.",
+    fullEn: "pH is a 0-14 scale of acidity: 7 is neutral, below 7 acidic, above 7 alkaline. In veterinary medicine urine pH is measured: in healthy cats it is slightly acidic (around 6.0-6.5). Struvite crystals form in alkaline urine, so a urinary diet acidifies the urine to dissolve them. Blood pH stays in a narrow 7.35-7.45 range — going outside this range threatens life.",
     source: null, verified: false
   },
   {
@@ -573,7 +573,7 @@ export const GLOSSARY = [
     simplePl: "Choroba skóry wywołana przez roztocza - powoduje świąd, łysienie i strupy; leczy się lekiem przeciwpasożytniczym, nie antybiotykiem.",
     fullPl: "Świerzbowica to pasożytnicza choroba skóry wywołana przez roztocza (np. Trixacarus u świnki, Sarcoptes u psa, Demodex). Roztocza drążą naskórek i wywołują nasilony świąd; diagnozuje się ją zeskrobinami skórnymi pod mikroskopem. Leczy się lekiem przeciwpasożytniczym (selamektyna, iwermektyna), a nie antybiotykiem - roztocza to pasożyty, nie bakterie.",
     simpleEn: "A skin disease caused by mites — it causes itching, hair loss and crusts; it is treated with an antiparasitic, not an antibiotic.",
-    fullEn: "Mange is a parasitic skin disease caused by mites (e.g. Trixacarus in the guinea pig, Sarcoptes in the dog, Demodex). The mites burrow into the epidermis and cause intense itching; it is diagnosed with a skin scrape under the microscope. It is treated with an antiparasitic (selamectin, ivermectin), not an antibiotic — mites are parasites, not bacteria.",
+    fullEn: "Mange is a parasitic skin disease caused by mites (e.g. Trixacarus in the guinea pig, Sarcoptes in the dog, Demodex). The mites burrow into the epidermis and cause intense itching; it is diagnosed by examining a skin scrape under a microscope. It is treated with an antiparasitic (selamectin, ivermectin), not an antibiotic — mites are parasites, not bacteria.",
     source: null, verified: false
   },
   {
@@ -849,7 +849,7 @@ export const GLOSSARY = [
     simplePl: "Lek sterydowy, który m.in. podnosi cukier we krwi — dlatego pomaga przy insulinomie.",
     fullPl: "Prednizolon to glikokortykosteroid — steryd, który m.in. stymuluje glukoneogenezę (produkcję glukozy w wątrobie), podnosząc cukier we krwi. W insulinomie to lek pierwszego wyboru: zapobiega hipoglikemii, choć nie leczy guza. Długotrwale osłabia odporność i ma skutki uboczne, dlatego dawkę dobiera się do najmniejszej skutecznej.",
     simpleEn: "A steroid drug that, among other effects, raises blood sugar — that is why it helps in insulinoma.",
-    fullEn: "Prednisolone is a glucocorticoid — a steroid that, among other effects, stimulates gluconeogenesis (glucose production in the liver), raising blood sugar. In insulinoma it is the first-line drug: it prevents hypoglycemia, though it does not cure the tumor. Long-term it weakens immunity and has side effects, so the dose is titrated to the lowest effective.",
+    fullEn: "Prednisolone is a glucocorticoid — a steroid that, among other effects, stimulates gluconeogenesis (glucose production in the liver), raising blood sugar. In insulinoma it is the first-line drug: it prevents hypoglycemia, though it does not cure the tumor. Long-term it weakens immunity and has side effects, so the dose is titrated to the lowest effective dose.",
     "source": "https://pl.wikipedia.org/wiki/Prednizolon",
     "verified": false
     },
@@ -925,7 +925,7 @@ export const GLOSSARY = [
     forms: [],
     simplePl: "Rodzaj światła z lampy/słońca, pod którym gady produkują witaminę D3 — bez niego chorują na kości.",
     fullPl: "UVB to zakres promieniowania ultrafioletowego, który w skórze gadów napędza syntezę witaminy D3, a ta umożliwia wchłanianie wapnia. Bez lampy UVB w terrarium gady na diecie ubogiej w wapń zapadają na chorobę metaboliczną kości. To klucz elementu hodowli, nie dodatek.",
-    simpleEn: "A kind of light from a lamp/sun, under which reptiles make vitamin D3 — without it their bones sicken.",
+    simpleEn: "A kind of light from a lamp/sun, under which reptiles make vitamin D3 — without it they develop bone disease.",
     fullEn: "UVB is the range of ultraviolet radiation that drives vitamin D3 synthesis in reptile skin, which in turn enables calcium absorption. Without a UVB lamp in the terrarium, reptiles on a calcium-poor diet develop metabolic bone disease. It is a key element of husbandry, not an accessory.",
     "source": null,
     "verified": false
@@ -937,7 +937,7 @@ export const GLOSSARY = [
     simplePl: "Wycięcie martwych tkanek z rany lub jamy ustnej, by odsłonić zdrową, gojącą się tkankę.",
     fullPl: "Martwiktomia (debridement) to usunięcie martwych i zanieczyszczonych tkanek z rany lub jamy ustnej (np. masy serowatej przy stomatitis węża). Martwa tkanka jest pożywką dla bakterii i blokuje dostęp leków; jej wycięcie odsłania ukrwioną, zdrową tkankę, która się zagoi. Zabieg poprzedza antyseptyk i antybiotyk.",
     simpleEn: "Cutting away dead tissue from a wound or mouth, to expose healthy, healing tissue.",
-    fullEn: "Debridement is the removal of dead and contaminated tissue from a wound or the mouth (e.g. caseous material in snake stomatitis). Dead tissue feeds bacteria and blocks drugs from reaching the tissue; cutting it away exposes vascularized, healthy tissue that will heal. The procedure precedes antiseptic and antibiotic.",
+    fullEn: "Debridement is the removal of dead and contaminated tissue from a wound or the mouth (e.g. caseous material in snake stomatitis). Dead tissue feeds bacteria and blocks drugs from reaching the tissue; cutting it away exposes vascularized, healthy tissue that will heal. The procedure precedes antiseptic and antibiotic treatment.",
     "source": "https://en.wikipedia.org/wiki/Debridement",
     "verified": false
     },
