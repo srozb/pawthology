@@ -6,12 +6,12 @@ export const rubricConfig = {
   // --- Badania ---
   "R-EXAM-NEEDED": {
     delta: +10, claimId: "C-RUB-EXAM",
-    epiloguePl: "Zlecono wymagane badanie - dostarczyło informacji pomocnych w rozpoznaniu.",
+    epiloguePl: "Zlecono wymagane badanie - pomogło w rozpoznaniu.",
     epilogueEn: "A required exam was ordered — it provided information useful for the diagnosis."
   },
   "R-EXAM-REDUNDANT": {
     delta: -5, claimId: "C-RUB-EXAM",
-    epiloguePl: "Zlecono badanie zbędne w tej sprawie - nie przybliżyło diagnozy, a dodało tylko koszt i czas.",
+    epiloguePl: "Zlecono badanie zbędne w tej sprawie - nie przybliżyło diagnozy, a przysporzyło tylko kosztów i zajęło czas.",
     epilogueEn: "A redundant exam was ordered for this case — it didn't advance the diagnosis and only added cost and time."
   },
   "R-EXAM-MISSED": {
@@ -70,7 +70,7 @@ export const rubricConfig = {
   // --- Dawka (systemic) ---
   "R-DOSE-IN-RANGE": {
     delta: 0, claimId: "C-RUB-DOSE",
-    epiloguePl: "Dawka mieściła się w paśmie bezpieczeństwa - podano ją prawidłowo.",
+    epiloguePl: "Dawka mieściła się w zakresie bezpieczeństwa - podano ją prawidłowo.",
     epilogueEn: "The dose was within the safe range — it was given correctly."
   },
   "R-DOSE-UNDER": {
