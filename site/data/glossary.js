@@ -69,7 +69,7 @@ export const GLOSSARY = [
     term: "steryd", termEn: "steroid",
     forms: ["sterydy", "sterydów", "sterydem", "sterydami"],
     simplePl: "Lek gaszący stan zapalny - w kroplach do uszu łagodzi obrzęk i swędzenie.",
-    fullPl: "Steryd (glikokortykoid) silnie hamuje stan zapalny i reakcję immunologiczną; w kroplach do uszu zmniejsza obrzęk i świąd. Działa przeciwnie do infekcji - może maskować przyczynę.",
+    fullPl: "Steryd (glikokortykoid) silnie hamuje stan zapalny i reakcję immunologiczną; w kroplach do uszu zmniejsza obrzęk i świąd. Nie działa na infekcję - może jedynie maskować przyczynę.",
     simpleEn: "A medicine that calms inflammation — in ear drops it reduces swelling and itching.",
     fullEn: "A steroid (glucocorticoid) strongly suppresses inflammation and immune response; in ear drops it reduces swelling and itching. It does not treat infection and may mask the cause.",
     source: null, verified: false
@@ -669,7 +669,7 @@ export const GLOSSARY = [
         "pikę"
       ],
       "simplePl": "Zaburzenie polegające na zjadaniu rzeczy niejadalnych — u psów: zabawki, skarpetki, kamienie.",
-      "fullPl": "Pika to zaburzenie zachowania polegające na chętnym połykaniu przedmiotów niejadalnych. U psów objawia się zjadaniem zabawek, skarpetek, kamieni, kawałków drewna — szczególnie u młodych i aktywnych ras, jak beagle czy labrador. Skutkiem są ciała obce w przewodzie pokarmowym i obturacja. Leczenie to zapobieganie: odpowiednie zabawki, nadzór, a u psów o silnej pike — miski na karmę z zabawką, by zaspokoić potrzebę żucia bez ryzyka.",
+      "fullPl": "Pika to zaburzenie zachowania polegające na chętnym połykaniu przedmiotów niejadalnych. U psów objawia się zjadaniem zabawek, skarpetek, kamieni, kawałków drewna — szczególnie u młodych i aktywnych ras, jak beagle czy labrador. Skutkiem są ciała obce w przewodzie pokarmowym i obturacja. Leczenie to zapobieganie: odpowiednie zabawki, nadzór, a u psów o silnej pice — miski na karmę z zabawką, by zaspokoić potrzebę żucia bez ryzyka.",
       "simpleEn": "A behavioral disorder of eating non-food items — in dogs: toys, socks, stones.",
       "fullEn": "Pica is a behavioral disorder consisting of the compulsive swallowing of non-food objects. In dogs it manifests as eating toys, socks, stones, pieces of wood — especially in young and active breeds like beagles or labradors. The consequence is gastrointestinal foreign bodies and obstruction. Treatment is prevention: appropriate toys, supervision, and for dogs with strong pica — puzzle feeders to satisfy the need to chew without risk.",
       "source": null,
