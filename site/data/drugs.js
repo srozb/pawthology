@@ -428,7 +428,7 @@ export const drugs = [
     speciesToxic: [],
     antibiotic: false,
     infoPl: "Imidokarb to lek przeciwpierwotniakowy stosowany w babeszjozie (piroplazmozie) psa - chorobie przenoszonej przez kleszcze, w której pierwotniak Babesia wnika do erytrocytów i je niszczy, wywołując anemię. Imidokarb zabija piroplazmy wewnątrz krwinek czerwonych; podaje się go domięśniowo lub podskórnie, zwykle w jednej dawce z powtórzeniem za dwa tygodnie.\n\nDawka u psa wynosi 5–6 mg/kg masy ciała. Lek ma wąski margines bezpieczeństwa - przedawkowanie wywołuje ślinotok, wymioty i objawy cholinergiczne, dlatego liczy się mg/kg dokładnie tak jak przy antybiotyku: dawka mg = mg/kg × waga kg. Nie jest antybiotykiem - nie działa na bakterie, a podanie go na zwykłą infekcję bakteryjną byłoby błędem.\n\nImidokarb łączy diagnostykę z leczeniem: rozmaz krwi potwierdza Babesię, a ten lek ją zabija. Razem z kontrolą pasożytów w środowisku i prewencją kleszczową uczy, że kleszcz to nie tylko swędzący punkcik - to wektor śmiertelnej choroby, którą można leczyć skierowanym lekiem, a najlepiej w ogóle nie dopuścić do zakażenia.",
-    infoEn: "Imidocarb is an anti-protozoal drug used in canine babesiosis — a tick-borne disease in which the Babesia protozoan enters erythrocytes and destroys them, causing anemia. Imidocarb kills the piroplasms inside the red cells; it is given intramuscularly or subcutaneously, usually as a single dose repeated after two weeks.\n\nThe dose in the dog is 5–6 mg per kilogram body weight. The drug has a narrow safety margin — overdose causes salivation, vomiting and cholinergic signs, so the mg/kg is counted exactly as with an antibiotic: dose mg = mg/kg × weight kg. It is not an antibiotic — it does not act on bacteria, and giving it for an ordinary bacterial infection would be a mistake.\n\nImidocarb links diagnostics with treatment: the blood smear confirms Babesia, and this drug kills it. Together with environmental parasite control and tick prevention it teaches that a tick is not just an itchy speck — it is the vector of a lethal disease that can be treated with a targeted drug, and best of all prevented.",
+    infoEn: "Imidocarb is an anti-protozoal drug used in canine babesiosis — a tick-borne disease in which the Babesia protozoan enters erythrocytes and destroys them, causing anemia. Imidocarb kills the piroplasms inside the red cells; it is given intramuscularly or subcutaneously, usually as a single dose repeated after two weeks.\n\nThe dose in the dog is 5–6 mg per kilogram of body weight. The drug has a narrow safety margin — overdose causes salivation, vomiting and cholinergic signs, so the mg/kg is counted exactly as with an antibiotic: dose mg = mg/kg × weight kg. It is not an antibiotic — it does not act on bacteria, and giving it for an ordinary bacterial infection would be a mistake.\n\nImidocarb links diagnostics with treatment: the blood smear confirms Babesia, and this drug kills it. Together with environmental parasite control and tick prevention it teaches that a tick is not just an itchy speck — it is the vector of a lethal disease that can be treated with a targeted drug, and best of all prevented.",
     wikiPl: "https://en.wikipedia.org/wiki/Imidocarb",
     wikiEn: "https://en.wikipedia.org/wiki/Imidocarb",
     reviewStatus: "llm-audited", reviewDate: "2026-08-10", sources: ["S-MVM"], claimIds: ["C-DRG-19"]
@@ -649,7 +649,7 @@ export const drugGroups = [
     id: "antiparasitic",
     labelPl: "Leki przeciwpasożytnicze", labelEn: "Antiparasitics",
     descPl: "Przeciwnicieniowe, przeciwtasiemcowe i przeciwko ektopasożytom (pchły, kleszcze) - dobór wg grupy pasożyta.",
-    descEn: "Anti-nematode, anti-tapeworm and against ectoparasites (fleas, ticks) — chosen per parasite group.",
+    descEn: "Anti-nematode, anti-tapeworm and anti-ectoparasitic (fleas, ticks) — chosen per parasite group.",
     image: "drug-groups/antiparasitic.webp"
   },
   {
@@ -678,7 +678,7 @@ export const drugGroups = [
     id: "antiprotozoal",
     labelPl: "Przeciwpierwotniakowe", labelEn: "Antiprotozoal",
     descPl: "Leki na pierwotniaki krwi i tkanek (Babesia) - zabijają patogen wewnątrz komórek, nie są antybiotykami.",
-    descEn: "Drugs for blood and tissue protozoa (Babesia) — kill the pathogen inside cells, not antibiotics.",
+    descEn: "Drugs for blood and tissue protozoa (Babesia) — kill the pathogen inside cells; these are not antibiotics.",
     image: "drug-groups/antiprotozoal.webp"
   },
 {
