@@ -124,7 +124,7 @@ export const GLOSSARY = [
     term: "miejscowo", termEn: "topical",
     simplePl: "Lek nakładany na skórę lub ranę - nie wchłania się w organizm.",
     fullPl: "Podanie miejscowe (topical) - lek działa na powierzchni (skóra, rana, ucho); minimalnie wchłania się do krwiobiegu. Dawka nie jest liczona w mg/kg.",
-    simpleEn: "Medicine applied to the skin or wound — it doesn't enter the body.",
+    simpleEn: "Medicine applied to the skin or a wound — it doesn't enter the body.",
     fullEn: "Topical administration — the drug acts on the surface (skin, wound, ear) and is minimally absorbed into the bloodstream. The dose is not calculated as mg/kg.",
     source: null, verified: false
   },
@@ -265,7 +265,7 @@ export const GLOSSARY = [
     simplePl: "Krople na skórę karku - lek wchłania się przez skórę, nie przez pysk.",
     fullPl: "Spot-on - preparat nakładany na skórę karku (niestrumieniową); lek wchłania się przez skórę i rozprowadza w łoju. Wygodny, miesięczny (np. selamektyna, emodepsyd).",
     simpleEn: "Drops on the neck skin — the medicine absorbs through the skin, not by mouth.",
-    fullEn: "Spot-on — a preparation applied to the non-spinal neck skin; the drug absorbs through skin and distributes in sebum. Convenient, monthly (e.g. selamectin, emodepside).",
+    fullEn: "Spot-on — a preparation applied to the back of the neck; the drug absorbs through the skin and distributes in sebum. Convenient, monthly (e.g. selamectin, emodepside).",
     source: null, verified: false
   },
   {
@@ -471,9 +471,9 @@ export const GLOSSARY = [
     id: "g-fluorescein", term: "fluoresceina", termEn: "fluorescein",
     forms: ["fluoresceiną","fluoresceiny","fluoresceinę","fluoresceinowy","fluorescein"],
     simplePl: "Barwnik, który wybarwia uszkodzoną rogówkę oka na zielono - test na owrzodzenia.",
-    simpleEn: "A dye that stains damaged cornea green — a test for ulcers.",
+    simpleEn: "A dye that stains the damaged cornea green — a test for ulcers.",
     fullPl: "Fluoresceina to barwnik stosowany w okulistyce weterynaryjnej: kropla na oko wybarwia uszkodzoną (pozbawioną nabłonka) rogówkę na zielono, ujawniając owrzodzenia i zadrapania niewidoczne gołym okiem. Podstawa badania oka przy katarze kocim.",
-    fullEn: "Fluorescein is a dye used in veterinary ophthalmology: a drop on the eye stains damaged (epithelium-denuded) cornea green, revealing ulcers and abrasions invisible to the naked eye. A mainstay of eye exam in feline viral rhinotracheitis.",
+    fullEn: "Fluorescein is a dye used in veterinary ophthalmology: a drop on the eye stains the damaged (epithelium-denuded) cornea green, revealing ulcers and abrasions invisible to the naked eye. A mainstay of eye exams in feline viral rhinotracheitis.",
     source: null, verified: false
   },
   {
@@ -500,7 +500,7 @@ export const GLOSSARY = [
     simplePl: "Stawonóg, który przyczepia się do skóry i przenosi choroby (Babesia, Lyme).",
     simpleEn: "An arthropod that attaches to skin and transmits diseases (Babesia, Lyme).",
     fullPl: "Kleszcz to stawonóg (pajęczak) żywiący się krwią; podczas wkłucia przekazuje ze śliną patogeny - pierwotniaka Babesia (babeszjoza), bakterie Borrelia (borelioza), anaplazmę. Dlatego prewencja kleszczowa i szybkie usuwanie są kluczowe u psa.",
-    fullEn: "A tick is a blood-feeding arachnid; during the bite it transmits pathogens in saliva — the Babesia protozoan (babesiosis), Borrelia bacteria (Lyme disease), anaplasmae. Hence tick prevention and prompt removal are key in the dog.",
+    fullEn: "A tick is a blood-feeding arachnid; during the bite it transmits pathogens in saliva — the Babesia protozoan (babesiosis), Borrelia bacteria (Lyme disease), Anaplasma. Hence tick prevention and prompt removal are key in the dog.",
     source: null, verified: false
   },
   {
@@ -702,7 +702,7 @@ export const GLOSSARY = [
       ],
       "simplePl": "Wywołanie wymiotów jako dekontaminacja — gdy trucizna niedawno połknięta i pacjent bez objawów. U kota inny lek niż u psa.",
       "fullPl": "Emeza to medyczne wywołanie wymiotów w celu usunięcia trucizny z żołądka. Wskazana, gdy spożycie było niedawne (<1–2 h) i pacjent jest bezobjawowy (bez drgnieć, bez objawów neurologicznych). Przeciwwskazana, gdy objawy już wystąpiły (ryzyko zachłyśnięcia) lub gdy toksyna jest żrąca. Różnica gatunkowa: u psa apomorfina, u kota agonista alfa-2 (ksylazyna, deksmedetomidyna) — apomorfina u kota jest nieskuteczna lub niebezpieczna.",
-      "simpleEn": "Inducing vomiting as decontamination — when toxin was recently ingested and patient is asymptomatic. In cats a different drug than in dogs.",
+      "simpleEn": "Inducing vomiting as decontamination — when a toxin was recently ingested and the patient is asymptomatic. In cats a different drug than in dogs.",
       "fullEn": "Emesis is medically induced vomiting to remove a toxin from the stomach. Indicated when ingestion was recent (<1–2 h) and the patient is asymptomatic (no tremors, no neurological signs). Contraindicated when symptoms are already present (aspiration risk) or when the toxin is corrosive. Species difference: in dogs apomorphine, in cats an alpha-2 agonist (xylazine, dexmedetomidine) — apomorphine in cats is ineffective or dangerous.",
       "source": null,
       "verified": false
@@ -767,7 +767,7 @@ export const GLOSSARY = [
       ],
       "simplePl": "Zrośnięty dziób ptaka z keratyny — u niektórych gatunków rośnie przez całe życie i wymaga ścierania lub spiłowania.",
       "fullPl": "Dziób ptaka to struktura z rogówki i keratyny, która u wielu gatunków (w tym papug) rośnie przez całe życie — jak zęby elodontyczne u gryzoni. W warunkach naturalnych ściera się jedzeniem i zabawą, ale w niewoli, przy niewłaściwej diecie lub chorobie (roztocza), przerośnie i wymaga spiłowania. Przerost rzadko jest „tylko mechaniczny” — najczęściej za nim stoi świerzb (Knemidokoptes) lub niedobór pokarmowy.",
-      "simpleEn": "A bird's keratin beak — in some species it grows throughout life and requires wearing or trimming.",
+      "simpleEn": "A bird's keratin beak — in some species it grows throughout life and requires wearing down or trimming.",
       "fullEn": "A bird's beak is a structure of horn and keratin that in many species (including parrots) grows throughout life — like elodont teeth in rodents. In the wild it wears down through eating and play, but in captivity, with improper diet or disease (mites), it overgrows and needs trimming. Overgrowth is rarely “just mechanical” — most often it is driven by scaly face mites (Knemidokoptes) or a nutritional deficiency.",
       "source": null,
       "verified": false
@@ -838,7 +838,7 @@ export const GLOSSARY = [
     simplePl: "Za niski poziom cukru we krwi — zwierzę słabnie, drży, może stracić przytomność.",
     fullPl: "Hipoglikemia to spadek glukozy we krwi poniżej normy. Mózg zależy od glukozy, więc jej brak daje objawy neurologiczne: osowiałość, ataksję, drżenia, ślinotok, a w skrajnych przypadkach drgawki i śpiączkę. U fretki najczęstszą przyczyną jest insulinoma; u innych zwierząt np. przedawkowanie insuliny lub głodówka. Pierwsza pomoc to podanie glukozy.",
     simpleEn: "Blood sugar too low — the animal weakens, trembles, may lose consciousness.",
-    fullEn: "Hypoglycemia is a fall of blood glucose below normal. The brain depends on glucose, so its lack gives neurological signs: lethargy, ataxia, tremors, drooling, and in severe cases seizures and coma. In ferrets the most common cause is insulinoma; in other animals e.g. insulin overdose or fasting. First aid is giving glucose.",
+    fullEn: "Hypoglycemia is a fall of blood glucose below normal. The brain depends on glucose, so its absence causes neurological signs: lethargy, ataxia, tremors, drooling, and in severe cases seizures and coma. In ferrets the most common cause is insulinoma; in other animals e.g. insulin overdose or fasting. First aid is giving glucose.",
     "source": "https://pl.wikipedia.org/wiki/Hipoglikemia",
     "verified": false
     },
