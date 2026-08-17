@@ -509,7 +509,7 @@ export const GLOSSARY = [
     simplePl: "Grupa wirusów; herpeswirus kota (FHV-1) wywołuje katar koci - antybiotyk nie działa.",
     simpleEn: "A group of viruses; feline herpesvirus (FHV-1) causes feline viral rhinotracheitis — antibiotics do not work.",
     fullPl: "Herpeswirusy to rodzina wirusów; herpeswirus kota typu 1 (FHV-1) jest główną przyczyną kataru kociego (wirusowego zapalenia górnych dróg oddechowych i spojówek). Jak każdy wirus nie reaguje na antybiotyk - leczenie jest wspomagające, a antybiotyk wchodzi w grę dopiero przy wtórnym nadkażeniu bakteryjnym.",
-    fullEn: "Herpesviruses are a family of viruses; feline herpesvirus 1 (FHV-1) is the main cause of feline viral rhinotracheitis (viral upper respiratory and conjunctival inflammation). Like any virus it does not respond to antibiotic — treatment is supportive, and an antibiotic enters only with a secondary bacterial infection.",
+    fullEn: "Herpesviruses are a family of viruses; feline herpesvirus 1 (FHV-1) is the main cause of feline viral rhinotracheitis (viral upper respiratory and conjunctival inflammation). Like any virus it does not respond to antibiotics — treatment is supportive, and an antibiotic comes into play only with a secondary bacterial infection.",
     source: null, verified: false
   },
   {
@@ -562,8 +562,8 @@ export const GLOSSARY = [
     forms: ["pH"],
     simplePl: "Pokazuje, jak kwaśne lub zasadowe jest coś - na przykład mocz. 7 to obojętne, poniżej kwaśne, powyżej zasadowe.",
     fullPl: "pH to skala od 0 do 14 określająca kwasowość roztworu: 7 to odczyn obojętny, poniżej 7 kwaśny, powyżej 7 zasadowy. W weterynarii najczęściej mierzy się pH moczu: u zdrowego kota mocz jest lekko kwaśny (ok. 6,0-6,5). Kryształy struwitu tworzą się w moczu zasadowym, dlatego dieta moczowa zakwasza mocz, by je rozpuścić. pH krwi utrzymuje się w wąskim zakresie 7,35-7,45 - jego przekroczenie zagraża życiu.",
-    simpleEn: "Measures how acidic or alkaline something is - like urine. 7 is neutral, below is acidic, above is alkaline.",
-    fullEn: "pH is a 0-14 scale of acidity: 7 is neutral, below 7 acidic, above 7 alkaline. In veterinary medicine urine pH is measured: in healthy cats it is slightly acidic (around 6.0-6.5). Struvite crystals form in alkaline urine, so a urinary diet acidifies the urine to dissolve them. Blood pH stays in a narrow 7.35-7.45 range - leaving it threatens life.",
+    simpleEn: "Measures how acidic or alkaline something is — like urine. 7 is neutral, below is acidic, above is alkaline.",
+    fullEn: "pH is a 0-14 scale of acidity: 7 is neutral, below 7 acidic, above 7 alkaline. In veterinary medicine urine pH is measured: in healthy cats it is slightly acidic (around 6.0-6.5). Struvite crystals form in alkaline urine, so a urinary diet acidifies the urine to dissolve them. Blood pH stays in a narrow 7.35-7.45 range — leaving it threatens life.",
     source: null, verified: false
   },
   {
