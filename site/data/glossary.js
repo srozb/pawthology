@@ -193,7 +193,7 @@ export const GLOSSARY = [
     simplePl: "Lek, który dla jednego zwierzęcia jest lekiem, a dla innego (inny gatunek) - trucizną. Np. paracetamol dla człowieka jest bezpieczny, dla kota trucizną.",
     fullPl: "Toksyczność gatunkowa - ten sam lek może być bezpieczny dla jednego gatunku, a toksyczny dla innego (różnice metaboliczne, np. deficyt glukuronidacji u kota). Acetaminofen: człowiek i pies - bezpieczny w wąskim zakresie, kot - toksyczny. Ibuprofen: pies i kot - toksyczny.",
     simpleEn: "A drug that is medicine for one animal but poison for another species. E.g. paracetamol is fine for humans but poison for cats.",
-    fullEn: "Species toxicity — the same drug may be safe in one species but toxic in another (metabolic differences, e.g. cats' glucuronidation deficit). Acetaminophen: human and dog — narrow; cat — toxic. Ibuprofen: dog and cat — toxic.",
+    fullEn: "Species toxicity — the same drug may be safe in one species but toxic in another (metabolic differences, e.g. cats' glucuronidation deficit). Acetaminophen: human and dog — safe in a narrow range; cat — toxic. Ibuprofen: dog and cat — toxic.",
     source: "https://www.merckvetmanual.com/toxicology/toxicoses-from-human-analgesics/toxicoses-from-human-analgesics-in-animals",
     verified: true
   },
@@ -255,8 +255,8 @@ export const GLOSSARY = [
     forms: ["izoksazoliny", "izoksazoliną", "izoksazolin", "izoksazolinami"],
     simplePl: "Nowoczesny lek na pchły i kleszcze (np. fluralaner) - tabletka działa długo.",
     fullPl: "Izoksazoliny (np. fluralaner) to nowoczesne leki przeciwpasożytnicze na pchły i kleszcze; podawane doustnie, działają długo (do 12 tyg.) przez blokadę układu nerwowego owadów.",
-    simpleEn: "A modern medicine against fleas and ticks (e.g. fluralaner) — a tablet works long.",
-    fullEn: "Isoxazolines (e.g. fluralaner) are modern antiparasitics against fleas and ticks; given orally, long-acting (up to 12 wk) by blocking insect nervous system.",
+    simpleEn: "A modern medicine against fleas and ticks (e.g. fluralaner) — a tablet is long-acting.",
+    fullEn: "Isoxazolines (e.g. fluralaner) are modern antiparasitics against fleas and ticks; given orally, long-acting (up to 12 wk) by blocking the insect nervous system.",
     source: null, verified: false
   },
   {
@@ -332,7 +332,7 @@ export const GLOSSARY = [
     term: "Malassezia", termEn: "Malassezia",
     simplePl: "Drożdże (grzyby) żyjące w uchu - gdy ich za dużo, ucho boli, swędzi i cuchnie.",
     fullPl: "Malassezia to drożdżaki bytujące w przewodzie słuchowym; ich namnożenie (w stale wilgotnym uchu) powoduje zapalenie ucha, swędzenie i ciemną wydzielinę. Rozpoznanie: cytologia.",
-    simpleEn: "Yeast (fungi) living in the ear — when there's too many, the ear hurts, itches and smells.",
+    simpleEn: "Yeast (fungi) living in the ear — when there are too many, the ear hurts, itches and smells.",
     fullEn: "Malassezia are yeasts inhabiting the ear canal; their overgrowth (in a persistently moist ear) causes otitis, itching and dark discharge. Diagnosis: cytology.",
     source: null, verified: false
   },
@@ -404,7 +404,7 @@ export const GLOSSARY = [
     forms: ["drożdżaków", "drożdżakami", "drożdżaka", "drożdżaki"],
     simplePl: "Grzyby żyjące w uchu i na skórze - gdy ich za dużo, ucho swędzi i cuchnie. Nie leczy się ich antybiotykiem.",
     fullPl: "Drożdżaki (np. Malassezia) to grzyby bytujące w przewodzie słuchowym i na skórze; ich namnożenie powoduje zapalenie ucha. Leczy się je lekiem przeciwgrzybiczym, nie antybiotykiem - antybiotyk przeciwnie, może je napędzić niszcząc florę bakteryjną.",
-    simpleEn: "Fungi living in the ear and on the skin — when there's too many, the ear itches and smells. They are not treated with an antibiotic.",
+    simpleEn: "Fungi living in the ear and on the skin — when there are too many, the ear itches and smells. They are not treated with an antibiotic.",
     fullEn: "Yeasts (e.g. Malassezia) are fungi inhabiting the ear canal and skin; their overgrowth causes otitis. They are treated with an antifungal, not an antibiotic — an antibiotic can in fact worsen them by destroying the bacterial flora.",
     source: null, verified: false
   },
@@ -507,7 +507,7 @@ export const GLOSSARY = [
     id: "g-herpesvirus", term: "herpeswirus", termEn: "herpesvirus",
     forms: ["herpeswirusa","herpeswirusy","herpeswirusów","herpeswirusowy","herpeswirusowa","herpeswirusa kota","herpeswirusiem","herpeswirusiem kota","herpeswirusu"],
     simplePl: "Grupa wirusów; herpeswirus kota (FHV-1) wywołuje katar koci - antybiotyk nie działa.",
-    simpleEn: "A group of viruses; feline herpesvirus (FHV-1) causes feline viral rhinotracheitis — antibiotics do not act.",
+    simpleEn: "A group of viruses; feline herpesvirus (FHV-1) causes feline viral rhinotracheitis — antibiotics do not work.",
     fullPl: "Herpeswirusy to rodzina wirusów; herpeswirus kota typu 1 (FHV-1) jest główną przyczyną kataru kociego (wirusowego zapalenia górnych dróg oddechowych i spojówek). Jak każdy wirus nie reaguje na antybiotyk - leczenie jest wspomagające, a antybiotyk wchodzi w grę dopiero przy wtórnym nadkażeniu bakteryjnym.",
     fullEn: "Herpesviruses are a family of viruses; feline herpesvirus 1 (FHV-1) is the main cause of feline viral rhinotracheitis (viral upper respiratory and conjunctival inflammation). Like any virus it does not respond to antibiotic — treatment is supportive, and an antibiotic enters only with a secondary bacterial infection.",
     source: null, verified: false
@@ -784,7 +784,7 @@ export const GLOSSARY = [
       "simplePl": "Stan, w którym jajo utknęło w jajowodzie samicy ptaka i nie może zostać zniesione — zagraża życiu.",
       "fullPl": "Zatrzymanie jaja (dystocia) to stan nagły u samic ptaków, w którym jajo utknęło w jajowodzie. Najczęstsza przyczyna to hipokalcemia — niski wapń osłabia skurcze mięśni jajowodu. Leczenie zaczyna się od wapnia i wsparcia (ciepło, wilgoć, płyny), a operacja jest ostatecznością. Nigdy nie wyciągać jaja na siłę.",
       "simpleEn": "A condition in which an egg is stuck in a female bird's oviduct and cannot be laid — life-threatening.",
-      "fullEn": "Egg binding (dystocia) is an emergency in female birds in which an egg is stuck in the oviduct. The most common cause is hypokalcemia — low calcium weakens the oviduct muscles. Treatment begins with calcium and support (warmth, humidity, fluids), and surgery is the last resort. The egg must never be pulled by force.",
+      "fullEn": "Egg binding (dystocia) is an emergency in female birds in which an egg is stuck in the oviduct. The most common cause is hypocalcemia — low calcium weakens the oviduct muscles. Treatment begins with calcium and support (warmth, humidity, fluids), and surgery is the last resort. The egg must never be pulled by force.",
       "source": null,
       "verified": false
     },
@@ -816,7 +816,7 @@ export const GLOSSARY = [
       "simplePl": "Trudne znoszenie jaja lub poród — stan, w którym jajo lub młode utknęło.",
       "fullPl": "Dystocia to utrudnione znoszenie jaja u ptaków lub trudny poród u ssaków. U ptaków najczęściej oznacza zatrzymanie jaja — jajo utknęło w jajowodzie z powodu hipokalcemii lub wady anatomicznej. Leczenie jest schodkowe: wapń i wsparcie najpierw, pomoc ręczna, operacja na końcu.",
       "simpleEn": "Difficult egg-laying or birth — a condition in which the egg or young is stuck.",
-      "fullEn": "Dystocia is difficult egg-laying in birds or difficult birth in mammals. In birds it most often means egg binding — the egg is stuck in the oviduct due to hypokalcemia or an anatomical defect. Treatment is stepwise: calcium and support first, manual assistance, surgery last.",
+      "fullEn": "Dystocia is difficult egg-laying in birds or difficult birth in mammals. In birds it most often means egg binding — the egg is stuck in the oviduct due to hypocalcemia or an anatomical defect. Treatment is stepwise: calcium and support first, manual assistance, surgery last.",
       "source": null,
       "verified": false
     },
