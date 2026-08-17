@@ -601,7 +601,7 @@ export const GLOSSARY = [
     term: "choroba mokrego ogona", termEn: "wet tail",
     forms: ["choroba mokrego ogona", "chorobę mokrego ogona", "choroby mokrego ogona", "ciekły chomik", "wet tail", "wet-tail"],
     simplePl: "Ostra, często śmiertelna biegunka młodych chomików syryjskich; bakteryjna - leczy się antybiotykiem i płynami.",
-    fullPl: "Choroba mokrego ogona, nazywana też potocznie ciekłym chomikiem, to ostra, wodnista biegunka młodych, zestresowanych chomików syryjskich, wywołana przez bakterię Lawsonia intracellularis atakującą jelito cienkie (przerostowe zapalenie bocznika). Postępuje błyskawicznie - bez antybiotyku (enrofloksacyna) i płynów chomik ginie w 24-48 godzin. Tu antybiotyk jest wskazany i ratuje życie, co kontrastuje z chorobami, gdzie antybiotyk szkodzi (FIC, katar koci).",
+    fullPl: "Choroba mokrego ogona, nazywana też potocznie ciekłym chomikiem, to ostra, wodnista biegunka młodych, zestresowanych chomików syryjskich, wywołana przez bakterię Lawsonia intracellularis atakującą jelito cienkie (przerostowe zapalenie jelita krętego). Postępuje błyskawicznie - bez antybiotyku (enrofloksacyna) i płynów chomik ginie w 24-48 godzin. Tu antybiotyk jest wskazany i ratuje życie, co kontrastuje z chorobami, gdzie antybiotyk szkodzi (FIC, katar koci).",
     simpleEn: "An acute, often fatal diarrhea of young Syrian hamsters; it is bacterial — treated with an antibiotic and fluids.",
     fullEn: "Wet tail is an acute, watery diarrhea of young, stressed Syrian hamsters caused by the bacterium Lawsonia intracellularis attacking the small intestine (proliferative ileitis). It progresses rapidly — without an antibiotic (enrofloxacin) and fluids the hamster dies in 24-48 hours. Here the antibiotic is indicated and life-saving, in contrast with diseases where an antibiotic harms (FIC, feline cold).",
     source: null, verified: false
@@ -621,7 +621,7 @@ export const GLOSSARY = [
     term: "Lawsonia", termEn: "Lawsonia",
     forms: ["Lawsonii", "Lawsonią", "Lawsonie"],
     simplePl: "Bakteria atakująca jelito cienkie chomika i wywołująca chorobę mokrego ogona - ostrą, śmiertelną biegunkę.",
-    fullPl: "Lawsonia intracellularis to bakteria wewnątrzkomórkowa atakująca jelito cienkie; u młodych chomików syryjskich wywołuje przerostowe zapalenie bocznika (chorobę mokrego ogona) - nagłą, wodnistą biegunkę. Stres (odstąpienie od matki, przeprowadzka) otwiera jej drogę. Leczy się ją antybiotykiem (enrofloksacyna) i płynami - tu antybiotyk jest wskazany, bo infekcja jest potwierdzona i bez leczenia zabija.",
+    fullPl: "Lawsonia intracellularis to bakteria wewnątrzkomórkowa atakująca jelito cienkie; u młodych chomików syryjskich wywołuje przerostowe zapalenie jelita krętego (chorobę mokrego ogona) - nagłą, wodnistą biegunkę. Stres (odstąpienie od matki, przeprowadzka) otwiera jej drogę. Leczy się ją antybiotykiem (enrofloksacyna) i płynami - tu antybiotyk jest wskazany, bo infekcja jest potwierdzona i bez leczenia zabija.",
     simpleEn: "A bacterium that attacks the hamster's small intestine and causes wet tail — an acute, fatal diarrhea.",
     fullEn: "Lawsonia intracellularis is an intracellular bacterium attacking the small intestine; in young Syrian hamsters it causes proliferative ileitis (wet tail) — sudden, watery diarrhea. Stress (weaning, moving) opens the door to it. It is treated with an antibiotic (enrofloxacin) and fluids — here the antibiotic is indicated, because the infection is confirmed and kills without treatment.",
     source: null, verified: false
