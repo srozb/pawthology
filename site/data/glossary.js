@@ -11,7 +11,7 @@ export const GLOSSARY = [
     term: "antyseptyk", termEn: "antiseptic",
     forms: ["antyseptyku", "antyseptykiem", "antyseptyki", "antyseptyków"],
     simplePl: "Substancja odkażająca ranę i zabijająca zarazki na powierzchni - to nie antybiotyk.",
-    fullPl: "Antyseptyk miejscowy niszczy drobnoustroje na powierzchni tkanek; w przeciwieństwie do antybiotyku nie wnika do organizmu i nie wybiera oporności (AMR).",
+    fullPl: "Antyseptyk miejscowy niszczy drobnoustroje na powierzchni tkanek; w przeciwieństwie do antybiotyku nie wnika do organizmu i nie napędza oporności (AMR).",
     simpleEn: "A substance that disinfects a wound and kills germs on the surface — it's not an antibiotic.",
     fullEn: "A topical antiseptic destroys microorganisms on tissue surfaces; unlike an antibiotic it does not enter the body and does not drive antimicrobial resistance (AMR).",
     source: null, verified: false
@@ -172,7 +172,7 @@ export const GLOSSARY = [
     id: "g-nephrotoxic",
     term: "nephrotoksyczny", termEn: "nephrotoxic",
     simplePl: "Szkodliwy dla nerek - niektóre leki (np. NSAID) obciążają nerki, u kotów szczególnie.",
-    fullPl: "Nephrotoksyczność - uszkodzenie nerek; NSAID i niektóre antybiotyki obciążają nerki, u kotów (które są wrażliwe na odwodnienie) szczególnie ostrożnie.",
+    fullPl: "Nephrotoksyczność - uszkodzenie nerek; NSAID i niektóre antybiotyki obciążają nerki, dlatego u kotów (wrażliwych na odwodnienie) stosuje się je ze szczególną ostrożnością.",
     simpleEn: "Harmful to the kidneys — some drugs (e.g. NSAIDs) strain the kidneys, especially in cats.",
     fullEn: "Nephrotoxicity — kidney damage; NSAIDs and some antibiotics burden the kidneys, requiring special caution in cats (sensitive to dehydration).",
     source: null, verified: false
@@ -191,7 +191,7 @@ export const GLOSSARY = [
     id: "g-species-toxic",
     term: "toksyczny gatunkowo", termEn: "species-toxic",
     simplePl: "Lek, który dla jednego zwierzęcia jest lekiem, a dla innego (inny gatunek) - trucizną. Np. paracetamol dla człowieka jest bezpieczny, dla kota trucizną.",
-    fullPl: "Toksyczność gatunkowa - ten sam lek może być bezpieczny dla jednego gatunku, a toksyczny dla innego (różnice metaboliczne, np. deficyt glukuronidacji u kota). Acetaminofen: człowiek i pies - wąsko, kot - toksyczny. Ibuprofen: pies i kot - toksyczny.",
+    fullPl: "Toksyczność gatunkowa - ten sam lek może być bezpieczny dla jednego gatunku, a toksyczny dla innego (różnice metaboliczne, np. deficyt glukuronidacji u kota). Acetaminofen: człowiek i pies - bezpieczny w wąskim zakresie, kot - toksyczny. Ibuprofen: pies i kot - toksyczny.",
     simpleEn: "A drug that is medicine for one animal but poison for another species. E.g. paracetamol is fine for humans but poison for cats.",
     fullEn: "Species toxicity — the same drug may be safe in one species but toxic in another (metabolic differences, e.g. cats' glucuronidation deficit). Acetaminophen: human and dog — narrow; cat — toxic. Ibuprofen: dog and cat — toxic.",
     source: "https://www.merckvetmanual.com/toxicology/toxicoses-from-human-analgesics/toxicoses-from-human-analgesics-in-animals",
@@ -263,7 +263,7 @@ export const GLOSSARY = [
     id: "g-spot-on",
     term: "spot-on", termEn: "spot-on",
     simplePl: "Krople na skórę karku - lek wchłania się przez skórę, nie przez pysk.",
-    fullPl: "Spot-on - preparat nakładany na skórę karku (niestrumieniową); lek wchłania się przez skórę i rozprowadza w łojach. Wygodny, miesięczny (np. selamektyna, emodepsyd).",
+    fullPl: "Spot-on - preparat nakładany na skórę karku (niestrumieniową); lek wchłania się przez skórę i rozprowadza w łoju. Wygodny, miesięczny (np. selamektyna, emodepsyd).",
     simpleEn: "Drops on the neck skin — the medicine absorbs through the skin, not by mouth.",
     fullEn: "Spot-on — a preparation applied to the non-spinal neck skin; the drug absorbs through skin and distributes in sebum. Convenient, monthly (e.g. selamectin, emodepside).",
     source: null, verified: false
@@ -432,7 +432,7 @@ export const GLOSSARY = [
     term: "błona bębenkowa", termEn: "eardrum",
     forms: ["błony bębenkowej", "błonę bębenkową", "błoną bębenkową"],
     simplePl: "Cienka błona w uchu, która odbiera dźwięk - trzeba sprawdzić otoskopem, czy jest cała, zanim poda się krople.",
-    fullPl: "Błona bębenkowa (tympanon) oddziela przewód słuchowy od ucha środkowego; otoskopia ocenia, czy jest nienaruszona. Gdy jest pęknięta, niektóre krople do ucha mogą uszkodzić ucho wewnętrzne (ototoksyczność), dlatego najpierw otoskopia, potem leki.",
+    fullPl: "Błona bębenkowa oddziela przewód słuchowy od ucha środkowego; otoskopia ocenia, czy jest nienaruszona. Gdy jest pęknięta, niektóre krople do ucha mogą uszkodzić ucho wewnętrzne (ototoksyczność), dlatego najpierw otoskopia, potem leki.",
     simpleEn: "A thin membrane in the ear that catches sound — you check with an otoscope that it's intact before giving drops.",
     fullEn: "The eardrum (tympanic membrane) separates the ear canal from the middle ear; otoscopy assesses whether it is intact. When it's ruptured, some ear drops can damage the inner ear (ototoxicity), hence otoscopy first, drugs second.",
     source: null, verified: false
@@ -499,7 +499,7 @@ export const GLOSSARY = [
     forms: ["kleszcze","kleszczy","kleszcza","kleszczem","kleszczu","kleszczowa","kleszczowy","kleszczowe"],
     simplePl: "Stawonóg, który przyczepia się do skóry i przenosi choroby (Babesia, Lyme).",
     simpleEn: "An arthropod that attaches to skin and transmits diseases (Babesia, Lyme).",
-    fullPl: "Kleszcz to stawonóg (pajęczak) żywiący się krwią; podczas wkłucia przekazuje ze śliną patogeny - pierwotniaka Babesia (babeszjoza), bakterie Borrelia (choroba z Lyme), anaplazmy. Dlatego prewencja kleszczowa i szybkie usuwanie są kluczowe u psa.",
+    fullPl: "Kleszcz to stawonóg (pajęczak) żywiący się krwią; podczas wkłucia przekazuje ze śliną patogeny - pierwotniaka Babesia (babeszjoza), bakterie Borrelia (borelioza), anaplazmę. Dlatego prewencja kleszczowa i szybkie usuwanie są kluczowe u psa.",
     fullEn: "A tick is a blood-feeding arachnid; during the bite it transmits pathogens in saliva — the Babesia protozoan (babesiosis), Borrelia bacteria (Lyme disease), anaplasmae. Hence tick prevention and prompt removal are key in the dog.",
     source: null, verified: false
   },
@@ -749,7 +749,7 @@ export const GLOSSARY = [
         "iwermektynie"
       ],
       "simplePl": "Lek przeciwpasożytniczy na roztocza i nicienie — u ptaków jedna kropla spot-on na kark.",
-      "fullPl": "Iwermektyna to lek z grupy makrocyklicznych laktonów, działający na roztocza (Knemidokoptes, Sarcoptes) i nicienie. U ptaków podaje się ją jako spot-on — jedna kropla na skórę karku — i powtarza po 2 tygodniach, by złapać roztocza wylęgnięte z jaj. Ma szeroki margines bezpieczeństwa. Nie jest antybiotykiem — jej celem są pasożyty, nie bakterie, więc nie wybiera oporności (AMR).",
+      "fullPl": "Iwermektyna to lek z grupy makrocyklicznych laktonów, działający na roztocza (Knemidokoptes, Sarcoptes) i nicienie. U ptaków podaje się ją jako spot-on — jedna kropla na skórę karku — i powtarza po 2 tygodniach, by złapać roztocza wylęgnięte z jaj. Ma szeroki margines bezpieczeństwa. Nie jest antybiotykiem — jej celem są pasożyty, nie bakterie, więc nie napędza oporności (AMR).",
       "simpleEn": "An antiparasitic drug against mites and nematodes — in birds, one spot-on drop on the neck.",
       "fullEn": "Ivermectin is a drug from the macrocyclic lactone class, acting on mites (Knemidokoptes, Sarcoptes) and nematodes. In birds it is given as a spot-on — one drop on nape skin — and repeated after 2 weeks to catch mites hatched from eggs. It has a wide safety margin. It is not an antibiotic — its targets are parasites, not bacteria, so it does not drive resistance (AMR).",
       "source": null,

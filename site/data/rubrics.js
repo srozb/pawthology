@@ -70,7 +70,7 @@ export const rubricConfig = {
   // --- Dawka (systemic) ---
   "R-DOSE-IN-RANGE": {
     delta: 0, claimId: "C-RUB-DOSE",
-    epiloguePl: "Dawka mieściła się w zakresie bezpieczeństwa - podano ją prawidłowo.",
+    epiloguePl: "Dawka mieściła się w bezpiecznym zakresie - podano ją prawidłowo.",
     epilogueEn: "The dose was within the safe range — it was given correctly."
   },
   "R-DOSE-UNDER": {
@@ -117,7 +117,7 @@ export const rubricConfig = {
   },
   "R-PROC-EXTRA": {
     delta: -5, claimId: "C-RUB-PROC",
-    epiloguePl: "Zlecono zabieg zbędny w tej sprawie - nie przynosi korzyści, a dodaje ryzyko i koszt.",
+    epiloguePl: "Zlecono zabieg zbędny w tej sprawie - nie przynosi korzyści, a zwiększa ryzyko i koszt.",
     epilogueEn: "An unnecessary procedure was ordered for this case — it brings no benefit and only adds risk and cost."
   },
   "R-PROC-CONTRA": {
