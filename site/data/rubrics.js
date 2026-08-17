@@ -17,7 +17,7 @@ export const rubricConfig = {
   "R-EXAM-MISSED": {
     delta: -10, claimId: "C-RUB-EXAM",
     epiloguePl: "Zaniechano kluczowego badania - diagnoza została postawiona w ciemno, bez potwierdzenia.",
-    epilogueEn: "A key exam was skipped — the diagnosis was made blind, without confirmation."
+    epilogueEn: "A key exam was skipped — the diagnosis was made blindly, without confirmation."
   },
   // --- Diagnoza ---
   "R-DX-CORRECT": {
@@ -38,7 +38,7 @@ export const rubricConfig = {
   "R-DX-LUCKY": {  // trafiona diagnoza, ale bez potwierdzenia badaniem (strzał w ciemno)
     delta: -15, claimId: "C-RUB-DX",
     epiloguePl: "Rozpoznanie okazało się trafne, ale postawione w ciemno, bez badania potwierdzającego - tym razem się udało, lecz bez dowodu to był przypadek, nie rozumowanie.",
-    epilogueEn: "The diagnosis turned out to be correct, but it was made blind, without a confirming exam — this time it worked out, yet without proof it was luck, not reasoning."
+    epilogueEn: "The diagnosis turned out to be correct, but it was made blindly, without a confirming exam — this time it worked out, yet without proof, it was luck, not reasoning."
   },
   // --- Leczenie: grupa ---
   "R-DRUG-GROUP-MATCH": {
@@ -97,7 +97,7 @@ export const rubricConfig = {
   "R-ABX-INDICATED": {
     delta: +5, claimId: "C-AMR-01",
     epiloguePl: "Antybiotyk był uzasadniony potwierdzoną infekcją - to celowo dobrane leczenie.",
-    epilogueEn: "The antibiotic was justified by confirmed infection — appropriately chosen treatment."
+    epilogueEn: "The antibiotic was justified by confirmed infection — it was appropriately chosen treatment."
   },
   "R-DRUG-DUPLICATE": {  // duplikat tego samego leku (M4)
     delta: -5, claimId: "C-RUB-DRUG",
@@ -123,7 +123,7 @@ export const rubricConfig = {
   "R-PROC-CONTRA": {
     delta: -15, claimId: "C-RUB-PROC",
     epiloguePl: "Zlecono zabieg szkodliwy w tym stanie - pogarsza stan pacjenta zamiast pomagać.",
-    epilogueEn: "A harmful procedure was ordered for this condition — it worsens the patient instead of helping."
+    epilogueEn: "A harmful procedure was ordered for this condition — it worsens the patient's condition instead of helping."
   },
   // --- Operacje (kind=surgery) ---
   "R-SURG-REQUIRED": {
@@ -150,7 +150,7 @@ export const rubricConfig = {
   "R-REC-MISSING": {
     delta: -5, claimId: "C-RUB-REC",
     epiloguePl: "Zaniechano kluczowego zalecenia - bez niego opiekun może zepsuć efekt leczenia w domu.",
-    epilogueEn: "A key recommendation was omitted — without it the carer can undo the treatment result at home."
+    epilogueEn: "A key recommendation was omitted — without it, the carer can undo the treatment result at home."
   },
   "R-REC-EXTRA": {
     delta: -3, claimId: "C-RUB-REC",
