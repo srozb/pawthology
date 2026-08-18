@@ -9,6 +9,7 @@ import { CONTENT, GLOSSARY, ICONS } from "../data/index.js";
 import { evaluateCase, availableCases, availableDrugs, availableProcedures, levelFromXp } from "./game.js";
 import { t, detectLang, AVAILABLE_LANGS, LANG_LABELS } from "./i18n.js";
 import { track } from "./track.js";
+import { TUT_STEPS, shouldRun as shouldRunTutorial, showStep as showTutorialStep, closeTutorial } from "./tutorial.js";
 
 /* ---- XP: najlepszy wynik na przypadek (best-per-case) ----
    totalXp = Σ max(0, bestXp[caseId]). Poprawa przy powtórce podnosi total;
@@ -67,7 +68,8 @@ const state = {
   glossaryExpanded: new Set(),  // expanded glossary entry ids in popups
   historyExpanded: new Set(),    // rozwinięte wpisy historii (klucz = entry.date)
   encyclopediaTab: "exams",      // aktywna zakładka katalogu: exams|diseases|drugs|procedures|recommendations|glossary
-  levelOpen: {}                  // rozwinięte poziomy składane (klawisz = numer poziomu) — tylko gdy zwijalny
+  levelOpen: {},                 // rozwinięte poziomy składane (klawisz = numer poziomu) — tylko gdy zwijalny
+  tutorial: { active: false, step: -1 }  // stan sesji samouczka (aktywny + najwyższy pokazany krok)
 };
 state.totalXp = sumXp(state.bestXp);  // total XP = suma najlepszych wyników per przypadek
 
@@ -514,6 +516,7 @@ function attachGlossaryHandlers(container) {
 
 function render() {
   document.documentElement.lang = state.lang;
+  if (state.view !== "game") closeTutorial();   // bąbelk samouczka tylko w widoku gry
   const app = document.getElementById("app");
   app.textContent = "";
 
@@ -2396,8 +2399,14 @@ function renderAbout() {
   ));
 
   container.append(h("div", { class: "action-bar" },
-    h("button", { class: "btn-primary", onclick: () => { state.view = "cases"; render(); } },
+    h("button", { class: "btn-primary", onclick: () => { track("view/cases"); state.view = "cases"; render(); } },
       en ? "← Back" : "← Powrót")
+  ));
+
+  // Powtórka samouczka (reset flagi — wystartuje przy najbliższym pierwszym przypadku)
+  container.append(h("div", { class: "about-tutorial" },
+    h("button", { class: "btn", onclick: replayTutorial }, tt("about.replayTutorial")),
+    h("p", { class: "card-meta" }, tt("about.tutorialHint"))
   ));
 
   return container;
@@ -2420,8 +2429,11 @@ function selectCase(id) {
   state.diagnosisOrder = shuffledDiagnosisOptions(id);
   state.lastResult = null;
   state.glossaryExpanded.clear();
+  const c = getCase(id);
+  state.tutorial = { active: shouldRunTutorial(state, c, !!localStorage.getItem("pawthology.tutorialDone")), step: -1 };
   live(tt("phase.intake"));
   render();
+  if (state.tutorial.active) { track("tutorial/start"); tutorialShow("intake"); }
 }
 
 // Przetasuj kolejność opcji diagnozy (Fisher–Yates) — prawidłowa nie zawsze pierwsza.
@@ -2443,6 +2455,7 @@ function goToPhase(phase) {
   state.glossaryExpanded.clear();
   live(tt(PHASE_KEYS[phase]));
   render();
+  tutorialShow(phase);
 }
 
 function toggleExam(id) {
@@ -2567,6 +2580,7 @@ function finishCase() {
     track("case/outcome/" + result.patientOutcome);
     live(`${tt("label.outcome")}: ${t("outcome." + result.patientOutcome, state.lang)}, XP: ${result.xp >= 0 ? "+" : ""}${result.xp}`);
     render();
+    tutorialShow("outcome");
   } catch (e) {
     live(state.lang === "en" ? "Error evaluating case: " + e.message : "Błąd oceny przypadku: " + e.message);
     console.error(e);
@@ -2576,6 +2590,7 @@ function finishCase() {
 function abandonCase() {
   if (confirm(tt("case.abandonConfirm"))) {
     track("case/abandon/" + state.currentCaseId);
+    closeTutorial();
     state.view = "cases";
     state.currentCaseId = null;
     state.phase = "intake";
@@ -2612,6 +2627,7 @@ function nextPatient() {
 
 function resetCase() {
   track("case/reset/" + state.currentCaseId);
+  closeTutorial();
   state.phase = "intake";
   state.selectedExams = [];
   state.diagnosis = null;
@@ -2645,6 +2661,42 @@ function setLang(lang) {
   state.lang = lang;
   persist();
   render();
+}
+
+/* ---- Tutorial (wariant A: modal per faza) ---- */
+
+/** Pokazuje bąbelk samouczka dla danej fazy — tylko gdy aktywny i to nowy (wyższy) krok. */
+function tutorialShow(phase) {
+  if (!state.tutorial?.active) return;
+  const idx = TUT_STEPS.indexOf(phase);
+  if (idx < 0 || idx <= state.tutorial.step) return;   // wstecz lub ten sam krok: nie powtarzamy
+  state.tutorial.step = idx;
+  track("tutorial/step/" + phase);
+  showTutorialStep(idx, state.lang, {
+    onSkip: tutorialSkip,
+    onClose: tutorialClose,
+    onComplete: tutorialComplete,
+  });
+}
+function tutorialClose() { closeTutorial(); }   // zamknij bąbelk (kontynuuj)
+function tutorialSkip() {                     // pomiń cały samouczek (już nigdy)
+  if (!state.tutorial?.active) return;
+  state.tutorial.active = false;
+  localStorage.setItem("pawthology.tutorialDone", "1");
+  track("tutorial/dismiss");
+  closeTutorial();
+  live(state.lang === "en" ? "Tutorial dismissed." : "Samouczek pominięty.");
+}
+function tutorialComplete() {                  // ostatni krok zakończony
+  state.tutorial.active = false;
+  localStorage.setItem("pawthology.tutorialDone", "1");
+  track("tutorial/complete");
+  closeTutorial();
+  live(state.lang === "en" ? "Tutorial complete." : "Samouczek ukończony.");
+}
+function replayTutorial() {                    // reset flagi → samouczek wystartuje przy pierwszym przypadku
+  localStorage.removeItem("pawthology.tutorialDone");
+  live(state.lang === "en" ? "Tutorial will start when you open the first case." : "Samouczek wystartuje po otwarciu pierwszego przypadku.");
 }
 
 /* ============================== UTIL ============================== */

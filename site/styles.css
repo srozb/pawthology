@@ -1185,6 +1185,15 @@ button:focus-visible, .btn:focus-visible, [tabindex]:focus-visible {
 .knowledge-overlay--hint .knowledge-body { font-style: italic; color: var(--text-muted); }
 .knowledge-overlay--hint .knowledge-modal { border-left: 4px solid var(--primary); }
 
+/* Tutorial overlay — reuses .knowledge-overlay--hint + .knowledge-modal */
+.tutorial-overlay .knowledge-body { font-style: normal; color: var(--text); font-size: 1rem; }
+.tutorial-overlay .knowledge-modal { max-width: 540px; }
+.tutorial-counter { font-size: 0.75rem; font-weight: 600; color: var(--text-muted); margin-left: 0.4rem; vertical-align: middle; }
+.tutorial-footer { display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 1rem; padding-top: 0.7rem; border-top: 1px solid var(--border, #e3ddd4); }
+.tutorial-footer .btn { min-width: 6rem; }
+.about-tutorial { margin-top: 1.2rem; text-align: center; }
+.about-tutorial .card-meta { margin-top: 0.4rem; }
+
 /* Mały przycisk „ℹ" przy leku/chorobie/gatunku/badaniu */
 .info-btn {
   display: inline-flex; align-items: center; justify-content: center;
