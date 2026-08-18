@@ -1271,7 +1271,7 @@ export const cases = [
     {
       "id": "case-snake-mouth-rot",
       "difficulty": 1,
-      "unlockXpThreshold": 0,
+      "unlockXpThreshold": 3,
       "species": "snake",
       "weightKg": 0.4,
       "patientName": "Vader",
