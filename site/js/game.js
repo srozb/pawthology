@@ -61,22 +61,28 @@ function evaluateExams(caseObj, disease, orderedExams, content, verdicts) {
   // zlecono wymagane → +
   required.forEach((id) => {
     if (orderedExams.includes(id)) {
-      pushVerdict(verdicts, "exams", "R-EXAM-NEEDED", content,
-        `Zlecono wymagane badanie „${examLabel(content, id)}”.`);
+      pushVerdict(verdicts, "exams", "R-EXAM-NEEDED", content, (lang) =>
+        lang === "en"
+          ? `Required exam ordered: “${examLabel(content, id, lang)}”.`
+          : `Zlecono wymagane badanie „${examLabel(content, id, lang)}”.`);
     }
   });
   // zlecono wspomagające → też +
   supportive.forEach((id) => {
     if (orderedExams.includes(id)) {
-      pushVerdict(verdicts, "exams", "R-EXAM-NEEDED", content,
-        `Zlecono wspomagające badanie „${examLabel(content, id)}”.`);
+      pushVerdict(verdicts, "exams", "R-EXAM-NEEDED", content, (lang) =>
+        lang === "en"
+          ? `Supportive exam ordered: “${examLabel(content, id, lang)}”.`
+          : `Zlecono wspomagające badanie „${examLabel(content, id, lang)}”.`);
     }
   });
   // brak wymaganego → -
   const missing = required.filter((id) => !orderedExams.includes(id));
   if (missing.length > 0) {
-    pushVerdict(verdicts, "exams", "R-EXAM-MISSED", content,
-      `Nie zlecono wymaganego badania: ${missing.map((id) => examLabel(content, id)).join(", ")}. Diagnoza niepewna.`);
+    pushVerdict(verdicts, "exams", "R-EXAM-MISSED", content, (lang) =>
+      lang === "en"
+        ? `Required exam not ordered: ${missing.map((id) => examLabel(content, id, lang)).join(", ")}. Diagnosis uncertain.`
+        : `Nie zlecono wymaganego badania: ${missing.map((id) => examLabel(content, id, lang)).join(", ")}. Diagnoza niepewna.`);
   }
   // zbędne badania → -  (każde spoza {wymagane, wspomagające, opcjonalne})
   const optional = disease.optionalExams || [];
@@ -84,9 +90,13 @@ function evaluateExams(caseObj, disease, orderedExams, content, verdicts) {
   orderedExams.forEach((id) => {
     if (relevant.has(id)) return;
     const r = results[id];
-    const extra = r && r.textPl ? ` — ${r.textPl}` : "";
-    pushVerdict(verdicts, "exams", "R-EXAM-REDUNDANT", content,
-      `Zlecono zbędne badanie „${examLabel(content, id)}” — nie przynosi informacji do tej sprawy${extra}`);
+    pushVerdict(verdicts, "exams", "R-EXAM-REDUNDANT", content, (lang) => {
+      const extra = r ? (lang === "en" ? (r.textEn || r.textPl) : r.textPl) : "";
+      const suffix = extra ? ` — ${extra}` : "";
+      return lang === "en"
+        ? `Redundant exam ordered: “${examLabel(content, id, lang)}” — adds no information to this case${suffix}`
+        : `Zlecono zbędne badanie „${examLabel(content, id, lang)}” — nie przynosi informacji do tej sprawy${suffix}`;
+    });
   });
 }
 
@@ -97,20 +107,28 @@ function evaluateDiagnosis(caseObj, disease, diagnosis, dxPossible, missing, con
       // trafiona diagnoza mimo braku wymaganego badania — to strzał w ciemno (R-DX-LUCKY).
       // Los pacjenta: jeśli leczenie trafione, pacjent wyzdrowieje (biologicznie leczenie działa),
       // ale XP karze za brak potwierdzenia badaniem.
-      pushVerdict(verdicts, "diagnosis", "R-DX-LUCKY", content,
-        `Diagnoza trafiona, ale bez wymaganego badania — to trafiony strzał w ciemno, nie rozumowanie.`);
+      pushVerdict(verdicts, "diagnosis", "R-DX-LUCKY", content, (lang) =>
+        lang === "en"
+          ? `Diagnosis correct, but without the required exam — a lucky guess, not clinical reasoning.`
+          : `Diagnoza trafiona, ale bez wymaganego badania — to trafiony strzał w ciemno, nie rozumowanie.`);
     } else {
-      pushVerdict(verdicts, "diagnosis", "R-DX-BLOCKED", content,
-        `Diagnoza bez podstaw: brak badań (${missing.map((id) => examLabel(content, id)).join(", ")}).`);
+      pushVerdict(verdicts, "diagnosis", "R-DX-BLOCKED", content, (lang) =>
+        lang === "en"
+          ? `Groundless diagnosis: missing exams (${missing.map((id) => examLabel(content, id, lang)).join(", ")}).`
+          : `Diagnoza bez podstaw: brak badań (${missing.map((id) => examLabel(content, id, lang)).join(", ")}).`);
     }
     return;
   }
   if (diagnosis === disease.id) {
-    pushVerdict(verdicts, "diagnosis", "R-DX-CORRECT", content,
-      `Diagnoza zgodna z wynikami: ${diseaseLabel(content, disease.id)}.`);
+    pushVerdict(verdicts, "diagnosis", "R-DX-CORRECT", content, (lang) =>
+      lang === "en"
+        ? `Diagnosis consistent with findings: ${diseaseLabel(content, disease.id, lang)}.`
+        : `Diagnoza zgodna z wynikami: ${diseaseLabel(content, disease.id, lang)}.`);
   } else {
-    pushVerdict(verdicts, "diagnosis", "R-DX-WRONG", content,
-      `Błędna diagnoza. Wyniki wskazują: ${diseaseLabel(content, disease.id)}, a nie ${diseaseLabel(content, diagnosis)}.`);
+    pushVerdict(verdicts, "diagnosis", "R-DX-WRONG", content, (lang) =>
+      lang === "en"
+        ? `Wrong diagnosis. Findings indicate: ${diseaseLabel(content, disease.id, lang)}, not ${diseaseLabel(content, diagnosis, lang)}.`
+        : `Błędna diagnoza. Wyniki wskazują: ${diseaseLabel(content, disease.id, lang)}, a nie ${diseaseLabel(content, diagnosis, lang)}.`);
   }
 }
 
@@ -120,40 +138,54 @@ function evaluateTreatment(caseObj, disease, species, treatments, weightKg, cont
   const contraGroups = disease.contraindicatedGroups || [];
 
   if (treatments.length === 0 && recGroups.length > 0) {
-    pushVerdict(verdicts, "treatment", "R-NO-TREATMENT", content,
-      `Nie przepisano leczenia pierwszej linii (${recGroups.map((g) => groupLabel(content, g)).join(", ")}).`);
+    pushVerdict(verdicts, "treatment", "R-NO-TREATMENT", content, (lang) =>
+      lang === "en"
+        ? `First-line treatment not prescribed (${recGroups.map((g) => groupLabel(content, g, lang)).join(", ")}).`
+        : `Nie przepisano leczenia pierwszej linii (${recGroups.map((g) => groupLabel(content, g, lang)).join(", ")}).`);
   }
 
   treatments.forEach((rx, idx) => {
     const drug = content.drugs.find((d) => d.id === rx.drug);
     if (!drug) {
-      pushVerdict(verdicts, "treatment", "R-DRUG-GROUP-MISMATCH", content,
-        `Nieznany lek: ${rx.drug}.`);
+      pushVerdict(verdicts, "treatment", "R-DRUG-GROUP-MISMATCH", content, (lang) =>
+        lang === "en"
+          ? `Unknown drug: ${rx.drug}.`
+          : `Nieznany lek: ${rx.drug}.`);
       return;
     }
     // M4: duplikat tego samego leku — nie pompuj XP; pierwsza dawka oceniona
     const earlier = treatments.slice(0, idx).some((p) => p.drug === rx.drug);
     if (earlier) {
-      pushVerdict(verdicts, "treatment", "R-DRUG-DUPLICATE", content,
-        `${drug.inn} przepisany ponownie — powielanie tego samego leku nie ma sensu klinicznego i nie dodaje skuteczności.`);
+      pushVerdict(verdicts, "treatment", "R-DRUG-DUPLICATE", content, (lang) =>
+        lang === "en"
+          ? `${drug.inn} prescribed again — repeating the same drug makes no clinical sense and adds no efficacy.`
+          : `${drug.inn} przepisany ponownie — powielanie tego samego leku nie ma sensu klinicznego i nie dodaje skuteczności.`);
       return;
     }
     // gatunkowa toksyczność — dominująca
     if ((species.toxicDrugs || []).includes(drug.id) || (drug.speciesToxic || []).includes(species.id)) {
-      pushVerdict(verdicts, "treatment", "R-DRUG-SPECIES-TOXIC", content,
-        `${drug.inn} jest toksyczny dla ${speciesLabel(content, species.id)}. ${drugTooltip(drug)}.`);
+      pushVerdict(verdicts, "treatment", "R-DRUG-SPECIES-TOXIC", content, (lang) =>
+        lang === "en"
+          ? `${drug.inn} is toxic to ${speciesLabel(content, species.id, lang)}. ${drugTooltip(drug, lang)}.`
+          : `${drug.inn} jest toksyczny dla ${speciesLabel(content, species.id, lang)}. ${drugTooltip(drug, lang)}.`);
       return; // przy toksycznym dawka nie ma znaczenia
     }
     // grupa — M1: używamy groupPl TYCH leków (nie pierwszego z grupy)
     if (contraGroups.includes(drug.groupId)) {
-      pushVerdict(verdicts, "treatment", "R-DRUG-CONTRAINDICATED", content,
-        `${drug.inn} (grupa: ${drug.groupPl}) jest przeciwwskazany przy ${diseaseLabel(content, disease.id)}.`);
+      pushVerdict(verdicts, "treatment", "R-DRUG-CONTRAINDICATED", content, (lang) =>
+        lang === "en"
+          ? `${drug.inn} (group: ${lang === "en" ? (drug.groupEn || drug.groupPl) : drug.groupPl}) is contraindicated in ${diseaseLabel(content, disease.id, lang)}.`
+          : `${drug.inn} (grupa: ${drug.groupPl}) jest przeciwwskazany przy ${diseaseLabel(content, disease.id, lang)}.`);
     } else if (recGroups.includes(drug.groupId)) {
-      pushVerdict(verdicts, "treatment", "R-DRUG-GROUP-MATCH", content,
-        `${drug.inn} — właściwa grupa (${drug.groupPl}) dla ${diseaseLabel(content, disease.id)}.`);
+      pushVerdict(verdicts, "treatment", "R-DRUG-GROUP-MATCH", content, (lang) =>
+        lang === "en"
+          ? `${drug.inn} — correct group (${lang === "en" ? (drug.groupEn || drug.groupPl) : drug.groupPl}) for ${diseaseLabel(content, disease.id, lang)}.`
+          : `${drug.inn} — właściwa grupa (${drug.groupPl}) dla ${diseaseLabel(content, disease.id, lang)}.`);
     } else {
-      pushVerdict(verdicts, "treatment", "R-DRUG-GROUP-MISMATCH", content,
-        `${drug.inn} (grupa: ${drug.groupPl}) nie jest leczeniem pierwszej linii przy ${diseaseLabel(content, disease.id)}.`);
+      pushVerdict(verdicts, "treatment", "R-DRUG-GROUP-MISMATCH", content, (lang) =>
+        lang === "en"
+          ? `${drug.inn} (group: ${lang === "en" ? (drug.groupEn || drug.groupPl) : drug.groupPl}) is not first-line treatment for ${diseaseLabel(content, disease.id, lang)}.`
+          : `${drug.inn} (grupa: ${drug.groupPl}) nie jest leczeniem pierwszej linii przy ${diseaseLabel(content, disease.id, lang)}.`);
     }
     // dawka (tylko systemic)
     if (drug.dosingType === "systemic") {
@@ -170,11 +202,16 @@ function evaluateDose(drug, species, rx, weightKg, content, verdicts, doseBreakd
   const noDose = !Number.isFinite(doseMg) || doseMg < 0;
   if (!spDosing || !spDosing.mgPerKg || noWeight || noDose) {
     doseBreakdown.push({ drug: drug.id, drugName: drug.inn, doseMg, weightKg, mgPerKg: NaN, band: spDosing ? spDosing.mgPerKg : null, verdict: "invalid" });
-    const reason = noWeight
-      ? `nie zważono pacjenta (waga = ${fmt(weightKg)} kg) — bez wagi nie da się liczyć mg/kg. Zważ pacjenta i oblicz: dawka mg = mg/kg × waga kg.`
-      : `brak lub niepoprawna dawka (${fmt(doseMg)} mg) leku systemic — nie da się ocenić bezpieczeństwa.`;
-    pushVerdict(verdicts, "treatment", "R-DOSE-INVALID", content,
-      `${drug.inn}: ${reason}`);
+    pushVerdict(verdicts, "treatment", "R-DOSE-INVALID", content, (lang) => {
+      const reason = noWeight
+        ? (lang === "en"
+            ? `patient not weighed (weight = ${fmt(weightKg)} kg) — without weight, mg/kg cannot be calculated. Weigh the patient and compute: dose mg = mg/kg × weight kg.`
+            : `nie zważono pacjenta (waga = ${fmt(weightKg)} kg) — bez wagi nie da się liczyć mg/kg. Zważ pacjenta i oblicz: dawka mg = mg/kg × waga kg.`)
+        : (lang === "en"
+            ? `missing or invalid dose (${fmt(doseMg)} mg) for a systemic drug — safety cannot be assessed.`
+            : `brak lub niepoprawna dawka (${fmt(doseMg)} mg) leku systemic — nie da się ocenić bezpieczeństwa.`);
+      return `${drug.inn}: ${reason}`;
+    });
     return;
   }
   const band = spDosing.mgPerKg; // {min,max}
@@ -185,22 +222,30 @@ function evaluateDose(drug, species, rx, weightKg, content, verdicts, doseBreakd
   if (band.min === 0 && band.max === 0) {
     // lek w ogóle niepolecany (np. OTC ludzki) — zarejestrowany jako poza pasmem
     entry.verdict = "over";
-    pushVerdict(verdicts, "treatment", "R-DOSE-OVER", content,
-      `${drug.inn}: ${fmt(doseMg)} mg = ${fmt(mgPerKg)} mg/kg. Lek niepolecany — pasmo bezpieczeństwa niewyznaczone.`);
+    pushVerdict(verdicts, "treatment", "R-DOSE-OVER", content, (lang) =>
+      lang === "en"
+        ? `${drug.inn}: ${fmt(doseMg)} mg = ${fmt(mgPerKg)} mg/kg. Drug not recommended — safety range undefined.`
+        : `${drug.inn}: ${fmt(doseMg)} mg = ${fmt(mgPerKg)} mg/kg. Lek niepolecany — pasmo bezpieczeństwa niewyznaczone.`);
     return;
   }
   if (mgPerKg >= band.min && mgPerKg <= band.max) {
     entry.verdict = "in-range";
-    pushVerdict(verdicts, "treatment", "R-DOSE-IN-RANGE", content,
-      `${drug.inn}: ${fmt(doseMg)} mg = ${fmt(mgPerKg)} mg/kg, w paśmie ${fmt(band.min)}–${fmt(band.max)} mg/kg.`);
+    pushVerdict(verdicts, "treatment", "R-DOSE-IN-RANGE", content, (lang) =>
+      lang === "en"
+        ? `${drug.inn}: ${fmt(doseMg)} mg = ${fmt(mgPerKg)} mg/kg, within the ${fmt(band.min)}–${fmt(band.max)} mg/kg range.`
+        : `${drug.inn}: ${fmt(doseMg)} mg = ${fmt(mgPerKg)} mg/kg, w paśmie ${fmt(band.min)}–${fmt(band.max)} mg/kg.`);
   } else if (mgPerKg < band.min) {
     entry.verdict = "under";
-    pushVerdict(verdicts, "treatment", "R-DOSE-UNDER", content,
-      `${drug.inn}: ${fmt(mgPerKg)} mg/kg poniżej pasma ${fmt(band.min)}–${fmt(band.max)} — niedodawkowanie, leczenie nieskuteczne. (Oblicz: dawka mg = mg/kg × waga kg.)`);
+    pushVerdict(verdicts, "treatment", "R-DOSE-UNDER", content, (lang) =>
+      lang === "en"
+        ? `${drug.inn}: ${fmt(mgPerKg)} mg/kg below the ${fmt(band.min)}–${fmt(band.max)} range — underdosed, treatment ineffective. (Compute: dose mg = mg/kg × weight kg.)`
+        : `${drug.inn}: ${fmt(mgPerKg)} mg/kg poniżej pasma ${fmt(band.min)}–${fmt(band.max)} — niedodawkowanie, leczenie nieskuteczne. (Oblicz: dawka mg = mg/kg × waga kg.)`);
   } else {
     entry.verdict = "over";
-    pushVerdict(verdicts, "treatment", "R-DOSE-OVER", content,
-      `${drug.inn}: ${fmt(mgPerKg)} mg/kg powyżej pasma ${fmt(band.min)}–${fmt(band.max)} — przedawkowanie, ryzyko toksyczności. (Waga = ${fmt(weightKg)} kg.)`);
+    pushVerdict(verdicts, "treatment", "R-DOSE-OVER", content, (lang) =>
+      lang === "en"
+        ? `${drug.inn}: ${fmt(mgPerKg)} mg/kg above the ${fmt(band.min)}–${fmt(band.max)} range — overdose, risk of toxicity. (Weight = ${fmt(weightKg)} kg.)`
+        : `${drug.inn}: ${fmt(mgPerKg)} mg/kg powyżej pasma ${fmt(band.min)}–${fmt(band.max)} — przedawkowanie, ryzyko toksyczności. (Waga = ${fmt(weightKg)} kg.)`);
   }
 }
 
@@ -228,11 +273,15 @@ function evaluateProcedures(caseObj, orderedIds, content, verdicts) {
   expectedProc.forEach((pid) => {
     const p = allProcedures.find((x) => x.id === pid);
     if (ordered.has(pid)) {
-      pushVerdict(verdicts, "procedure", "R-PROC-REQUIRED", content,
-        `Zlecono wymagany zabieg: ${procLabel(content, pid)}.`);
+      pushVerdict(verdicts, "procedure", "R-PROC-REQUIRED", content, (lang) =>
+        lang === "en"
+          ? `Required procedure ordered: ${procLabel(content, pid, lang)}.`
+          : `Zlecono wymagany zabieg: ${procLabel(content, pid, lang)}.`);
     } else {
-      pushVerdict(verdicts, "procedure", "R-PROC-MISSING", content,
-        `Zaniechano wymaganego zabiegu: ${procLabel(content, pid)}.`);
+      pushVerdict(verdicts, "procedure", "R-PROC-MISSING", content, (lang) =>
+        lang === "en"
+          ? `Required procedure omitted: ${procLabel(content, pid, lang)}.`
+          : `Zaniechano wymaganego zabiegu: ${procLabel(content, pid, lang)}.`);
     }
   });
 
@@ -241,11 +290,15 @@ function evaluateProcedures(caseObj, orderedIds, content, verdicts) {
     if (surgCoveredByAlt.has(sid)) return; // szyna zaspokaja brak operacji
     const s = allProcedures.find((x) => x.id === sid);
     if (ordered.has(sid)) {
-      pushVerdict(verdicts, "procedure", "R-SURG-REQUIRED", content,
-        `Zlecono wymaganą operację: ${procLabel(content, sid)}.`);
+      pushVerdict(verdicts, "procedure", "R-SURG-REQUIRED", content, (lang) =>
+        lang === "en"
+          ? `Required surgery ordered: ${procLabel(content, sid, lang)}.`
+          : `Zlecono wymaganą operację: ${procLabel(content, sid, lang)}.`);
     } else {
-      pushVerdict(verdicts, "procedure", "R-SURG-MISSING", content,
-        `Zaniechano wymaganej operacji: ${procLabel(content, sid)}.`);
+      pushVerdict(verdicts, "procedure", "R-SURG-MISSING", content, (lang) =>
+        lang === "en"
+          ? `Required surgery omitted: ${procLabel(content, sid, lang)}.`
+          : `Zaniechano wymaganej operacji: ${procLabel(content, sid, lang)}.`);
     }
   });
 
@@ -256,8 +309,10 @@ function evaluateProcedures(caseObj, orderedIds, content, verdicts) {
     const p = allProcedures.find((x) => x.id === pid);
     if (p && Array.isArray(p.alternativeTo) &&
         p.alternativeTo.some((sid) => expectedSurg.includes(sid) && !ordered.has(sid))) {
-      pushVerdict(verdicts, "procedure", "R-PROC-REQUIRED", content,
-        `Zlecono zabieg alternatywny (${procLabel(content, pid)}) w zastępstwie operacji — wystarczający dla stabilizacji.`);
+      pushVerdict(verdicts, "procedure", "R-PROC-REQUIRED", content, (lang) =>
+        lang === "en"
+          ? `Alternative procedure (${procLabel(content, pid, lang)}) ordered in place of surgery — sufficient for stabilization.`
+          : `Zlecono zabieg alternatywny (${procLabel(content, pid, lang)}) w zastępstwie operacji — wystarczający dla stabilizacji.`);
     }
   });
 
@@ -268,15 +323,21 @@ function evaluateProcedures(caseObj, orderedIds, content, verdicts) {
     const p = allProcedures.find((x) => x.id === pid);
     // szkodliwy (w contraindicated) → osobna reguła
     if (contra.includes(pid)) {
-      pushVerdict(verdicts, "procedure", "R-PROC-CONTRA", content,
-        `Zlecono zabieg szkodliwy przy ${diseaseLabel(content, caseObj.trueDiagnosis)}: ${procLabel(content, pid)}.`);
+      pushVerdict(verdicts, "procedure", "R-PROC-CONTRA", content, (lang) =>
+        lang === "en"
+          ? `Harmful procedure ordered in ${diseaseLabel(content, caseObj.trueDiagnosis, lang)}: ${procLabel(content, pid, lang)}.`
+          : `Zlecono zabieg szkodliwy przy ${diseaseLabel(content, caseObj.trueDiagnosis, lang)}: ${procLabel(content, pid, lang)}.`);
     } else if (p && p.kind === "surgery") {
       // zbędna operacja (kind=surgery) → surowsza kara niż zbędny zabieg
-      pushVerdict(verdicts, "procedure", "R-SURG-EXTRA", content,
-        `Zlecono operację zbędną w tej sprawie: ${procLabel(content, pid)}.`);
+      pushVerdict(verdicts, "procedure", "R-SURG-EXTRA", content, (lang) =>
+        lang === "en"
+          ? `Unnecessary surgery ordered in this case: ${procLabel(content, pid, lang)}.`
+          : `Zlecono operację zbędną w tej sprawie: ${procLabel(content, pid, lang)}.`);
     } else {
-      pushVerdict(verdicts, "procedure", "R-PROC-EXTRA", content,
-        `Zlecono zabieg zbędny w tej sprawie: ${procLabel(content, pid)}.`);
+      pushVerdict(verdicts, "procedure", "R-PROC-EXTRA", content, (lang) =>
+        lang === "en"
+          ? `Unnecessary procedure ordered in this case: ${procLabel(content, pid, lang)}.`
+          : `Zlecono zabieg zbędny w tej sprawie: ${procLabel(content, pid, lang)}.`);
     }
   });
 
@@ -287,8 +348,10 @@ function evaluateProcedures(caseObj, orderedIds, content, verdicts) {
       if (ordered.has(pid)) {
         const p = allProcedures.find((x) => x.id === pid);
         if (p && Array.isArray(p.alternativeTo) && p.alternativeTo.some((sid) => expectedSurg.includes(sid) && ordered.has(sid))) {
-          pushVerdict(verdicts, "procedure", "R-PROC-EXTRA", content,
-            `Zlecono zarówno operację, jak i zabieg alternatywny (${procLabel(content, pid)}) — wystarczy jedno z nich.`);
+          pushVerdict(verdicts, "procedure", "R-PROC-EXTRA", content, (lang) =>
+            lang === "en"
+              ? `Both surgery and an alternative procedure (${procLabel(content, pid, lang)}) were ordered — one is enough.`
+              : `Zlecono zarówno operację, jak i zabieg alternatywny (${procLabel(content, pid, lang)}) — wystarczy jedno z nich.`);
         }
       }
     });
@@ -303,18 +366,24 @@ function evaluateRecommendations(caseObj, orderedIds, content, verdicts) {
 
   expected.forEach((rid) => {
     if (ordered.has(rid)) {
-      pushVerdict(verdicts, "recommendation", "R-REC-REQUIRED", content,
-        `Zlecono właściwe zalecenie: ${recLabel(content, rid)}.`);
+      pushVerdict(verdicts, "recommendation", "R-REC-REQUIRED", content, (lang) =>
+        lang === "en"
+          ? `Appropriate recommendation given: ${recLabel(content, rid, lang)}.`
+          : `Zlecono właściwe zalecenie: ${recLabel(content, rid, lang)}.`);
     } else {
-      pushVerdict(verdicts, "recommendation", "R-REC-MISSING", content,
-        `Zaniechano kluczowego zalecenia: ${recLabel(content, rid)}.`);
+      pushVerdict(verdicts, "recommendation", "R-REC-MISSING", content, (lang) =>
+        lang === "en"
+          ? `Key recommendation omitted: ${recLabel(content, rid, lang)}.`
+          : `Zaniechano kluczowego zalecenia: ${recLabel(content, rid, lang)}.`);
     }
   });
   // zbędne zalecenia
   ordered.forEach((rid) => {
     if (expected.includes(rid)) return;
-    pushVerdict(verdicts, "recommendation", "R-REC-EXTRA", content,
-      `Zalecono coś zbędnego: ${recLabel(content, rid)}.`);
+    pushVerdict(verdicts, "recommendation", "R-REC-EXTRA", content, (lang) =>
+      lang === "en"
+        ? `Unnecessary recommendation given: ${recLabel(content, rid, lang)}.`
+        : `Zalecono coś zbędnego: ${recLabel(content, rid, lang)}.`);
   });
 }
 
@@ -326,11 +395,15 @@ function evaluateRationality(disease, treatments, content, verdicts) {
   });
   if (!abxGiven) return;
   if (disease.bacterialInfection) {
-    pushVerdict(verdicts, "rationality", "R-ABX-INDICATED", content,
-      `Antybiotyk uzasadniony — rozpoznanie wiąże się z infekcją bakteryjną.`);
+    pushVerdict(verdicts, "rationality", "R-ABX-INDICATED", content, (lang) =>
+      lang === "en"
+        ? `Antibiotic justified — the diagnosis involves a bacterial infection.`
+        : `Antybiotyk uzasadniony — rozpoznanie wiąże się z infekcją bakteryjną.`);
   } else {
-    pushVerdict(verdicts, "rationality", "R-ABX-IRRATIONAL", content,
-      `Antybiotyk NIEUZASADNIONY — rozpoznanie nie wiąże się z infekcją bakteryjną. To napędza oporność (AMR) i naraża pacjenta na skutki uboczne bez korzyści.`);
+    pushVerdict(verdicts, "rationality", "R-ABX-IRRATIONAL", content, (lang) =>
+      lang === "en"
+        ? `Antibiotic UNJUSTIFIED — the diagnosis does not involve a bacterial infection. It drives resistance (AMR) and exposes the patient to side effects with no benefit.`
+        : `Antybiotyk NIEUZASADNIONY — rozpoznanie nie wiąże się z infekcją bakteryjną. To napędza oporność (AMR) i naraża pacjenta na skutki uboczne bez korzyści.`);
   }
 }
 
@@ -396,16 +469,20 @@ function synthesizeOutcome(verdicts, disease) {
 }
 
 /* ----------------------------- POMOCNICZE ----------------------------- */
-function pushVerdict(verdicts, stage, rule, content, detailPl) {
+function pushVerdict(verdicts, stage, rule, content, detailBuilder) {
   const cfg = content.rubricConfig[rule];
   if (!cfg) throw new Error("Unknown rubric rule: " + rule);
+  // detailBuilder: (lang) => string — buduje tekst werdyktu w danym języku,
+  // używając zlokalizowanych helperów etykiet (*Label(content, id, lang)).
+  const detailPl = detailBuilder("pl");
+  const detailEn = detailBuilder("en");
   verdicts.push({
     stage,
     rule,
     delta: cfg.delta,
     claimId: cfg.claimId,
     detailPl,
-    detailEn: detailPl // en = pl do czasu i18n detali (poza zakresem MVP)
+    detailEn
   });
 }
 
@@ -413,34 +490,39 @@ function sumXp(verdicts) {
   return verdicts.reduce((s, v) => s + v.delta, 0);
 }
 
-function examLabel(content, id) {
+function examLabel(content, id, lang = "pl") {
   const e = content.exams.find((x) => x.id === id);
-  return e ? e.labelPl : id;
+  if (!e) return id;
+  return lang === "en" ? (e.labelEn || e.labelPl) : e.labelPl;
 }
-function diseaseLabel(content, id) {
+function diseaseLabel(content, id, lang = "pl") {
   const d = content.diseases.find((x) => x.id === id);
-  return d ? d.labelPl : id;
+  if (!d) return id;
+  return lang === "en" ? (d.labelEn || d.labelPl) : d.labelPl;
 }
-function groupLabel(content, id) {
+function groupLabel(content, id, lang = "pl") {
   const d = content.drugs.find((x) => x.groupId === id);
-  if (d) return d.groupPl;
+  if (d) return lang === "en" ? (d.groupEn || d.groupPl) : d.groupPl;
   // fallback: z ewentualnej tabeli grup (tu przez pierwszy lek)
   return id;
 }
-function speciesLabel(content, id) {
+function speciesLabel(content, id, lang = "pl") {
   const s = content.species.find((x) => x.id === id);
-  return s ? s.labelPl : id;
+  if (!s) return id;
+  return lang === "en" ? (s.labelEn || s.labelPl) : s.labelPl;
 }
-function procLabel(content, id) {
+function procLabel(content, id, lang = "pl") {
   const p = (content.procedures || []).find((x) => x.id === id);
-  return p ? p.labelPl : id;
+  if (!p) return id;
+  return lang === "en" ? (p.labelEn || p.labelPl) : p.labelPl;
 }
-function recLabel(content, id) {
+function recLabel(content, id, lang = "pl") {
   const r = (content.recommendations || []).find((x) => x.id === id);
-  return r ? r.labelPl : id;
+  if (!r) return id;
+  return lang === "en" ? (r.labelEn || r.labelPl) : r.labelPl;
 }
-function drugTooltip(drug) {
-  return drug.tooltipPl || "";
+function drugTooltip(drug, lang = "pl") {
+  return lang === "en" ? (drug.tooltipEn || drug.tooltipPl || "") : (drug.tooltipPl || "");
 }
 function fmt(n) {
   if (!Number.isFinite(n)) return "—";

@@ -1912,7 +1912,8 @@ function renderVerdictGroup(verdicts) {
     const detailDiv = h("div", { class: "verdict-detail" });
     const stageSpan = h("span", { class: "verdict-stage" }, tt("verdict.stage." + v.stage));
     const detailText = h("div", { class: "verdict-detail-text" });
-    detailText.innerHTML = wrapGlossaryTerms(v.detailPl, state.lang);
+    const detail = state.lang === "en" ? (v.detailEn || v.detailPl) : v.detailPl;
+    detailText.innerHTML = wrapGlossaryTerms(detail, state.lang);
     detailDiv.append(stageSpan, detailText);
     // Metadane dla LLM/debug (rule + claimId) — NIE dla gracza. Ukryte; do skopiowania
     // służą przyciskiem „Kopiuj szczegóły" na ekranie wyniku (patrz renderOutcome).
@@ -1940,7 +1941,8 @@ function renderDebugCopyButton(r, c) {
       ];
       for (const v of r.verdicts) {
         const sign = v.delta > 0 ? "+" : "";
-        lines.push(`  [${sign}${v.delta}] ${tt("verdict.stage." + v.stage)} | ${v.rule} | claim: ${v.claimId} | ${v.detailPl}`);
+        const vd = state.lang === "en" ? (v.detailEn || v.detailPl) : v.detailPl;
+        lines.push(`  [${sign}${v.delta}] ${tt("verdict.stage." + v.stage)} | ${v.rule} | claim: ${v.claimId} | ${vd}`);
       }
       const text = lines.join("\n");
       const done = () => live(tt("outcome.copyDebugDone"));
@@ -2710,6 +2712,15 @@ function setLang(lang) {
   state.lang = lang;
   persist();
   render();
+  // Overlay samouczka żyje na <body> (poza #app), więc render() go nie odświeża —
+  // jeśli bąbelk jest akurat widoczny, pokaż go ponownie w nowym języku.
+  if (document.querySelector(".tutorial-overlay") && state.tutorial?.active && state.tutorial.step >= 0) {
+    showTutorialStep(state.tutorial.step, state.lang, {
+      onSkip: tutorialSkip,
+      onClose: tutorialClose,
+      onComplete: tutorialComplete,
+    });
+  }
 }
 
 /* ---- Tutorial (wariant A: modal per faza) ---- */
