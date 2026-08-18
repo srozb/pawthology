@@ -619,7 +619,7 @@ button:focus-visible, .btn:focus-visible, [tabindex]:focus-visible {
 .drug-group-chevron { margin-left: auto; font-size: 0.9rem; color: var(--primary); transition: transform 0.2s ease; flex-shrink: 0; }
 .drug-group--collapsed .drug-group-chevron { transform: rotate(-90deg); }
 .drug-group-count { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); background: var(--surface); border: 1px solid var(--border); padding: 0.1rem 0.45rem; border-radius: 999px; white-space: nowrap; }
-.drug-group-drugs { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.7rem 0.9rem; }
+.drug-group-drugs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; padding: 0.7rem 0.9rem; }
 .drug-group-drugs--hidden { display: none; }
 
 /* === Locked cards (progresywne odblokowanie — widoczne zablokowane encje) === */
@@ -1326,6 +1326,7 @@ button:focus-visible, .btn:focus-visible, [tabindex]:focus-visible {
   .patient-state .patient-visual { width: 3em; height: 3em; }
   .patient-state .patient-visual.patient-visual--photo { max-width: none; }
   .tile-grid { grid-template-columns: 1fr; }
+  .drug-group-drugs { grid-template-columns: 1fr; }
   .drug-group-banner { width: 64px; height: 32px; }
   .narrative-text { font-size: 1.1rem; }
   .stepper { font-size: 0.75rem; }
