@@ -46,10 +46,16 @@ export function evaluateCase(caseObj, decisions, content) {
   evaluateRationality(disease, treatments, content, verdicts);
 
   // --- XP i LOS PACJENTA ---
-  const xp = Math.max(0, sumXp(verdicts, content));
+  // maxXp = „designed ceiling” danego przypadku (najlepszy zamierzony przebieg).
+  // SUWamy wynik: nie można zarobić więcej niż zaprojektowano (powstrzymuje to napompowanie
+  // XP przez powielanie leków tej samej grupy itp.). bestXp per przypadek = max przebiegów,
+  // więc i tak nigdy nie przekroczy maxXp — cap wymusza uczciwość wyniku.
+  const xpRaw = Math.max(0, sumXp(verdicts, content));
+  const maxXp = Number.isFinite(caseObj.maxXp) ? caseObj.maxXp : Infinity;
+  const xp = Math.min(xpRaw, maxXp);
   const patientOutcome = synthesizeOutcome(verdicts, disease);
 
-  return { xp, patientOutcome, verdicts, doseBreakdown, dxPossible };
+  return { xp, xpRaw, maxXp, patientOutcome, verdicts, doseBreakdown, dxPossible };
 }
 
 /* ----------------------------- BADANIA ----------------------------- */

@@ -53,6 +53,27 @@ test("każdy scenariusz ma wymagane pola (id, caseId, decisions, expected)", () 
   assert.deepEqual(bad, [], `Scenariusze z brakującymi polami: ${bad.map((s) => s.id).join(", ")}`);
 });
 
+// maxXp per case = wynik kanonicznego scenariusza „-good” (zamierzony najlepszy przebieg).
+// Utrzymuje maxXp w synchronizacji ze zmianami rubryki: gdy delta się zmieni, test
+// się posypie i wymusi przeliczenie maxXp w cases.js.
+test("maxXp każdego przypadku = wynik kanonicznego scenariusza *-good", () => {
+  const good = scenarios.filter((s) => s.id.endsWith("-good"));
+  for (const s of good) {
+    const c = CONTENT.cases.find((x) => x.id === s.caseId);
+    const r = evaluateCase(c, s.decisions, CONTENT);
+    assert.equal(r.xp, c.maxXp, `${c.id}: good scenario xp=${r.xp} ≠ maxXp=${c.maxXp}`);
+  }
+});
+
+// Cap: żaden scenariusz nie przekracza maxXp swojego przypadku (ucięcie zachowuje uczciwość).
+test("cap: żaden scenariusz nie przekracza maxXp przypadku", () => {
+  for (const s of scenarios) {
+    const c = CONTENT.cases.find((x) => x.id === s.caseId);
+    const r = evaluateCase(c, s.decisions, CONTENT);
+    assert.ok(r.xp <= c.maxXp, `${s.id}: xp=${r.xp} > maxXp=${c.maxXp}`);
+  }
+});
+
 // --- Testy per-scenariusz (dynamiczne) ---
 
 for (const scenario of scenarios) {

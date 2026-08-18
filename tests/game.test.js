@@ -316,7 +316,15 @@ test("winnability: każdy przypadek wygralny na swoim poziomie", () => {
   }
 });
 
-// === NOWE REGUŁY: zabiegi, operacje, zalecenia ===
+// maxXp per case — „designed ceiling”: każdy przypadek ma skończony, dodatni maxXp,
+// a wynik każdego scenariusza nie przekracza maxXp (cap zachowuje uczciwość).
+test("maxXp: każdy przypadek ma skończony dodatni designed ceiling", () => {
+  for (const cs of CONTENT.cases) {
+    assert.ok(Number.isFinite(cs.maxXp), `${cs.id}: brak maxXp`);
+    assert.ok(cs.maxXp > 0, `${cs.id}: maxXp=${cs.maxXp} ≤ 0`);
+  }
+});
+
 // verdictRules(r) = Set(r.verdicts.map(v => v.rule)) — helper już zdefiniowany powyżej.
 
 test("zabieg wymagany zlecony → R-PROC-REQUIRED", () => {

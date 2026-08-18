@@ -707,6 +707,28 @@ function toggleLevel(level) {
 
 const DIFFICULTY_DOTS = { 1: "●○○", 2: "●●○", 3: "●●●" };
 
+/** Cienki pasek postępu XP (best lub ten przebieg) względem maxXp przypadku.
+ *  Wypełnienie proporcjonalnie do xp/max; kolor odbija tier wyniku (recovered=zielony itd.).
+ *  ariaKey → ttf(ariaKey,{xp,max}) jako etykieta a11y. Etykieta tekstowa: „{xp}/{max} XP”. */
+function buildXpBar(xp, max, outcome, ariaKey) {
+  const mx = Math.max(0, Number(max) || 0);
+  const val = Math.max(0, Number(xp) || 0);
+  const pct = mx > 0 ? Math.min(100, Math.max(0, (val / mx) * 100)) : 0;
+  const tier = ["recovered", "improving", "not-responding", "deteriorating", "critical"].includes(outcome) ? outcome : "";
+  const row = h("div", { class: "xp-bar" });
+  const track = h("div", {
+    class: "xp-bar-track",
+    role: "progressbar",
+    "aria-valuemin": "0",
+    "aria-valuemax": String(mx),
+    "aria-valuenow": String(val),
+    "aria-label": ttf(ariaKey, { xp: String(val), max: String(mx) })
+  });
+  track.append(h("div", { class: `xp-bar-fill${tier ? " state-" + tier : ""}`, style: `width:${pct}%` }));
+  row.append(track, h("span", { class: "xp-bar-label" }, `${val}/${mx} XP`));
+  return row;
+}
+
 /** Build a case selection card. `unlocked` is the Set of currently available case ids. */
 function buildCaseCard(c, unlocked) {
   const isUnlocked = unlocked.has(c.id);
@@ -745,6 +767,11 @@ function buildCaseCard(c, unlocked) {
     ),
     h("div", { class: "case-narrative-preview" }, loc(c, "narrative"))
   );
+
+  // Pasek najlepszego wyniku vs maxXp przypadku — tylko dla zagranych przypadków.
+  if (isDone) {
+    card.append(buildXpBar(state.bestXp[c.id], c.maxXp, state.bestOutcome[c.id], "case.bestXpAria"));
+  }
 
   if (!isUnlocked) {
     const missing = Math.max(0, requiredXp - effectiveXp());
@@ -1790,26 +1817,33 @@ function renderOutcome(c) {
   // XP breakdown
   const xpPos = r.verdicts.filter((v) => v.delta > 0).reduce((s, v) => s + v.delta, 0);
   const xpNeg = r.verdicts.filter((v) => v.delta < 0).reduce((s, v) => s + v.delta, 0);
-  container.append(h("div", { class: "card xp-breakdown-card" },
+  const breakdownChildren = [
     h("div", { class: "xp-breakdown-row" },
       h("span", { class: "xp-breakdown-label" }, tt("outcome.xpBreakdown")),
       h("span", { class: "xp-breakdown-total" }, `${r.xp >= 0 ? "+" : ""}${r.xp}`)
     ),
+    // Pasek: ten przebieg vs maxXp przypadku (zielony proporcjonalnie; kolor odbija wynik pacjenta).
+    buildXpBar(r.xp, r.maxXp, r.patientOutcome, "outcome.runXpAria"),
     h("div", { class: "xp-breakdown-detail" },
       h("span", { class: "xp-pos" }, `${tt("outcome.xpPositive")}: +${xpPos}`),
       h("span", { class: "xp-neg" }, `${tt("outcome.xpNegative")}: ${xpNeg}`),
       h("span", { class: "xp-total-badge" }, `${tt("label.xpTotal")}: ${displayXpStr()}`)
-    ),
-    h("div", { class: "xp-record-note" },
-      r.debugFrozen
-        ? tt("debug.outcomeNote")
-        : (r.wasPlayedBefore && r.xpDelta === 0
-            ? tt("outcome.recordNotBeaten")
-            : (r.xpDelta > 0
-                ? ttf("outcome.recordNew", { delta: r.xpDelta })
-                : tt("outcome.recordFirst")))
     )
-  ));
+  ];
+  // Gdyby wynik przebiegu przekroczył maxXp i został ucięty — dyskretna notka.
+  if (Number.isFinite(r.maxXp) && Number.isFinite(r.xpRaw) && r.xpRaw > r.xp) {
+    breakdownChildren.push(h("div", { class: "xp-cap-note" }, ttf("outcome.cappedNote", { max: r.maxXp })));
+  }
+  breakdownChildren.push(h("div", { class: "xp-record-note" },
+    r.debugFrozen
+      ? tt("debug.outcomeNote")
+      : (r.wasPlayedBefore && r.xpDelta === 0
+          ? tt("outcome.recordNotBeaten")
+          : (r.xpDelta > 0
+              ? ttf("outcome.recordNew", { delta: r.xpDelta })
+              : tt("outcome.recordFirst"))))
+  );
+  container.append(h("div", { class: "card xp-breakdown-card" }, ...breakdownChildren));
 
   // Grouped verdicts
   const positive = r.verdicts.filter((v) => v.delta > 0);
@@ -1936,7 +1970,7 @@ function renderDebugCopyButton(r, c) {
     title: tt("outcome.copyDebugAria"),
     onclick: () => {
       const lines = [
-        `Pawthology case=${c?.id || "?"} dx=${state.diagnosis || "?"} outcome=${r.patientOutcome} xp=${r.xp}`,
+        `Pawthology case=${c?.id || "?"} dx=${state.diagnosis || "?"} outcome=${r.patientOutcome} xp=${r.xp}${r.xpRaw > r.xp ? ` (raw ${r.xpRaw}, capped to ${r.maxXp})` : ""}`,
         "Verdicts:"
       ];
       for (const v of r.verdicts) {

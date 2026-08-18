@@ -6,6 +6,7 @@
 export const cases = [
   {
     id: "case-abrasion-paw",
+    maxXp: 70,
     difficulty: 1,
     unlockXpThreshold: 0,
     species: "dog",
@@ -79,6 +80,7 @@ export const cases = [
   },
   {
     id: "case-otitis-dog",
+    maxXp: 70,
     difficulty: 1,
     unlockXpThreshold: 20,
     species: "dog",
@@ -152,6 +154,7 @@ export const cases = [
   },
   {
     id: "case-diarrhea-cat",
+    maxXp: 55,
     difficulty: 2,
     unlockXpThreshold: 150,
     species: "cat",
@@ -224,6 +227,7 @@ export const cases = [
   },
   {
     id: "case-fracture-dog",
+    maxXp: 70,
     difficulty: 2,
     unlockXpThreshold: 200,
     species: "dog",
@@ -305,6 +309,7 @@ export const cases = [
   },
   {
     id: "case-fleas-cat",
+    maxXp: 55,
     difficulty: 1,
     unlockXpThreshold: 30,
     species: "cat",
@@ -369,6 +374,7 @@ export const cases = [
   },
   {
     id: "case-malocclusion-rabbit",
+    maxXp: 65,
     difficulty: 1,
     unlockXpThreshold: 40,
     species: "rabbit",
@@ -435,6 +441,7 @@ export const cases = [
   ,
   {
     id: "case-feline-herpesvirus",
+    maxXp: 50,
     difficulty: 2, unlockXpThreshold: 220,
     species: "cat", weightKg: 4,
     patientName: "Bageera",
@@ -497,6 +504,7 @@ export const cases = [
   },
   {
     id: "case-babesiosis-dog",
+    maxXp: 75,
     difficulty: 3, unlockXpThreshold: 400,
     species: "dog", weightKg: 20,
     patientName: "Marley",
@@ -559,6 +567,7 @@ export const cases = [
   },
   {
     id: "case-feline-cystitis",
+    maxXp: 70,
     difficulty: 2, unlockXpThreshold: 260,
     species: "cat", weightKg: 5,
     patientName: "Bazyl",
@@ -624,6 +633,7 @@ export const cases = [
 ,
   {
     id: "case-roundworm-cat",
+    maxXp: 55,
     difficulty: 1,
     unlockXpThreshold: 10,
     species: "cat",
@@ -682,6 +692,7 @@ export const cases = [
   ,
   {
     id: "case-hamster-wet-tail",
+    maxXp: 70,
     difficulty: 1,
     unlockXpThreshold: 15,
     species: "hamster",
@@ -739,6 +750,7 @@ export const cases = [
   },
   {
     id: "case-guinea-pig-mange",
+    maxXp: 55,
     difficulty: 1,
     unlockXpThreshold: 50,
     species: "guinea-pig",
@@ -796,6 +808,7 @@ export const cases = [
   },
 {
       "id": "case-gi-foreign-body",
+      "maxXp": 110,
       "difficulty": 2,
       "unlockXpThreshold": 100,
       "species": "dog",
@@ -888,6 +901,7 @@ export const cases = [
     },
 {
       "id": "case-metaldehyde-toxicity",
+      "maxXp": 45,
       "difficulty": 2,
       "unlockXpThreshold": 120,
       "species": "cat",
@@ -979,6 +993,7 @@ export const cases = [
     },
 {
       "id": "case-scaly-face-mites",
+      "maxXp": 70,
       "difficulty": 2,
       "unlockXpThreshold": 140,
       "species": "parrot",
@@ -1063,6 +1078,7 @@ export const cases = [
     },
 {
       "id": "case-egg-binding",
+      "maxXp": 75,
       "difficulty": 3,
       "unlockXpThreshold": 160,
       "species": "parrot",
@@ -1156,6 +1172,7 @@ export const cases = [
     },
     {
       "id": "case-tortoise-mbd",
+      "maxXp": 85,
       "difficulty": 2,
       "unlockXpThreshold": 150,
       "species": "tortoise",
@@ -1213,6 +1230,7 @@ export const cases = [
     },
     {
       "id": "case-ferret-insulinoma",
+      "maxXp": 55,
       "difficulty": 3,
       "unlockXpThreshold": 400,
       "species": "ferret",
@@ -1270,6 +1288,7 @@ export const cases = [
     },
     {
       "id": "case-snake-mouth-rot",
+      "maxXp": 85,
       "difficulty": 1,
       "unlockXpThreshold": 3,
       "species": "snake",
