@@ -361,8 +361,19 @@ function synthesizeOutcome(verdicts, disease) {
   if (rules.has("R-DOSE-UNDER") || rules.has("R-DOSE-INVALID")) return "not-responding";
   // zła diagnoza (R-DX-WRONG) → leczenie omija przyczynę → pogorszenie
   if (rules.has("R-DX-WRONG")) return "deteriorating";
-  // błędna diagnoza bez badań (R-DX-BLOCKED = pomyłka) → leczenie nie trafia w przyczynę
-  if (rules.has("R-DX-BLOCKED")) return "not-responding";
+  // błędna diagnoza bez badań (R-DX-BLOCKED = pomyłka). Biologicznie: jeśli leczenie
+  // jest trafione (właściwa grupa leku + wymagany zabieg; szkoda i dawka obsłużone
+  // wyżej), pacjent się poprawia — leczenie działa mimo złej diagnozy. Nie nagradzamy
+  // pełnym wyleczeniem (diagnoza była zła), więc co najwyżej improving. Kara XP za
+  // R-DX-BLOCKED i R-EXAM-MISSED zostaje — to ona motywuje do zlecania badań.
+  if (rules.has("R-DX-BLOCKED")) {
+    if (procMissing) return "not-responding";
+    const needsDrug = (disease.recommendedGroups || []).length > 0;
+    const matched = rules.has("R-DRUG-GROUP-MATCH");
+    const drugMismatch = rules.has("R-DRUG-GROUP-MISMATCH");
+    if (needsDrug) return matched ? "improving" : "not-responding";
+    return drugMismatch ? "not-responding" : "improving";
+  }
   // poniżej tego punktu: brak problemu z dawką (OVER/UNDER/INVALID obsłużone wyżej)
   // R-DX-LUCKY = trafiona w ciemno — traktujemy jak poprawną diagnozę dla losu pacjenta
   // (biologicznie: dobre leczenie działa, nawet jeśli badania nie potwierdziły);

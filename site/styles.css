@@ -919,9 +919,20 @@ button:focus-visible, .btn:focus-visible, [tabindex]:focus-visible {
 .verdict-stage { font-weight: 600; font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); }
 .verdict-detail { flex: 1; }
 .verdict-detail-text { font-size: 0.9rem; margin-top: 0.15rem; }
-.verdict-meta { display: flex; gap: 0.5rem; margin-top: 0.2rem; }
-.verdict-rule { font-family: monospace; font-size: 0.78rem; color: var(--text-muted); }
-.verdict-claim { font-size: 0.75rem; color: var(--text-muted); font-family: monospace; }
+/* .verdict-meta usunięte z renderu — metadane (rule/claim) dostępne przez „Kopiuj szczegóły" */
+
+/* Subtelny przycisk „Kopiuj szczegóły" dla debug/LLM */
+.debug-copy-row { margin-top: 0.4rem; }
+.debug-copy-btn {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  font-size: 0.78rem; color: var(--text-muted); background: none; border: 0;
+  padding: 0.25rem 0.4rem; border-radius: var(--radius-sm); cursor: pointer;
+  font-family: monospace;
+}
+.debug-copy-btn:hover { background: var(--surface-alt); color: var(--text); }
+.debug-copy-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.debug-copy-icon { display: inline-flex; width: 1em; height: 1em; }
+.debug-copy-icon svg { width: 100%; height: 100%; }
 
 .dose-breakdown { font-size: 0.85rem; }
 .dose-breakdown-row {

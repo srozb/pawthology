@@ -1837,6 +1837,11 @@ function renderOutcome(c) {
     container.append(renderVerdictGroup(neutral));
   }
 
+  // Przycisk „Kopiuj szczegóły" — subtelny, dla debug/LLM. Buduje tekst ze wszystkimi
+  // werdyktami (stage, delta, rule, claimId, detail) i kopiuje do schowka. Gracz nie
+  // widzi reguł/claimów na ekranie — są dostępne tylko tutaj, na żądanie.
+  container.append(renderDebugCopyButton(r, c));
+
   // Dose breakdown
   if (r.doseBreakdown && r.doseBreakdown.length > 0) {
     container.append(h("div", { class: "section-label" }, tt("label.doseRange")));
@@ -1909,15 +1914,59 @@ function renderVerdictGroup(verdicts) {
     const detailText = h("div", { class: "verdict-detail-text" });
     detailText.innerHTML = wrapGlossaryTerms(v.detailPl, state.lang);
     detailDiv.append(stageSpan, detailText);
-    detailDiv.append(h("div", { class: "verdict-meta" },
-      h("span", { class: "verdict-rule" }, v.rule),
-      h("span", { class: "verdict-claim" }, tt("verdict.claimRef") + ": " + v.claimId)
-    ));
+    // Metadane dla LLM/debug (rule + claimId) — NIE dla gracza. Ukryte; do skopiowania
+    // służą przyciskiem „Kopiuj szczegóły" na ekranie wyniku (patrz renderOutcome).
 
     item.append(deltaSpan, detailDiv);
     list.append(item);
   });
   return list;
+}
+
+/** Subtelny przycisk „Kopiuj szczegóły" — buduje tekst z wszystkimi werdyktami dla debug/LLM
+ *  (stage, delta, rule, claimId, detail) i kopiuje do schowka. Metadane (rule/claim) są
+ *  ukryte z widoku gracza; ten przycisk to jedyyny sposób ich pozyskania. */
+function renderDebugCopyButton(r, c) {
+  const wrap = h("div", { class: "debug-copy-row" });
+  const btn = h("button", {
+    class: "debug-copy-btn",
+    type: "button",
+    "aria-label": tt("outcome.copyDebugAria"),
+    title: tt("outcome.copyDebugAria"),
+    onclick: () => {
+      const lines = [
+        `Pawthology case=${c?.id || "?"} dx=${state.diagnosis || "?"} outcome=${r.patientOutcome} xp=${r.xp}`,
+        "Verdicts:"
+      ];
+      for (const v of r.verdicts) {
+        const sign = v.delta > 0 ? "+" : "";
+        lines.push(`  [${sign}${v.delta}] ${tt("verdict.stage." + v.stage)} | ${v.rule} | claim: ${v.claimId} | ${v.detailPl}`);
+      }
+      const text = lines.join("\n");
+      const done = () => live(tt("outcome.copyDebugDone"));
+      const fail = () => live(tt("outcome.copyDebugFail"));
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(done, fail);
+        } else {
+          // Fallback: tymczasowy textarea + execCommand (starsze przeglądarki / insecure context)
+          const ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed";
+          ta.style.opacity = "0";
+          document.body.append(ta);
+          ta.select();
+          document.execCommand ? (document.execCommand("copy") ? done() : fail()) : fail();
+          ta.remove();
+        }
+      } catch { fail(); }
+    }
+  });
+  const ic = h("span", { class: "debug-copy-icon", "aria-hidden": "true" });
+  ic.innerHTML = iconSvg("copy");
+  btn.append(ic, document.createTextNode(" " + tt("outcome.copyDebug")));
+  wrap.append(btn);
+  return wrap;
 }
 
 function getTip(verdicts) {
