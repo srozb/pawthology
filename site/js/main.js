@@ -8,6 +8,7 @@
 import { CONTENT, GLOSSARY, ICONS } from "../data/index.js";
 import { evaluateCase, availableCases, availableDrugs, availableProcedures, levelFromXp } from "./game.js";
 import { t, detectLang, AVAILABLE_LANGS, LANG_LABELS } from "./i18n.js";
+import { track } from "./track.js";
 
 /* ---- XP: najlepszy wynik na przypadek (best-per-case) ----
    totalXp = Σ max(0, bestXp[caseId]). Poprawa przy powtórce podnosi total;
@@ -442,6 +443,7 @@ function attachGlossaryHandlers(container) {
         class: "glossary-toggle",
         onclick: (e) => {
           e.stopPropagation();
+          track("glossary/expand");
           if (state.glossaryExpanded.has(gid)) state.glossaryExpanded.delete(gid);
           else state.glossaryExpanded.add(gid);
           showPopup();
@@ -542,7 +544,7 @@ function renderHeader() {
     h("h1", {}, tt("app.title")),
     h("span", { class: "subtitle" }, tt("app.subtitle"))
   );
-  const goHome = () => { state.view = "cases"; render(); };
+  const goHome = () => { track("view/cases"); state.view = "cases"; render(); };
   titleWrap.addEventListener("click", goHome);
   titleWrap.addEventListener("keydown", (e) => {
     if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goHome(); }
@@ -565,7 +567,7 @@ function renderHeader() {
   // History button
   const histBtn = h("button", {
     class: "btn-icon",
-    onclick: () => { state.view = "history"; render(); },
+    onclick: () => { track("view/history"); state.view = "history"; render(); },
     "aria-label": tt("history.view"),
     title: tt("history.view")
   });
@@ -575,7 +577,7 @@ function renderHeader() {
   // Encyclopedia button (katalog)
   const encBtn = h("button", {
     class: "btn-icon",
-    onclick: () => { state.view = "encyclopedia"; render(); },
+    onclick: () => { track("view/encyclopedia"); state.view = "encyclopedia"; render(); },
     "aria-label": tt("encyclopedia.title"),
     title: tt("encyclopedia.title")
   });
@@ -585,7 +587,7 @@ function renderHeader() {
   // About button
   const aboutBtn = h("button", {
     class: "btn-icon",
-    onclick: () => { state.view = "about"; render(); },
+    onclick: () => { track("view/about"); state.view = "about"; render(); },
     "aria-label": tt("about.title"),
     title: tt("about.title")
   });
@@ -2406,6 +2408,7 @@ function renderAbout() {
 function selectCase(id) {
   state.currentCaseId = id;
   state.view = "game";
+  track("case/open/" + id);
   state.phase = "intake";
   state.selectedExams = [];
   state.diagnosis = null;
@@ -2435,6 +2438,7 @@ function shuffledDiagnosisOptions(caseId) {
 }
 
 function goToPhase(phase) {
+  track("phase/enter/" + phase);
   state.phase = phase;
   state.glossaryExpanded.clear();
   live(tt(PHASE_KEYS[phase]));
@@ -2558,6 +2562,9 @@ function finishCase() {
 
     persist();
     state.phase = "outcome";
+    track("phase/enter/outcome");
+    track("case/complete/" + c.id);
+    track("case/outcome/" + result.patientOutcome);
     live(`${tt("label.outcome")}: ${t("outcome." + result.patientOutcome, state.lang)}, XP: ${result.xp >= 0 ? "+" : ""}${result.xp}`);
     render();
   } catch (e) {
@@ -2568,6 +2575,7 @@ function finishCase() {
 
 function abandonCase() {
   if (confirm(tt("case.abandonConfirm"))) {
+    track("case/abandon/" + state.currentCaseId);
     state.view = "cases";
     state.currentCaseId = null;
     state.phase = "intake";
@@ -2603,6 +2611,7 @@ function nextPatient() {
 }
 
 function resetCase() {
+  track("case/reset/" + state.currentCaseId);
   state.phase = "intake";
   state.selectedExams = [];
   state.diagnosis = null;
