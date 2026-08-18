@@ -6,6 +6,7 @@ export const STRINGS = {
     "app.subtitle": "Symulator decyzji klinicznych — małe zwierzęta",
     "nav.home": "Strona główna",
     "nav.github": "Kod źródłowy na GitHubie",
+    "lang.select": "Wybierz język",
     "safety.note": "To symulacja. Nigdy nie podawaj leku zwierzęciu bez weterynarza.",
     "phase.intake": "Przyjęcie",
     "phase.exams": "Badania",
@@ -190,6 +191,7 @@ export const STRINGS = {
     "app.subtitle": "Clinical decision simulator — small animals",
     "nav.home": "Home",
     "nav.github": "Source code on GitHub",
+    "lang.select": "Choose language",
     "safety.note": "This is a simulation. Never medicate an animal without a veterinarian.",
     "phase.intake": "Intake",
     "phase.exams": "Diagnostics",
@@ -381,4 +383,35 @@ export function missingKeys(lang) {
   const base = Object.keys(STRINGS.pl);
   const target = STRINGS[lang] || {};
   return base.filter((k) => !(k in target));
+}
+
+// Dostępne (gotowe) języki = klucze STRINGS. Dodanie nowego języka do STRINGS
+// automatycznie udostępnia go detekcji i menu wyboru — bez zmian w main.js.
+export const AVAILABLE_LANGS = Object.keys(STRINGS);      // ["pl", "en"]
+
+// Nazwy wyświetlane w menu wyboru — w rodzimym języku.
+export const LANG_LABELS = {
+  pl: "Polski",
+  en: "English",
+};
+
+// Fallback, gdy preferowany język przeglądarki nie jest (jeszcze) gotowy.
+export const DEFAULT_LANG = "en";
+
+// Wybiera język startowy na podstawie navigator.languages (po primary subtagu:
+// "pl-PL"→"pl", "en-US"→"en"). Zwraca pierwszy dostępny; w przeciwnym razie DEFAULT_LANG.
+// Bezpieczne w Node (brak navigator) — nie psuje tools/replay.js.
+export function detectLang() {
+  if (typeof navigator === "undefined") return DEFAULT_LANG;
+  const want = [];
+  if (Array.isArray(navigator.languages) && navigator.languages.length) want.push(...navigator.languages);
+  if (navigator.language) want.push(navigator.language);
+  if (navigator.userLanguage) want.push(navigator.userLanguage);
+  const avail = new Set(AVAILABLE_LANGS);
+  for (const tag of want) {
+    if (!tag) continue;
+    const primary = String(tag).trim().toLowerCase().split("-")[0];
+    if (avail.has(primary)) return primary;
+  }
+  return DEFAULT_LANG;
 }

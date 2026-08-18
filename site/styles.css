@@ -168,13 +168,22 @@ button:focus-visible, .btn:focus-visible, [tabindex]:focus-visible {
   outline-offset: 2px;
 }
 
-.lang-toggle {
+.lang-select {
   font-weight: 600;
   font-size: 0.8rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 0.4rem;
+  width: auto;
+  height: 38px;
   background: var(--primary-light);
-  border-color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
   color: var(--primary-dark);
+  cursor: pointer;
+}
+.lang-select:hover { border-color: var(--primary-dark); }
+.lang-select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
 }
 
 /* === Icon System === */

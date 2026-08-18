@@ -7,7 +7,7 @@
 
 import { CONTENT, GLOSSARY, ICONS } from "../data/index.js";
 import { evaluateCase, availableCases, availableDrugs, availableProcedures, levelFromXp } from "./game.js";
-import { t } from "./i18n.js";
+import { t, detectLang, AVAILABLE_LANGS, LANG_LABELS } from "./i18n.js";
 
 /* ---- XP: najlepszy wynik na przypadek (best-per-case) ----
    totalXp = Σ max(0, bestXp[caseId]). Poprawa przy powtórce podnosi total;
@@ -47,7 +47,7 @@ function sumXp(best) { return Object.values(best).reduce((s, x) => s + Math.max(
 /* ============================== STATE ============================== */
 
 const state = {
-  lang: localStorage.getItem("pawthology.lang") || "pl",
+  lang: localStorage.getItem("pawthology.lang") || detectLang(),
   bestXp: migrateBestXp(),
   bestOutcome: migrateBestOutcome(),
   history: JSON.parse(localStorage.getItem("pawthology.history") || "[]"),
@@ -604,12 +604,18 @@ function renderHeader() {
   ghLink.innerHTML = iconSvg("github");
   actions.append(ghLink);
 
-  // Language toggle
-  actions.append(h("button", {
-    class: "lang-toggle",
-    onclick: toggleLang,
-    "aria-label": state.lang === "pl" ? "Switch to English" : "Przełącz na polski"
-  }, state.lang === "pl" ? "EN" : "PL"));
+  // Language selector (rozwijane menu)
+  const langSelect = h("select", {
+    class: "lang-select",
+    "aria-label": tt("lang.select"),
+    title: tt("lang.select"),
+    onchange: (e) => setLang(e.target.value),
+  });
+  for (const code of AVAILABLE_LANGS) {
+    langSelect.append(h("option", { value: code }, LANG_LABELS[code] || code));
+  }
+  langSelect.value = state.lang;
+  actions.append(langSelect);
 
   header.append(actions);
   return header;
@@ -2624,8 +2630,10 @@ function clearHistory() {
   }
 }
 
-function toggleLang() {
-  state.lang = state.lang === "pl" ? "en" : "pl";
+function setLang(lang) {
+  if (!AVAILABLE_LANGS.includes(lang)) return;
+  if (state.lang === lang) return;
+  state.lang = lang;
   persist();
   render();
 }
